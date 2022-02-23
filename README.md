@@ -13,7 +13,7 @@ python3 redfish_to_grpc.py
 ```
 
 This will regenerate all the schemas, as well as run them through the protoc compiler.
-Output can be seen in the grpc/proto_out directory.  For ease of reviewing, the output
+Output can be seen in the grpc directory.  For ease of reviewing, the output
 from the initial run is checked into the repo.
 
 Base types are converted to their most equivalent type (string to string, number to
