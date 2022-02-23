@@ -9,13 +9,16 @@ from multiprocessing import Pool, cpu_count
 import shutil
 import subprocess
 
-multithread = False
+multithread = True
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 REDFISH_SCHEMA_DIR = os.path.join(SCRIPT_DIR, "csdl")
 GRPC_DIR = os.path.join(SCRIPT_DIR, "grpc")
 PROTO_OUT_DIR = os.path.join(GRPC_DIR, "proto_out")
 
+
+# The current mechanisms of generation have problems with circular imports.
+# Will likely need a way in the future to set an explicit max depth
 circular_imports = [
     "SubProcessors",
     "AllocatedPools",
@@ -76,7 +79,7 @@ def basetype_to_grpc(basetype):
     if basetype == BaseType.DURATION:
         return "google.protobuf.Duration", ["google/protobuf/duration.proto"]
     if basetype == BaseType.GUID:
-        # TODO(ed) does grpc have a better type
+        # TODO(ed) does grpc have a better type?
         return "string", []
     else:
         print("Can't find type for {}")
@@ -1143,6 +1146,7 @@ def main():
     gen_cpp = True
     if gen_protos:
         flat_list = []
+
         print("Reading from {}".format(REDFISH_SCHEMA_DIR))
         for root, dirs, files in os.walk(REDFISH_SCHEMA_DIR):
             # Todo(ed) Oem account service is totally wrong odata wise, and
