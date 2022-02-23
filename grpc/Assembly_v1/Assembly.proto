@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package Assembly;
+
+import "Assembly_v1/Actions.proto";
+import "Assembly_v1/AssemblyData.proto";
+import "Resource_v1/Oem.proto";
+
+message Assembly {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Assembly.v1_0_0.Assembly
+    repeated AssemblyData Assemblies = 5;
+    Actions Actions = 6;
+}

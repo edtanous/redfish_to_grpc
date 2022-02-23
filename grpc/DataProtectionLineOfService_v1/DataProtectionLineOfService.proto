@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package DataProtectionLineOfService;
+
+import "DataProtectionLineOfService_v1/Actions.proto";
+import "DataProtectionLoSCapabilities_v1/FailureDomainScope.proto";
+import "DataProtectionLoSCapabilities_v1/RecoveryAccessScope.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Schedule_v1/Schedule.proto";
+import "StorageReplicaInfo_v1/ReplicaType.proto";
+
+message DataProtectionLineOfService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from DataProtectionLineOfService.v1_0_0.DataProtectionLineOfService
+    .DataProtectionLoSCapabilities.FailureDomainScope RecoveryGeographicObjective = 5;
+    string RecoveryPointObjectiveTime = 6;
+    .DataProtectionLoSCapabilities.RecoveryAccessScope RecoveryTimeObjective = 7;
+    .StorageReplicaInfo.ReplicaType ReplicaType = 8;
+    string MinLifetime = 9;
+    bool IsIsolated = 10;
+    .Schedule.Schedule Schedule = 11;
+    NavigationReference ReplicaClassOfService = 12;
+    .Resource.Location ReplicaAccessLocation = 13;
+
+    // from DataProtectionLineOfService.v1_2_0.DataProtectionLineOfService
+    Actions Actions = 14;
+}

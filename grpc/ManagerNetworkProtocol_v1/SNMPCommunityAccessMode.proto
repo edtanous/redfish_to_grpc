@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ManagerNetworkProtocol;
+
+enum SNMPCommunityAccessMode {
+    SNMPCommunityAccessMode_Full = 0;
+    SNMPCommunityAccessMode_Limited = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Volume;
+
+enum WriteCacheStateType {
+    WriteCacheStateType_Unprotected = 0;
+    WriteCacheStateType_Protected = 1;
+    WriteCacheStateType_Degraded = 2;
+}

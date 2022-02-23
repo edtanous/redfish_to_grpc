@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ThermalMetrics;
+
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "ThermalMetrics_v1/Actions.proto";
+import "ThermalMetrics_v1/TemperatureSummary.proto";
+
+message ThermalMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ThermalMetrics.v1_0_0.ThermalMetrics
+    TemperatureSummary TemperatureSummaryCelsius = 5;
+    repeated NavigationReference TemperatureReadingsCelsius = 6;
+    Actions Actions = 7;
+}

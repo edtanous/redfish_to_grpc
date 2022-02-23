@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package SoftwareInventory;
+
+import "google/protobuf/timestamp.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/Actions.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+
+message SoftwareInventory {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from SoftwareInventory.v1_0_0.SoftwareInventory
+    .Resource.Status Status = 5;
+    string Version = 6;
+    bool Updateable = 7;
+    Actions Actions = 8;
+
+    // from SoftwareInventory.v1_1_0.SoftwareInventory
+    string SoftwareId = 9;
+    string LowestSupportedVersion = 10;
+    repeated string UefiDevicePaths = 11;
+    repeated NavigationReference RelatedItem = 12;
+
+    // from SoftwareInventory.v1_2_0.SoftwareInventory
+    string Manufacturer = 13;
+    google.protobuf.Timestamp ReleaseDate = 14;
+
+    // from SoftwareInventory.v1_3_0.SoftwareInventory
+    bool WriteProtected = 15;
+
+    // from SoftwareInventory.v1_4_0.SoftwareInventory
+    MeasurementBlock Measurement = 16;
+}

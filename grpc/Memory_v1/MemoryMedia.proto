@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Memory;
+
+enum MemoryMedia {
+    MemoryMedia_DRAM = 0;
+    MemoryMedia_NAND = 1;
+    MemoryMedia_Intel3DXPoint = 2;
+    MemoryMedia_Proprietary = 3;
+}

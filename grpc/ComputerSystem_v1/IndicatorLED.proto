@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum IndicatorLED {
+    IndicatorLED_Unknown = 0;
+    IndicatorLED_Lit = 1;
+    IndicatorLED_Blinking = 2;
+    IndicatorLED_Off = 3;
+}

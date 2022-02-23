@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ComponentIntegrity;
+
+import "google/protobuf/any.proto";
+
+message SPDMresponderAuth{
+    map<string, google.protobuf.Any> SPDMresponderAuth = 1;
+}
+

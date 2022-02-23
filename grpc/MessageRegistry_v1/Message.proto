@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package MessageRegistry;
+
+import "google/protobuf/any.proto";
+
+message Message{
+    map<string, google.protobuf.Any> Message = 1;
+}
+

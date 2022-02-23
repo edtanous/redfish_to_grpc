@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package Circuit;
+
+enum NominalVoltageType {
+    NominalVoltageType_AC100To240V = 0;
+    NominalVoltageType_AC100To277V = 1;
+    NominalVoltageType_AC120V = 2;
+    NominalVoltageType_AC200To240V = 3;
+    NominalVoltageType_AC200To277V = 4;
+    NominalVoltageType_AC208V = 5;
+    NominalVoltageType_AC230V = 6;
+    NominalVoltageType_AC240V = 7;
+    NominalVoltageType_AC240AndDC380V = 8;
+    NominalVoltageType_AC277V = 9;
+    NominalVoltageType_AC277AndDC380V = 10;
+    NominalVoltageType_AC400V = 11;
+    NominalVoltageType_AC480V = 12;
+    NominalVoltageType_DC48V = 13;
+    NominalVoltageType_DC240V = 14;
+    NominalVoltageType_DC380V = 15;
+    NominalVoltageType_DCNeg48V = 16;
+}

@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package ManagerNetworkProtocol;
+
+import "ManagerNetworkProtocol_v1/Actions.proto";
+import "ManagerNetworkProtocol_v1/HTTPSProtocol.proto";
+import "ManagerNetworkProtocol_v1/NTPProtocol.proto";
+import "ManagerNetworkProtocol_v1/Protocol.proto";
+import "ManagerNetworkProtocol_v1/ProxyConfiguration.proto";
+import "ManagerNetworkProtocol_v1/SNMPProtocol.proto";
+import "ManagerNetworkProtocol_v1/SSDProtocol.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message ManagerNetworkProtocol {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ManagerNetworkProtocol.v1_0_0.ManagerNetworkProtocol
+    string HostName = 5;
+    string FQDN = 6;
+    Protocol HTTP = 7;
+    HTTPSProtocol HTTPS = 8;
+    SNMPProtocol SNMP = 9;
+    Protocol VirtualMedia = 10;
+    Protocol Telnet = 11;
+    SSDProtocol SSDP = 12;
+    Protocol IPMI = 13;
+    Protocol SSH = 14;
+    Protocol KVMIP = 15;
+    .Resource.Status Status = 16;
+
+    // from ManagerNetworkProtocol.v1_1_0.ManagerNetworkProtocol
+    Protocol DHCP = 17;
+
+    // from ManagerNetworkProtocol.v1_2_0.ManagerNetworkProtocol
+    NTPProtocol NTP = 18;
+    Actions Actions = 19;
+
+    // from ManagerNetworkProtocol.v1_3_0.ManagerNetworkProtocol
+    Protocol DHCPv6 = 20;
+    Protocol RDP = 21;
+    Protocol RFB = 22;
+
+    // from ManagerNetworkProtocol.v1_8_0.ManagerNetworkProtocol
+    ProxyConfiguration Proxy = 23;
+}

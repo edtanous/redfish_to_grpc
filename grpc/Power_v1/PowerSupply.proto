@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package Power;
+
+import "Assembly_v1/Assembly.proto";
+import "NavigationReference.proto";
+import "Power_v1/InputRange.proto";
+import "Power_v1/LineInputVoltageType.proto";
+import "Power_v1/PowerSupplyActions.proto";
+import "Power_v1/PowerSupplyType.proto";
+import "Resource_v1/IndicatorLED.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message PowerSupply {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Power.v1_0_0.PowerSupply
+    string Name = 3;
+    PowerSupplyType PowerSupplyType = 4;
+    LineInputVoltageType LineInputVoltageType = 5;
+    double LineInputVoltage = 6;
+    double PowerCapacityWatts = 7;
+    double LastPowerOutputWatts = 8;
+    string Model = 9;
+    string FirmwareVersion = 10;
+    string SerialNumber = 11;
+    string PartNumber = 12;
+    string SparePartNumber = 13;
+    .Resource.Status Status = 14;
+    repeated NavigationReference RelatedItem = 15;
+    repeated NavigationReference Redundancy = 16;
+
+    // from Power.v1_1_0.PowerSupply
+    string Manufacturer = 17;
+    repeated InputRange InputRanges = 18;
+
+    // from Power.v1_2_0.PowerSupply
+    .Resource.IndicatorLED IndicatorLED = 19;
+
+    // from Power.v1_3_0.PowerSupply
+    PowerSupplyActions Actions = 20;
+
+    // from Power.v1_5_0.PowerSupply
+    .Resource.Location Location = 21;
+    .Assembly.Assembly Assembly = 22;
+    double PowerInputWatts = 23;
+    double PowerOutputWatts = 24;
+    double EfficiencyPercent = 25;
+    bool HotPluggable = 26;
+}

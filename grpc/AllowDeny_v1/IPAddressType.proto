@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package AllowDeny;
+
+enum IPAddressType {
+    IPAddressType_IPv4 = 0;
+    IPAddressType_IPv6 = 1;
+}

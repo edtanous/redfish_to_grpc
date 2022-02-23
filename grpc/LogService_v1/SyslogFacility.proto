@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package LogService;
+
+enum SyslogFacility {
+    SyslogFacility_Kern = 0;
+    SyslogFacility_User = 1;
+    SyslogFacility_Mail = 2;
+    SyslogFacility_Daemon = 3;
+    SyslogFacility_Auth = 4;
+    SyslogFacility_Syslog = 5;
+    SyslogFacility_LPR = 6;
+    SyslogFacility_News = 7;
+    SyslogFacility_UUCP = 8;
+    SyslogFacility_Cron = 9;
+    SyslogFacility_Authpriv = 10;
+    SyslogFacility_FTP = 11;
+    SyslogFacility_NTP = 12;
+    SyslogFacility_Security = 13;
+    SyslogFacility_Console = 14;
+    SyslogFacility_SolarisCron = 15;
+    SyslogFacility_Local0 = 16;
+    SyslogFacility_Local1 = 17;
+    SyslogFacility_Local2 = 18;
+    SyslogFacility_Local3 = 19;
+    SyslogFacility_Local4 = 20;
+    SyslogFacility_Local5 = 21;
+    SyslogFacility_Local6 = 22;
+    SyslogFacility_Local7 = 23;
+}

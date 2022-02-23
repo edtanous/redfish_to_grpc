@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Control;
+
+enum ControlType {
+    ControlType_Temperature = 0;
+    ControlType_Power = 1;
+    ControlType_Frequency = 2;
+    ControlType_FrequencyMHz = 3;
+    ControlType_Pressure = 4;
+}

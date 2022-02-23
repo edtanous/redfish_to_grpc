@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Job;
+
+enum JobState {
+    JobState_New = 0;
+    JobState_Starting = 1;
+    JobState_Running = 2;
+    JobState_Suspended = 3;
+    JobState_Interrupted = 4;
+    JobState_Pending = 5;
+    JobState_Stopping = 6;
+    JobState_Completed = 7;
+    JobState_Cancelled = 8;
+    JobState_Exception = 9;
+    JobState_Service = 10;
+    JobState_UserIntervention = 11;
+    JobState_Continue = 12;
+}

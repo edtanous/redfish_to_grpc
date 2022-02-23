@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Manager;
+
+enum ManagerType {
+    ManagerType_ManagementController = 0;
+    ManagerType_EnclosureManager = 1;
+    ManagerType_BMC = 2;
+    ManagerType_RackManager = 3;
+    ManagerType_AuxiliaryController = 4;
+    ManagerType_Service = 5;
+}

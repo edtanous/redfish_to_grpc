@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum BootSource {
+    BootSource_None = 0;
+    BootSource_Pxe = 1;
+    BootSource_Floppy = 2;
+    BootSource_Cd = 3;
+    BootSource_Usb = 4;
+    BootSource_Hdd = 5;
+    BootSource_BiosSetup = 6;
+    BootSource_Utilities = 7;
+    BootSource_Diags = 8;
+    BootSource_UefiShell = 9;
+    BootSource_UefiTarget = 10;
+    BootSource_SDCard = 11;
+    BootSource_UefiHttp = 12;
+    BootSource_RemoteDrive = 13;
+    BootSource_UefiBootNext = 14;
+}

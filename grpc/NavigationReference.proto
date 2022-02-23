@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message NavigationReference {
+    string id = 1;
+}

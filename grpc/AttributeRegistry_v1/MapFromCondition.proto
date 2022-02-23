@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package AttributeRegistry;
+
+enum MapFromCondition {
+    MapFromCondition_EQU = 0;
+    MapFromCondition_NEQ = 1;
+    MapFromCondition_GTR = 2;
+    MapFromCondition_GEQ = 3;
+    MapFromCondition_LSS = 4;
+    MapFromCondition_LEQ = 5;
+}

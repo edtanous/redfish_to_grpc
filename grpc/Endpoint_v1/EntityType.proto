@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package Endpoint;
+
+enum EntityType {
+    EntityType_StorageInitiator = 0;
+    EntityType_RootComplex = 1;
+    EntityType_NetworkController = 2;
+    EntityType_Drive = 3;
+    EntityType_StorageExpander = 4;
+    EntityType_DisplayController = 5;
+    EntityType_Bridge = 6;
+    EntityType_Processor = 7;
+    EntityType_Volume = 8;
+    EntityType_AccelerationFunction = 9;
+    EntityType_MediaController = 10;
+    EntityType_MemoryChunk = 11;
+    EntityType_Switch = 12;
+    EntityType_FabricBridge = 13;
+    EntityType_Manager = 14;
+    EntityType_StorageSubsystem = 15;
+}

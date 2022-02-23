@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Circuit;
+
+enum PowerRestorePolicyTypes {
+    PowerRestorePolicyTypes_AlwaysOn = 0;
+    PowerRestorePolicyTypes_AlwaysOff = 1;
+    PowerRestorePolicyTypes_LastState = 2;
+}

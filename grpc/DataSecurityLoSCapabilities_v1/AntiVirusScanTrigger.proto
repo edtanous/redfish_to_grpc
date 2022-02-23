@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package DataSecurityLoSCapabilities;
+
+enum AntiVirusScanTrigger {
+    AntiVirusScanTrigger_None = 0;
+    AntiVirusScanTrigger_OnFirstRead = 1;
+    AntiVirusScanTrigger_OnPatternUpdate = 2;
+    AntiVirusScanTrigger_OnUpdate = 3;
+    AntiVirusScanTrigger_OnRename = 4;
+}

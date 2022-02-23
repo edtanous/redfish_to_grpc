@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Resource;
+
+enum Reference {
+    Reference_Top = 0;
+    Reference_Bottom = 1;
+    Reference_Front = 2;
+    Reference_Rear = 3;
+    Reference_Left = 4;
+    Reference_Right = 5;
+    Reference_Middle = 6;
+}

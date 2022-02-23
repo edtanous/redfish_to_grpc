@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package CertificateService;
+
+import "google/protobuf/any.proto";
+
+message GenerateCSRResponse{
+    map<string, google.protobuf.Any> GenerateCSRResponse = 1;
+}
+

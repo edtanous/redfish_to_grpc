@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package LogEntry;
+
+enum OriginatorTypes {
+    OriginatorTypes_Client = 0;
+    OriginatorTypes_Internal = 1;
+    OriginatorTypes_SupportingService = 2;
+}

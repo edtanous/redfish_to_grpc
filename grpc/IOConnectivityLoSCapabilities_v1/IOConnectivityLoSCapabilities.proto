@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package IOConnectivityLoSCapabilities;
+
+import "IOConnectivityLineOfService_v1/IOConnectivityLineOfService.proto";
+import "IOConnectivityLoSCapabilities_v1/Actions.proto";
+import "Protocol_v1/Protocol.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+
+message IOConnectivityLoSCapabilities {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLoSCapabilities
+    .Resource.Identifier Identifier = 5;
+    repeated .Protocol.Protocol SupportedAccessProtocols = 6;
+    int64 MaxSupportedBytesPerSecond = 7;
+    repeated .IOConnectivityLineOfService.IOConnectivityLineOfService SupportedLinesOfService = 8;
+
+    // from IOConnectivityLoSCapabilities.v1_1_0.IOConnectivityLoSCapabilities
+    Actions Actions = 9;
+    int64 MaxSupportedIOPS = 10;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package PCIeFunction;
+
+enum FunctionType {
+    FunctionType_Physical = 0;
+    FunctionType_Virtual = 1;
+}

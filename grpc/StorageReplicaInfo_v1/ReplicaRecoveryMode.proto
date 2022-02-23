@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaRecoveryMode {
+    ReplicaRecoveryMode_Automatic = 0;
+    ReplicaRecoveryMode_Manual = 1;
+}

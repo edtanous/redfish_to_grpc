@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package FeaturesRegistry;
+
+import "FeaturesRegistry_v1/Actions.proto";
+import "FeaturesRegistry_v1/FeaturesRegistryProperty.proto";
+import "Resource_v1/Oem.proto";
+
+message FeaturesRegistry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from FeaturesRegistry.v1_0_0.FeaturesRegistry
+    string Language = 5;
+    string RegistryPrefix = 6;
+    string RegistryVersion = 7;
+    string OwningEntity = 8;
+    FeaturesRegistryProperty Features = 9;
+    Actions Actions = 10;
+}

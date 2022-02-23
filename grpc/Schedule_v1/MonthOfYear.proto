@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Schedule;
+
+enum MonthOfYear {
+    MonthOfYear_January = 0;
+    MonthOfYear_February = 1;
+    MonthOfYear_March = 2;
+    MonthOfYear_April = 3;
+    MonthOfYear_May = 4;
+    MonthOfYear_June = 5;
+    MonthOfYear_July = 6;
+    MonthOfYear_August = 7;
+    MonthOfYear_September = 8;
+    MonthOfYear_October = 9;
+    MonthOfYear_November = 10;
+    MonthOfYear_December = 11;
+    MonthOfYear_Every = 12;
+}

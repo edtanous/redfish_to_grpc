@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package Triggers;
+
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Triggers_v1/Actions.proto";
+import "Triggers_v1/DiscreteTrigger.proto";
+import "Triggers_v1/DiscreteTriggerConditionEnum.proto";
+import "Triggers_v1/Links.proto";
+import "Triggers_v1/MetricTypeEnum.proto";
+import "Triggers_v1/Thresholds.proto";
+import "Triggers_v1/TriggerActionEnum.proto";
+import "Triggers_v1/Wildcard.proto";
+
+message Triggers {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Triggers.v1_0_0.Triggers
+    MetricTypeEnum MetricType = 5;
+    repeated TriggerActionEnum TriggerActions = 6;
+    Thresholds NumericThresholds = 7;
+    DiscreteTriggerConditionEnum DiscreteTriggerCondition = 8;
+    repeated DiscreteTrigger DiscreteTriggers = 9;
+    .Resource.Status Status = 10;
+    repeated Wildcard Wildcards = 11;
+    repeated string MetricProperties = 12;
+    Actions Actions = 13;
+
+    // from Triggers.v1_1_0.Triggers
+    repeated string EventTriggers = 14;
+    Links Links = 15;
+
+    // from Triggers.v1_2_0.Triggers
+    repeated string MetricIds = 16;
+}

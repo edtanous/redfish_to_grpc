@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package AccelerationFunction;
+
+enum AccelerationFunctionType {
+    AccelerationFunctionType_Encryption = 0;
+    AccelerationFunctionType_Compression = 1;
+    AccelerationFunctionType_PacketInspection = 2;
+    AccelerationFunctionType_PacketSwitch = 3;
+    AccelerationFunctionType_Scheduler = 4;
+    AccelerationFunctionType_AudioProcessing = 5;
+    AccelerationFunctionType_VideoProcessing = 6;
+    AccelerationFunctionType_OEM = 7;
+}

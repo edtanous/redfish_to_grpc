@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package License;
+
+enum LicenseOrigin {
+    LicenseOrigin_BuiltIn = 0;
+    LicenseOrigin_Installed = 1;
+}

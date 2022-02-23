@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package PowerSupply;
+
+import "Assembly_v1/Assembly.proto";
+import "Circuit_v1/NominalVoltageType.proto";
+import "Circuit_v1/PhaseWiringType.proto";
+import "Circuit_v1/PlugType.proto";
+import "google/protobuf/timestamp.proto";
+import "PowerSupply_v1/Actions.proto";
+import "PowerSupply_v1/EfficiencyRating.proto";
+import "PowerSupply_v1/InputRange.proto";
+import "PowerSupply_v1/LineStatus.proto";
+import "PowerSupply_v1/Links.proto";
+import "PowerSupply_v1/OutputRail.proto";
+import "PowerSupply_v1/PowerSupplyType.proto";
+import "PowerSupplyMetrics_v1/PowerSupplyMetrics.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message PowerSupply {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PowerSupply.v1_0_0.PowerSupply
+    PowerSupplyType PowerSupplyType = 5;
+    .Circuit.NominalVoltageType InputNominalVoltageType = 6;
+    double PowerCapacityWatts = 7;
+    string Manufacturer = 8;
+    string Model = 9;
+    string FirmwareVersion = 10;
+    string SerialNumber = 11;
+    string PartNumber = 12;
+    string SparePartNumber = 13;
+    .Resource.Status Status = 14;
+    .Resource.Location Location = 15;
+    bool LocationIndicatorActive = 16;
+    repeated InputRange InputRanges = 17;
+    repeated OutputRail OutputRails = 18;
+    .Circuit.PhaseWiringType PhaseWiringType = 19;
+    .Circuit.PlugType PlugType = 20;
+    repeated EfficiencyRating EfficiencyRatings = 21;
+    bool HotPluggable = 22;
+    Links Links = 23;
+    .Assembly.Assembly Assembly = 24;
+    .PowerSupplyMetrics.PowerSupplyMetrics Metrics = 25;
+    Actions Actions = 26;
+
+    // from PowerSupply.v1_1_0.PowerSupply
+    string Version = 27;
+    google.protobuf.Timestamp ProductionDate = 28;
+
+    // from PowerSupply.v1_2_0.PowerSupply
+    repeated string ElectricalSourceManagerURIs = 29;
+    repeated string ElectricalSourceNames = 30;
+
+    // from PowerSupply.v1_3_0.PowerSupply
+    LineStatus LineInputStatus = 31;
+}

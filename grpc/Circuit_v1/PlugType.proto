@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package Circuit;
+
+enum PlugType {
+    PlugType_NEMA_5_15P = 0;
+    PlugType_NEMA_L5_15P = 1;
+    PlugType_NEMA_5_20P = 2;
+    PlugType_NEMA_L5_20P = 3;
+    PlugType_NEMA_L5_30P = 4;
+    PlugType_NEMA_6_15P = 5;
+    PlugType_NEMA_L6_15P = 6;
+    PlugType_NEMA_6_20P = 7;
+    PlugType_NEMA_L6_20P = 8;
+    PlugType_NEMA_L6_30P = 9;
+    PlugType_NEMA_L14_20P = 10;
+    PlugType_NEMA_L14_30P = 11;
+    PlugType_NEMA_L15_20P = 12;
+    PlugType_NEMA_L15_30P = 13;
+    PlugType_NEMA_L21_20P = 14;
+    PlugType_NEMA_L21_30P = 15;
+    PlugType_NEMA_L22_20P = 16;
+    PlugType_NEMA_L22_30P = 17;
+    PlugType_California_CS8265 = 18;
+    PlugType_California_CS8365 = 19;
+    PlugType_IEC_60320_C14 = 20;
+    PlugType_IEC_60320_C20 = 21;
+    PlugType_IEC_60309_316P6 = 22;
+    PlugType_IEC_60309_332P6 = 23;
+    PlugType_IEC_60309_363P6 = 24;
+    PlugType_IEC_60309_516P6 = 25;
+    PlugType_IEC_60309_532P6 = 26;
+    PlugType_IEC_60309_563P6 = 27;
+    PlugType_IEC_60309_460P9 = 28;
+    PlugType_IEC_60309_560P9 = 29;
+    PlugType_Field_208V_3P4W_60A = 30;
+    PlugType_Field_400V_3P5W_32A = 31;
+}

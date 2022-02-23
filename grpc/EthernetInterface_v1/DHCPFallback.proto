@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package EthernetInterface;
+
+enum DHCPFallback {
+    DHCPFallback_Static = 0;
+    DHCPFallback_AutoConfig = 1;
+    DHCPFallback_None = 2;
+}

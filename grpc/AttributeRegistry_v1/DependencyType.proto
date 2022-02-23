@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package AttributeRegistry;
+
+enum DependencyType {
+    DependencyType_Map = 0;
+}

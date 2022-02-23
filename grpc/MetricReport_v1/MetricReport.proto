@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package MetricReport;
+
+import "google/protobuf/timestamp.proto";
+import "MetricReport_v1/Actions.proto";
+import "MetricReport_v1/MetricValue.proto";
+import "Resource_v1/Oem.proto";
+
+message MetricReport {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MetricReport.v1_0_0.MetricReport
+    string ReportSequence = 5;
+    repeated MetricValue MetricValues = 6;
+    Actions Actions = 7;
+
+    // from MetricReport.v1_1_0.MetricReport
+    google.protobuf.Timestamp Timestamp = 8;
+
+    // from MetricReport.v1_4_0.MetricReport
+    string Context = 9;
+}

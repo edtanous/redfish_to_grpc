@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package SecureBoot;
+
+enum SecureBootCurrentBootType {
+    SecureBootCurrentBootType_Enabled = 0;
+    SecureBootCurrentBootType_Disabled = 1;
+}

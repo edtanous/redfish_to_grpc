@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package License;
+
+enum AuthorizationScope {
+    AuthorizationScope_Device = 0;
+    AuthorizationScope_Capacity = 1;
+    AuthorizationScope_Service = 2;
+}

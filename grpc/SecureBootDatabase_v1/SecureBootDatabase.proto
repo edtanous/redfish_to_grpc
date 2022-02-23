@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package SecureBootDatabase;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "Resource_v1/Oem.proto";
+import "SecureBootDatabase_v1/Actions.proto";
+import "SignatureCollection_v1/SignatureCollection.proto";
+
+message SecureBootDatabase {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from SecureBootDatabase.v1_0_0.SecureBootDatabase
+    string DatabaseId = 5;
+    Actions Actions = 6;
+    .CertificateCollection.CertificateCollection Certificates = 7;
+    .SignatureCollection.SignatureCollection Signatures = 8;
+}

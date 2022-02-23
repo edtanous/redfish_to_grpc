@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ConsistencyGroup;
+
+import "ConsistencyGroup_v1/Actions.proto";
+import "ConsistencyGroup_v1/ApplicationConsistencyMethod.proto";
+import "ConsistencyGroup_v1/ConsistencyType.proto";
+import "ConsistencyGroup_v1/Links.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "StorageReplicaInfo_v1/ReplicaInfo.proto";
+
+message ConsistencyGroup {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ConsistencyGroup.v1_0_0.ConsistencyGroup
+    bool IsConsistent = 5;
+    ApplicationConsistencyMethod ConsistencyMethod = 6;
+    ConsistencyType ConsistencyType = 7;
+    .Resource.Status Status = 8;
+    .StorageReplicaInfo.ReplicaInfo ReplicaInfo = 9;
+    repeated NavigationReference ReplicaTargets = 10;
+    repeated NavigationReference Volumes = 11;
+    Links Links = 12;
+    Actions Actions = 13;
+}

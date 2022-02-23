@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package License;
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "License_v1/Actions.proto";
+import "License_v1/AuthorizationScope.proto";
+import "License_v1/ContactInfo.proto";
+import "License_v1/LicenseOrigin.proto";
+import "License_v1/LicenseType.proto";
+import "License_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message License {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from License.v1_0_0.License
+    LicenseType LicenseType = 5;
+    LicenseOrigin LicenseOrigin = 6;
+    bool Removable = 7;
+    string Manufacturer = 8;
+    string SKU = 9;
+    string SerialNumber = 10;
+    string PartNumber = 11;
+    .Resource.Status Status = 12;
+    ContactInfo Contact = 13;
+    string LicenseString = 14;
+    string EntitlementId = 15;
+    string DownloadURI = 16;
+    AuthorizationScope AuthorizationScope = 17;
+    int64 MaxAuthorizedDevices = 18;
+    int64 GracePeriodDays = 19;
+    google.protobuf.Timestamp InstallDate = 20;
+    google.protobuf.Timestamp ExpirationDate = 21;
+    google.protobuf.Duration RemainingDuration = 22;
+    int64 RemainingUseCount = 23;
+    string LicenseInfoURI = 24;
+    Links Links = 25;
+    Actions Actions = 26;
+}

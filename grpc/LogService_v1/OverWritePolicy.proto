@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package LogService;
+
+enum OverWritePolicy {
+    OverWritePolicy_Unknown = 0;
+    OverWritePolicy_WrapsWhenFull = 1;
+    OverWritePolicy_NeverOverWrites = 2;
+}

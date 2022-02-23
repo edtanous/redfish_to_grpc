@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Session;
+
+enum SessionTypes {
+    SessionTypes_HostConsole = 0;
+    SessionTypes_ManagerConsole = 1;
+    SessionTypes_IPMI = 2;
+    SessionTypes_KVMIP = 3;
+    SessionTypes_OEM = 4;
+    SessionTypes_Redfish = 5;
+    SessionTypes_VirtualMedia = 6;
+    SessionTypes_WebUI = 7;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Volume;
+
+enum ReadCachePolicyType {
+    ReadCachePolicyType_ReadAhead = 0;
+    ReadCachePolicyType_AdaptiveReadAhead = 1;
+    ReadCachePolicyType_Off = 2;
+}

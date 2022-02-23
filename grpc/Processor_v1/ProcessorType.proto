@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Processor;
+
+enum ProcessorType {
+    ProcessorType_CPU = 0;
+    ProcessorType_GPU = 1;
+    ProcessorType_FPGA = 2;
+    ProcessorType_DSP = 3;
+    ProcessorType_Accelerator = 4;
+    ProcessorType_Core = 5;
+    ProcessorType_Thread = 6;
+    ProcessorType_OEM = 7;
+}

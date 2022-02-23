@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package ProcessorMetrics;
+
+import "NavigationReference.proto";
+import "PCIeDevice_v1/PCIeErrors.proto";
+import "ProcessorMetrics_v1/Actions.proto";
+import "ProcessorMetrics_v1/CacheMetrics.proto";
+import "ProcessorMetrics_v1/CacheMetricsTotal.proto";
+import "ProcessorMetrics_v1/CoreMetrics.proto";
+import "Resource_v1/Oem.proto";
+
+message ProcessorMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ProcessorMetrics.v1_0_0.ProcessorMetrics
+    double BandwidthPercent = 5;
+    double AverageFrequencyMHz = 6;
+    double ThrottlingCelsius = 7;
+    double TemperatureCelsius = 8;
+    double ConsumedPowerWatt = 9;
+    double FrequencyRatio = 10;
+    repeated CacheMetrics Cache = 11;
+    int64 LocalMemoryBandwidthBytes = 12;
+    int64 RemoteMemoryBandwidthBytes = 13;
+    double KernelPercent = 14;
+    double UserPercent = 15;
+    repeated CoreMetrics CoreMetrics = 16;
+    Actions Actions = 17;
+
+    // from ProcessorMetrics.v1_1_0.ProcessorMetrics
+    int64 OperatingSpeedMHz = 18;
+
+    // from ProcessorMetrics.v1_2_0.ProcessorMetrics
+    CacheMetricsTotal CacheMetricsTotal = 19;
+
+    // from ProcessorMetrics.v1_3_0.ProcessorMetrics
+    NavigationReference CoreVoltage = 20;
+
+    // from ProcessorMetrics.v1_4_0.ProcessorMetrics
+    .PCIeDevice.PCIeErrors PCIeErrors = 21;
+}

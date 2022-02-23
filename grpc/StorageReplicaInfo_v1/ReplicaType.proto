@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaType {
+    ReplicaType_Mirror = 0;
+    ReplicaType_Snapshot = 1;
+    ReplicaType_Clone = 2;
+    ReplicaType_TokenizedClone = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Chassis;
+
+enum EnvironmentalClass {
+    EnvironmentalClass_A1 = 0;
+    EnvironmentalClass_A2 = 1;
+    EnvironmentalClass_A3 = 2;
+    EnvironmentalClass_A4 = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ComponentIntegrity;
+
+enum MeasurementSpecification {
+    MeasurementSpecification_DMTF = 0;
+}

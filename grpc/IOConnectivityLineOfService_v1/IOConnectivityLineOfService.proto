@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package IOConnectivityLineOfService;
+
+import "IOConnectivityLineOfService_v1/Actions.proto";
+import "Protocol_v1/Protocol.proto";
+import "Resource_v1/Oem.proto";
+
+message IOConnectivityLineOfService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from IOConnectivityLineOfService.v1_0_0.IOConnectivityLineOfService
+    repeated .Protocol.Protocol AccessProtocols = 5;
+
+    // from IOConnectivityLineOfService.v1_1_0.IOConnectivityLineOfService
+    int64 MaxBytesPerSecond = 6;
+    int64 MaxIOPS = 7;
+
+    // from IOConnectivityLineOfService.v1_2_0.IOConnectivityLineOfService
+    Actions Actions = 8;
+}

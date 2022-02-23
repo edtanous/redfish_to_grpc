@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package NetworkPort;
+
+enum LinkStatus {
+    LinkStatus_Down = 0;
+    LinkStatus_Up = 1;
+    LinkStatus_Starting = 2;
+    LinkStatus_Training = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ActionInfo;
+
+import "google/protobuf/any.proto";
+
+message Parameters{
+    map<string, google.protobuf.Any> Parameters = 1;
+}
+

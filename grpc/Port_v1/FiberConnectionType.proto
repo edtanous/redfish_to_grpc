@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Port;
+
+enum FiberConnectionType {
+    FiberConnectionType_SingleMode = 0;
+    FiberConnectionType_MultiMode = 1;
+}

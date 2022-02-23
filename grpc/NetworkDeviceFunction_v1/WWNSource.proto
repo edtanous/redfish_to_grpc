@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package NetworkDeviceFunction;
+
+enum WWNSource {
+    WWNSource_ConfiguredLocally = 0;
+    WWNSource_ProvidedByFabric = 1;
+}

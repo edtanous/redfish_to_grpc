@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package Port;
+
+enum IEEE802IdSubtype {
+    IEEE802IdSubtype_ChassisComp = 0;
+    IEEE802IdSubtype_IfAlias = 1;
+    IEEE802IdSubtype_PortComp = 2;
+    IEEE802IdSubtype_MacAddr = 3;
+    IEEE802IdSubtype_NetworkAddr = 4;
+    IEEE802IdSubtype_IfName = 5;
+    IEEE802IdSubtype_AgentId = 6;
+    IEEE802IdSubtype_LocalAssign = 7;
+    IEEE802IdSubtype_NotTransmitted = 8;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Org;
+
+import "google/protobuf/any.proto";
+
+message ChangeTrackingType{
+    map<string, google.protobuf.Any> ChangeTrackingType = 1;
+}
+

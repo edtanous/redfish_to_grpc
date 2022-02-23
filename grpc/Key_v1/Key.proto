@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package Key;
+
+import "Key_v1/Actions.proto";
+import "Key_v1/KeyType.proto";
+import "Key_v1/NVMeoF.proto";
+import "Resource_v1/Oem.proto";
+
+message Key {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Key.v1_0_0.Key
+    string KeyString = 5;
+    KeyType KeyType = 6;
+    NVMeoF NVMeoF = 7;
+    Actions Actions = 8;
+}

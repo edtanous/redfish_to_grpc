@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Facility;
+
+enum FacilityType {
+    FacilityType_Room = 0;
+    FacilityType_Floor = 1;
+    FacilityType_Building = 2;
+    FacilityType_Site = 3;
+}

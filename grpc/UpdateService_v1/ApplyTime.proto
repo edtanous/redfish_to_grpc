@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package UpdateService;
+
+enum ApplyTime {
+    ApplyTime_Immediate = 0;
+    ApplyTime_OnReset = 1;
+    ApplyTime_AtMaintenanceWindowStart = 2;
+    ApplyTime_InMaintenanceWindowOnReset = 3;
+    ApplyTime_OnStartUpdateRequest = 4;
+}

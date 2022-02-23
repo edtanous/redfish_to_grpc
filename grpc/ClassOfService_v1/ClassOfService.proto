@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ClassOfService;
+
+import "DataSecurityLineOfService_v1/DataSecurityLineOfService.proto";
+import "DataStorageLineOfService_v1/DataStorageLineOfService.proto";
+import "IOConnectivityLineOfService_v1/IOConnectivityLineOfService.proto";
+import "IOPerformanceLineOfService_v1/IOPerformanceLineOfService.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+
+message ClassOfService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ClassOfService.v1_0_0.ClassOfService
+    .Resource.Identifier Identifier = 5;
+    string ClassOfServiceVersion = 6;
+
+    // from ClassOfService.v1_1_1.ClassOfService
+    repeated .DataSecurityLineOfService.DataSecurityLineOfService DataSecurityLinesOfService = 7;
+    repeated .DataStorageLineOfService.DataStorageLineOfService DataStorageLinesOfService = 8;
+    repeated .IOConnectivityLineOfService.IOConnectivityLineOfService IOConnectivityLinesOfService = 9;
+    repeated .IOPerformanceLineOfService.IOPerformanceLineOfService IOPerformanceLinesOfService = 10;
+}

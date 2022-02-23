@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package NetworkAdapter;
+
+import "Assembly_v1/Assembly.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "NavigationReference.proto";
+import "NetworkAdapter_v1/Actions.proto";
+import "NetworkAdapter_v1/Controllers.proto";
+import "NetworkDeviceFunctionCollection_v1/NetworkDeviceFunctionCollection.proto";
+import "NetworkPortCollection_v1/NetworkPortCollection.proto";
+import "PortCollection_v1/PortCollection.proto";
+import "ProcessorCollection_v1/ProcessorCollection.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+
+message NetworkAdapter {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from NetworkAdapter.v1_0_0.NetworkAdapter
+    .Resource.Status Status = 5;
+    .NetworkPortCollection.NetworkPortCollection NetworkPorts = 6;
+    .NetworkDeviceFunctionCollection.NetworkDeviceFunctionCollection NetworkDeviceFunctions = 7;
+    string Manufacturer = 8;
+    string Model = 9;
+    string SKU = 10;
+    string SerialNumber = 11;
+    string PartNumber = 12;
+    repeated Controllers Controllers = 13;
+    Actions Actions = 14;
+
+    // from NetworkAdapter.v1_1_0.NetworkAdapter
+    .Assembly.Assembly Assembly = 15;
+
+    // from NetworkAdapter.v1_4_0.NetworkAdapter
+    .Resource.Location Location = 16;
+    repeated .Resource.Identifier Identifiers = 17;
+
+    // from NetworkAdapter.v1_5_0.NetworkAdapter
+    .PortCollection.PortCollection Ports = 18;
+
+    // from NetworkAdapter.v1_6_0.NetworkAdapter
+    .CertificateCollection.CertificateCollection Certificates = 19;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 20;
+
+    // from NetworkAdapter.v1_7_0.NetworkAdapter
+    NavigationReference Metrics = 21;
+    NavigationReference EnvironmentMetrics = 22;
+    bool LLDPEnabled = 23;
+
+    // from NetworkAdapter.v1_8_0.NetworkAdapter
+    .ProcessorCollection.ProcessorCollection Processors = 24;
+}

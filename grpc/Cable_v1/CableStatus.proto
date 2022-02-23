@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Cable;
+
+enum CableStatus {
+    CableStatus_Normal = 0;
+    CableStatus_Degraded = 1;
+    CableStatus_Failed = 2;
+    CableStatus_Testing = 3;
+    CableStatus_Disabled = 4;
+    CableStatus_SetByService = 5;
+}

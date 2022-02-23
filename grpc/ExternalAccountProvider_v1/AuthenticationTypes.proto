@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ExternalAccountProvider;
+
+enum AuthenticationTypes {
+    AuthenticationTypes_Token = 0;
+    AuthenticationTypes_KerberosKeytab = 1;
+    AuthenticationTypes_UsernameAndPassword = 2;
+    AuthenticationTypes_OEM = 3;
+}

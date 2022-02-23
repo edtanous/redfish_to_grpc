@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Org;
+
+enum SearchExpressions {
+    SearchExpressions_none = 0;
+    SearchExpressions_AND = 1;
+    SearchExpressions_OR = 2;
+    SearchExpressions_NOT = 3;
+    SearchExpressions_phrase = 4;
+    SearchExpressions_group = 5;
+}

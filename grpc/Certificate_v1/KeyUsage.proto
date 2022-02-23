@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package Certificate;
+
+enum KeyUsage {
+    KeyUsage_DigitalSignature = 0;
+    KeyUsage_NonRepudiation = 1;
+    KeyUsage_KeyEncipherment = 2;
+    KeyUsage_DataEncipherment = 3;
+    KeyUsage_KeyAgreement = 4;
+    KeyUsage_KeyCertSign = 5;
+    KeyUsage_CRLSigning = 6;
+    KeyUsage_EncipherOnly = 7;
+    KeyUsage_DecipherOnly = 8;
+    KeyUsage_ServerAuthentication = 9;
+    KeyUsage_ClientAuthentication = 10;
+    KeyUsage_CodeSigning = 11;
+    KeyUsage_EmailProtection = 12;
+    KeyUsage_Timestamping = 13;
+    KeyUsage_OCSPSigning = 14;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package RedfishExtensions;
+
+enum ReleaseStatusType {
+    ReleaseStatusType_Standard = 0;
+    ReleaseStatusType_Informational = 1;
+    ReleaseStatusType_WorkInProgress = 2;
+    ReleaseStatusType_InDevelopment = 3;
+}

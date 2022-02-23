@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum InterfaceType {
+    InterfaceType_TPM1_2 = 0;
+    InterfaceType_TPM2_0 = 1;
+    InterfaceType_TCM1_0 = 2;
+}

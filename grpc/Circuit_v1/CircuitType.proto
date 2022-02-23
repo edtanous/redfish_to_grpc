@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Circuit;
+
+enum CircuitType {
+    CircuitType_Mains = 0;
+    CircuitType_Branch = 1;
+    CircuitType_Subfeed = 2;
+    CircuitType_Feeder = 3;
+    CircuitType_Bus = 4;
+}

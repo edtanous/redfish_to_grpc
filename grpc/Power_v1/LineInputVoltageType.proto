@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package Power;
+
+enum LineInputVoltageType {
+    LineInputVoltageType_Unknown = 0;
+    LineInputVoltageType_ACLowLine = 1;
+    LineInputVoltageType_ACMidLine = 2;
+    LineInputVoltageType_ACHighLine = 3;
+    LineInputVoltageType_DCNeg48V = 4;
+    LineInputVoltageType_DC380V = 5;
+    LineInputVoltageType_AC120V = 6;
+    LineInputVoltageType_AC240V = 7;
+    LineInputVoltageType_AC277V = 8;
+    LineInputVoltageType_ACandDCWideRange = 9;
+    LineInputVoltageType_ACWideRange = 10;
+    LineInputVoltageType_DC240V = 11;
+}

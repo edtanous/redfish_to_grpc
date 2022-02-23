@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package NetworkPort;
+
+import "google/protobuf/any.proto";
+
+message SupportedLinkCapabilities{
+    map<string, google.protobuf.Any> SupportedLinkCapabilities = 1;
+}
+

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package SoftwareInventory;
+
+import "google/protobuf/any.proto";
+
+message MeasurementBlock{
+    map<string, google.protobuf.Any> MeasurementBlock = 1;
+}
+

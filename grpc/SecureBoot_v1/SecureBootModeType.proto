@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package SecureBoot;
+
+enum SecureBootModeType {
+    SecureBootModeType_SetupMode = 0;
+    SecureBootModeType_UserMode = 1;
+    SecureBootModeType_AuditMode = 2;
+    SecureBootModeType_DeployedMode = 3;
+}

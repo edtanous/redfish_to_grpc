@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ManagerAccount;
+
+enum AccountTypes {
+    AccountTypes_Redfish = 0;
+    AccountTypes_SNMP = 1;
+    AccountTypes_OEM = 2;
+    AccountTypes_HostConsole = 3;
+    AccountTypes_ManagerConsole = 4;
+    AccountTypes_IPMI = 5;
+    AccountTypes_KVMIP = 6;
+    AccountTypes_VirtualMedia = 7;
+    AccountTypes_WebUI = 8;
+}

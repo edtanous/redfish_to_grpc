@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package PCIeSlots;
+
+enum SlotTypes {
+    SlotTypes_FullLength = 0;
+    SlotTypes_HalfLength = 1;
+    SlotTypes_LowProfile = 2;
+    SlotTypes_Mini = 3;
+    SlotTypes_M2 = 4;
+    SlotTypes_OEM = 5;
+    SlotTypes_OCP3Small = 6;
+    SlotTypes_OCP3Large = 7;
+    SlotTypes_U2 = 8;
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package Job;
+
+import "google/protobuf/timestamp.proto";
+import "Job_v1/Actions.proto";
+import "Job_v1/JobState.proto";
+import "Job_v1/Payload.proto";
+import "Message_v1/Message.proto";
+import "Resource_v1/Health.proto";
+import "Resource_v1/Oem.proto";
+import "Schedule_v1/Schedule.proto";
+
+message Job {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Job.v1_0_0.Job
+    .Resource.Health JobStatus = 5;
+    JobState JobState = 6;
+    google.protobuf.Timestamp StartTime = 7;
+    google.protobuf.Timestamp EndTime = 8;
+    string MaxExecutionTime = 9;
+    int64 PercentComplete = 10;
+    string CreatedBy = 11;
+    .Schedule.Schedule Schedule = 12;
+    bool HidePayload = 13;
+    Payload Payload = 14;
+    repeated string StepOrder = 15;
+    repeated .Message.Message Messages = 16;
+    Actions Actions = 17;
+}

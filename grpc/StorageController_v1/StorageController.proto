@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package StorageController;
+
+import "Assembly_v1/Assembly.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "NavigationReference.proto";
+import "PCIeDevice_v1/PCIeInterface.proto";
+import "PortCollection_v1/PortCollection.proto";
+import "Protocol_v1/Protocol.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+import "StorageController_v1/Actions.proto";
+import "StorageController_v1/CacheSummary.proto";
+import "StorageController_v1/Links.proto";
+import "StorageController_v1/NVMeControllerProperties.proto";
+import "StorageController_v1/Rates.proto";
+import "Volume_v1/RAIDType.proto";
+
+message StorageController {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from StorageController.v1_0_0.StorageController
+    .Resource.Status Status = 5;
+    double SpeedGbps = 6;
+    string FirmwareVersion = 7;
+    string Manufacturer = 8;
+    string Model = 9;
+    string SKU = 10;
+    string SerialNumber = 11;
+    string PartNumber = 12;
+    string AssetTag = 13;
+    repeated .Protocol.Protocol SupportedControllerProtocols = 14;
+    repeated .Protocol.Protocol SupportedDeviceProtocols = 15;
+    repeated .Resource.Identifier Identifiers = 16;
+    .Resource.Location Location = 17;
+    .Assembly.Assembly Assembly = 18;
+    CacheSummary CacheSummary = 19;
+    .PCIeDevice.PCIeInterface PCIeInterface = 20;
+    repeated .Volume.RAIDType SupportedRAIDTypes = 21;
+    .PortCollection.PortCollection Ports = 22;
+    Rates ControllerRates = 23;
+    NVMeControllerProperties NVMeControllerProperties = 24;
+    Links Links = 25;
+    Actions Actions = 26;
+
+    // from StorageController.v1_1_0.StorageController
+    .CertificateCollection.CertificateCollection Certificates = 27;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 28;
+
+    // from StorageController.v1_2_0.StorageController
+    NavigationReference EnvironmentMetrics = 29;
+}

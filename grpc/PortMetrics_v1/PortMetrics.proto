@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package PortMetrics;
+
+import "PortMetrics_v1/Actions.proto";
+import "PortMetrics_v1/FibreChannel.proto";
+import "PortMetrics_v1/GenZ.proto";
+import "PortMetrics_v1/Networking.proto";
+import "PortMetrics_v1/SAS.proto";
+import "PortMetrics_v1/Transceiver.proto";
+import "Resource_v1/Oem.proto";
+
+message PortMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PortMetrics.v1_0_0.PortMetrics
+    GenZ GenZ = 5;
+    Actions Actions = 6;
+
+    // from PortMetrics.v1_1_0.PortMetrics
+    int64 RXBytes = 7;
+    int64 TXBytes = 8;
+    int64 RXErrors = 9;
+    int64 TXErrors = 10;
+    Networking Networking = 11;
+    repeated Transceiver Transceivers = 12;
+    repeated SAS SAS = 13;
+
+    // from PortMetrics.v1_2_0.PortMetrics
+    FibreChannel FibreChannel = 14;
+}

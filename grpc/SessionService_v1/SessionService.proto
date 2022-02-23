@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package SessionService;
+
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SessionCollection_v1/SessionCollection.proto";
+import "SessionService_v1/Actions.proto";
+
+message SessionService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from SessionService.v1_0_0.SessionService
+    .Resource.Status Status = 5;
+    bool ServiceEnabled = 6;
+    int64 SessionTimeout = 7;
+    .SessionCollection.SessionCollection Sessions = 8;
+
+    // from SessionService.v1_1_0.SessionService
+    Actions Actions = 9;
+}

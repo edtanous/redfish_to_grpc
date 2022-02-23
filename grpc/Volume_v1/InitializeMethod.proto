@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Volume;
+
+enum InitializeMethod {
+    InitializeMethod_Skip = 0;
+    InitializeMethod_Background = 1;
+    InitializeMethod_Foreground = 2;
+}

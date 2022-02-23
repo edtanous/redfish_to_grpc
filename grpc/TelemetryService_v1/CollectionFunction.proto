@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package TelemetryService;
+
+enum CollectionFunction {
+    CollectionFunction_Average = 0;
+    CollectionFunction_Maximum = 1;
+    CollectionFunction_Minimum = 2;
+    CollectionFunction_Summation = 3;
+}

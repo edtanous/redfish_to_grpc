@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package RouteSetEntry;
+
+import "Resource_v1/Oem.proto";
+import "RouteSetEntry_v1/Actions.proto";
+
+message RouteSetEntry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from RouteSetEntry.v1_0_0.RouteSetEntry
+    bool Valid = 5;
+    int64 VCAction = 6;
+    int64 HopCount = 7;
+    int64 EgressIdentifier = 8;
+    Actions Actions = 9;
+}

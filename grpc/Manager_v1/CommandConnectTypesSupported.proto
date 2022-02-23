@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Manager;
+
+enum CommandConnectTypesSupported {
+    CommandConnectTypesSupported_SSH = 0;
+    CommandConnectTypesSupported_Telnet = 1;
+    CommandConnectTypesSupported_IPMI = 2;
+    CommandConnectTypesSupported_Oem = 3;
+}

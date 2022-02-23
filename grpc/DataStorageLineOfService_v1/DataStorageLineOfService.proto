@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package DataStorageLineOfService;
+
+import "DataProtectionLoSCapabilities_v1/RecoveryAccessScope.proto";
+import "DataStorageLineOfService_v1/Actions.proto";
+import "DataStorageLoSCapabilities_v1/ProvisioningPolicy.proto";
+import "DataStorageLoSCapabilities_v1/StorageAccessCapability.proto";
+import "Resource_v1/Oem.proto";
+
+message DataStorageLineOfService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from DataStorageLineOfService.v1_0_0.DataStorageLineOfService
+    .DataProtectionLoSCapabilities.RecoveryAccessScope RecoveryTimeObjectives = 5;
+    .DataStorageLoSCapabilities.ProvisioningPolicy ProvisioningPolicy = 6;
+    bool IsSpaceEfficient = 7;
+
+    // from DataStorageLineOfService.v1_1_0.DataStorageLineOfService
+    repeated .DataStorageLoSCapabilities.StorageAccessCapability AccessCapabilities = 8;
+
+    // from DataStorageLineOfService.v1_2_0.DataStorageLineOfService
+    int64 RecoverableCapacitySourceCount = 9;
+
+    // from DataStorageLineOfService.v1_3_0.DataStorageLineOfService
+    Actions Actions = 10;
+}

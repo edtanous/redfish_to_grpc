@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package MemoryChunks;
+
+import "MemoryChunks_v1/Actions.proto";
+import "MemoryChunks_v1/AddressRangeType.proto";
+import "MemoryChunks_v1/InterleaveSet.proto";
+import "MemoryChunks_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message MemoryChunks {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MemoryChunks.v1_0_0.MemoryChunks
+    int64 MemoryChunkSizeMiB = 5;
+    AddressRangeType AddressRangeType = 6;
+    bool IsMirrorEnabled = 7;
+    bool IsSpare = 8;
+    repeated InterleaveSet InterleaveSets = 9;
+
+    // from MemoryChunks.v1_1_0.MemoryChunks
+    Actions Actions = 10;
+
+    // from MemoryChunks.v1_2_0.MemoryChunks
+    .Resource.Status Status = 11;
+
+    // from MemoryChunks.v1_3_0.MemoryChunks
+    int64 AddressRangeOffsetMiB = 12;
+    Links Links = 13;
+
+    // from MemoryChunks.v1_4_0.MemoryChunks
+    string DisplayName = 14;
+}

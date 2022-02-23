@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package MetricDefinition;
+
+enum CalculationAlgorithmEnum {
+    CalculationAlgorithmEnum_Average = 0;
+    CalculationAlgorithmEnum_Maximum = 1;
+    CalculationAlgorithmEnum_Minimum = 2;
+    CalculationAlgorithmEnum_OEM = 3;
+}

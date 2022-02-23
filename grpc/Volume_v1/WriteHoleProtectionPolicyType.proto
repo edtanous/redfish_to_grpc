@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Volume;
+
+enum WriteHoleProtectionPolicyType {
+    WriteHoleProtectionPolicyType_Off = 0;
+    WriteHoleProtectionPolicyType_Journaling = 1;
+    WriteHoleProtectionPolicyType_DistributedLog = 2;
+    WriteHoleProtectionPolicyType_Oem = 3;
+}

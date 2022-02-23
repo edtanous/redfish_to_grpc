@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Battery;
+
+enum ChargeState {
+    ChargeState_Idle = 0;
+    ChargeState_Charging = 1;
+    ChargeState_Discharging = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Control;
+
+enum SetPointType {
+    SetPointType_Single = 0;
+    SetPointType_Range = 1;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package Power;
+
+import "NavigationReference.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "Power_v1/VoltageActions.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Voltage {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Power.v1_0_0.Voltage
+    string Name = 3;
+    int64 SensorNumber = 4;
+    .Resource.Status Status = 5;
+    double ReadingVolts = 6;
+    double UpperThresholdNonCritical = 7;
+    double UpperThresholdCritical = 8;
+    double UpperThresholdFatal = 9;
+    double LowerThresholdNonCritical = 10;
+    double LowerThresholdCritical = 11;
+    double LowerThresholdFatal = 12;
+    double MinReadingRange = 13;
+    double MaxReadingRange = 14;
+    .PhysicalContext.PhysicalContext PhysicalContext = 15;
+    repeated NavigationReference RelatedItem = 16;
+
+    // from Power.v1_3_0.Voltage
+    VoltageActions Actions = 17;
+}

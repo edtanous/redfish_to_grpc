@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package AccountService;
+
+enum LocalAccountAuth {
+    LocalAccountAuth_Enabled = 0;
+    LocalAccountAuth_Disabled = 1;
+    LocalAccountAuth_Fallback = 2;
+    LocalAccountAuth_LocalFirst = 3;
+}

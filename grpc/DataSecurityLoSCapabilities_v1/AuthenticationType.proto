@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package DataSecurityLoSCapabilities;
+
+enum AuthenticationType {
+    AuthenticationType_None = 0;
+    AuthenticationType_PKI = 1;
+    AuthenticationType_Ticket = 2;
+    AuthenticationType_Password = 3;
+}

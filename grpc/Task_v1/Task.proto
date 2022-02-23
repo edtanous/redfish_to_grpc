@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package Task;
+
+import "google/protobuf/timestamp.proto";
+import "Message_v1/Message.proto";
+import "Resource_v1/Health.proto";
+import "Resource_v1/Oem.proto";
+import "Task_v1/Actions.proto";
+import "Task_v1/Payload.proto";
+import "Task_v1/TaskState.proto";
+
+message Task {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Task.v1_0_0.Task
+    TaskState TaskState = 5;
+    google.protobuf.Timestamp StartTime = 6;
+    google.protobuf.Timestamp EndTime = 7;
+    .Resource.Health TaskStatus = 8;
+    repeated .Message.Message Messages = 9;
+
+    // from Task.v1_1_0.Task
+    Actions Actions = 10;
+
+    // from Task.v1_2_0.Task
+    string TaskMonitor = 11;
+
+    // from Task.v1_3_0.Task
+    Payload Payload = 12;
+    bool HidePayload = 13;
+
+    // from Task.v1_4_0.Task
+    int64 PercentComplete = 14;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum BootOrderTypes {
+    BootOrderTypes_BootOrder = 0;
+    BootOrderTypes_AliasBootOrder = 1;
+}

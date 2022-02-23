@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Triggers;
+
+enum TriggerActionEnum {
+    TriggerActionEnum_LogToLogService = 0;
+    TriggerActionEnum_RedfishEvent = 1;
+    TriggerActionEnum_RedfishMetricReport = 2;
+}

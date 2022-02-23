@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Power;
+
+enum PowerLimitException {
+    PowerLimitException_NoAction = 0;
+    PowerLimitException_HardPowerOff = 1;
+    PowerLimitException_LogEventOnly = 2;
+    PowerLimitException_Oem = 3;
+}

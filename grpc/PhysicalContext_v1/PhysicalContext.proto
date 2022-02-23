@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package PhysicalContext;
+
+enum PhysicalContext {
+    PhysicalContext_Room = 0;
+    PhysicalContext_Intake = 1;
+    PhysicalContext_Exhaust = 2;
+    PhysicalContext_LiquidInlet = 3;
+    PhysicalContext_LiquidOutlet = 4;
+    PhysicalContext_Front = 5;
+    PhysicalContext_Back = 6;
+    PhysicalContext_Upper = 7;
+    PhysicalContext_Lower = 8;
+    PhysicalContext_CPU = 9;
+    PhysicalContext_CPUSubsystem = 10;
+    PhysicalContext_GPU = 11;
+    PhysicalContext_GPUSubsystem = 12;
+    PhysicalContext_FPGA = 13;
+    PhysicalContext_Accelerator = 14;
+    PhysicalContext_ASIC = 15;
+    PhysicalContext_Backplane = 16;
+    PhysicalContext_SystemBoard = 17;
+    PhysicalContext_PowerSupply = 18;
+    PhysicalContext_PowerSubsystem = 19;
+    PhysicalContext_VoltageRegulator = 20;
+    PhysicalContext_Rectifier = 21;
+    PhysicalContext_StorageDevice = 22;
+    PhysicalContext_NetworkingDevice = 23;
+    PhysicalContext_ComputeBay = 24;
+    PhysicalContext_StorageBay = 25;
+    PhysicalContext_NetworkBay = 26;
+    PhysicalContext_ExpansionBay = 27;
+    PhysicalContext_PowerSupplyBay = 28;
+    PhysicalContext_Memory = 29;
+    PhysicalContext_MemorySubsystem = 30;
+    PhysicalContext_Chassis = 31;
+    PhysicalContext_Fan = 32;
+    PhysicalContext_CoolingSubsystem = 33;
+    PhysicalContext_Motor = 34;
+    PhysicalContext_Transformer = 35;
+    PhysicalContext_ACUtilityInput = 36;
+    PhysicalContext_ACStaticBypassInput = 37;
+    PhysicalContext_ACMaintenanceBypassInput = 38;
+    PhysicalContext_DCBus = 39;
+    PhysicalContext_ACOutput = 40;
+    PhysicalContext_ACInput = 41;
+    PhysicalContext_TrustedModule = 42;
+    PhysicalContext_Board = 43;
+    PhysicalContext_Transceiver = 44;
+    PhysicalContext_Battery = 45;
+    PhysicalContext_Pump = 46;
+}

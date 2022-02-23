@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package DataSecurityLoSCapabilities;
+
+enum SecureChannelProtocol {
+    SecureChannelProtocol_None = 0;
+    SecureChannelProtocol_TLS = 1;
+    SecureChannelProtocol_IPsec = 2;
+    SecureChannelProtocol_RPCSEC_GSS = 3;
+}

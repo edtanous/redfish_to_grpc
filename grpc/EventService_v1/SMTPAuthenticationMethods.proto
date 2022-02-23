@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package EventService;
+
+enum SMTPAuthenticationMethods {
+    SMTPAuthenticationMethods_None = 0;
+    SMTPAuthenticationMethods_AutoDetect = 1;
+    SMTPAuthenticationMethods_Plain = 2;
+    SMTPAuthenticationMethods_Login = 3;
+    SMTPAuthenticationMethods_CRAM_MD5 = 4;
+}

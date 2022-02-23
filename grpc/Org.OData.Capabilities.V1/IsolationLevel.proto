@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Org;
+
+enum IsolationLevel {
+    IsolationLevel_Snapshot = 0;
+}

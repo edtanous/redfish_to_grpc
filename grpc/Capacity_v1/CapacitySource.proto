@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package Capacity;
+
+import "Capacity_v1/Actions.proto";
+import "Capacity_v1/Capacity.proto";
+import "DriveCollection_v1/DriveCollection.proto";
+import "MemoryChunksCollection_v1/MemoryChunksCollection.proto";
+import "MemoryCollection_v1/MemoryCollection.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "StoragePoolCollection_v1/StoragePoolCollection.proto";
+import "VolumeCollection_v1/VolumeCollection.proto";
+
+message CapacitySource {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Capacity.v1_0_0.CapacitySource
+    Capacity ProvidedCapacity = 5;
+    NavigationReference ProvidedClassOfService = 6;
+    .VolumeCollection.VolumeCollection ProvidingVolumes = 7;
+    .StoragePoolCollection.StoragePoolCollection ProvidingPools = 8;
+    .DriveCollection.DriveCollection ProvidingDrives = 9;
+
+    // from Capacity.v1_1_0.CapacitySource
+    .MemoryChunksCollection.MemoryChunksCollection ProvidingMemoryChunks = 10;
+    .MemoryCollection.MemoryCollection ProvidingMemory = 11;
+
+    // from Capacity.v1_1_2.CapacitySource
+    Actions Actions = 12;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Connection;
+
+enum ConnectionType {
+    ConnectionType_Storage = 0;
+    ConnectionType_Memory = 1;
+}

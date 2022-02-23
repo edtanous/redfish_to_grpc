@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package StorageController;
+
+enum ANAAccessState {
+    ANAAccessState_Optimized = 0;
+    ANAAccessState_NonOptimized = 1;
+    ANAAccessState_Inaccessible = 2;
+    ANAAccessState_PersistentLoss = 3;
+}

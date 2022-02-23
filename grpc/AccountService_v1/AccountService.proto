@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package AccountService;
+
+import "AccountService_v1/Actions.proto";
+import "AccountService_v1/ExternalAccountProvider.proto";
+import "AccountService_v1/LocalAccountAuth.proto";
+import "ExternalAccountProviderCollection_v1/ExternalAccountProviderCollection.proto";
+import "ManagerAccount_v1/AccountTypes.proto";
+import "ManagerAccountCollection_v1/ManagerAccountCollection.proto";
+import "PrivilegeRegistry_v1/PrivilegeRegistry.proto";
+import "Privileges_v1/PrivilegeType.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "RoleCollection_v1/RoleCollection.proto";
+
+message AccountService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from AccountService.v1_0_0.AccountService
+    .Resource.Status Status = 5;
+    bool ServiceEnabled = 6;
+    int64 AuthFailureLoggingThreshold = 7;
+    int64 MinPasswordLength = 8;
+    int64 MaxPasswordLength = 9;
+    int64 AccountLockoutThreshold = 10;
+    int64 AccountLockoutDuration = 11;
+    int64 AccountLockoutCounterResetAfter = 12;
+    .ManagerAccountCollection.ManagerAccountCollection Accounts = 13;
+    .RoleCollection.RoleCollection Roles = 14;
+
+    // from AccountService.v1_1_0.AccountService
+    .PrivilegeRegistry.PrivilegeRegistry PrivilegeMap = 15;
+
+    // from AccountService.v1_2_0.AccountService
+    Actions Actions = 16;
+
+    // from AccountService.v1_3_0.AccountService
+    LocalAccountAuth LocalAccountAuth = 17;
+    ExternalAccountProvider LDAP = 18;
+    ExternalAccountProvider ActiveDirectory = 19;
+    .ExternalAccountProviderCollection.ExternalAccountProviderCollection AdditionalExternalAccountProviders = 20;
+
+    // from AccountService.v1_5_0.AccountService
+    bool AccountLockoutCounterResetEnabled = 21;
+
+    // from AccountService.v1_8_0.AccountService
+    ExternalAccountProvider TACACSplus = 22;
+    repeated .ManagerAccount.AccountTypes SupportedAccountTypes = 23;
+    repeated string SupportedOEMAccountTypes = 24;
+    repeated .Privileges.PrivilegeType RestrictedPrivileges = 25;
+    repeated string RestrictedOemPrivileges = 26;
+
+    // from AccountService.v1_9_0.AccountService
+    int64 PasswordExpirationDays = 27;
+
+    // from AccountService.v1_10_0.AccountService
+    ExternalAccountProvider OAuth2 = 28;
+}

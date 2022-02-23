@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Triggers;
+
+enum MetricTypeEnum {
+    MetricTypeEnum_Numeric = 0;
+    MetricTypeEnum_Discrete = 1;
+}

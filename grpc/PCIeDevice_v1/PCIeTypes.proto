@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package PCIeDevice;
+
+enum PCIeTypes {
+    PCIeTypes_Gen1 = 0;
+    PCIeTypes_Gen2 = 1;
+    PCIeTypes_Gen3 = 2;
+    PCIeTypes_Gen4 = 3;
+    PCIeTypes_Gen5 = 4;
+}

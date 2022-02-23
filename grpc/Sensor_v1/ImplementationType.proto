@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Sensor;
+
+enum ImplementationType {
+    ImplementationType_PhysicalSensor = 0;
+    ImplementationType_Synthesized = 1;
+    ImplementationType_Reported = 2;
+}

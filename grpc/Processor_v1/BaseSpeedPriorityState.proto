@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Processor;
+
+enum BaseSpeedPriorityState {
+    BaseSpeedPriorityState_Enabled = 0;
+    BaseSpeedPriorityState_Disabled = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ConsistencyState {
+    ConsistencyState_Consistent = 0;
+    ConsistencyState_Inconsistent = 1;
+}

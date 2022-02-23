@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package NetworkAdapterCollection;
+
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message NetworkAdapterCollection {
+    // from Resource.v1_0_0.ResourceCollection
+    string Description = 1;
+    string Name = 2;
+    .Resource.Oem Oem = 3;
+
+    // from NetworkAdapterCollection.NetworkAdapterCollection
+    repeated NavigationReference Members = 4;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package FileSystem;
+
+enum FileProtocol {
+    FileProtocol_NFSv3 = 0;
+    FileProtocol_NFSv4_0 = 1;
+    FileProtocol_NFSv4_1 = 2;
+    FileProtocol_SMBv2_0 = 3;
+    FileProtocol_SMBv2_1 = 4;
+    FileProtocol_SMBv3_0 = 5;
+    FileProtocol_SMBv3_0_2 = 6;
+    FileProtocol_SMBv3_1_1 = 7;
+}

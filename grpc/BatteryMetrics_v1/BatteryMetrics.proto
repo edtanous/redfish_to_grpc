@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package BatteryMetrics;
+
+import "BatteryMetrics_v1/Actions.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message BatteryMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from BatteryMetrics.v1_0_0.BatteryMetrics
+    .Resource.Status Status = 5;
+    double DischargeCycles = 6;
+    NavigationReference InputVoltage = 7;
+    NavigationReference InputCurrentAmps = 8;
+    repeated NavigationReference OutputVoltages = 9;
+    repeated NavigationReference OutputCurrentAmps = 10;
+    NavigationReference StoredEnergyWattHours = 11;
+    NavigationReference StoredChargeAmpHours = 12;
+    NavigationReference TemperatureCelsius = 13;
+    NavigationReference ChargePercent = 14;
+    repeated NavigationReference CellVoltages = 15;
+    Actions Actions = 16;
+}

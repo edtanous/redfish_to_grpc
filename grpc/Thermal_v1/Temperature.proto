@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package Thermal;
+
+import "NavigationReference.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Thermal_v1/TemperatureActions.proto";
+
+message Temperature {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Thermal.v1_0_0.Temperature
+    string Name = 3;
+    int64 SensorNumber = 4;
+    .Resource.Status Status = 5;
+    double ReadingCelsius = 6;
+    double UpperThresholdNonCritical = 7;
+    double UpperThresholdCritical = 8;
+    double UpperThresholdFatal = 9;
+    double LowerThresholdNonCritical = 10;
+    double LowerThresholdCritical = 11;
+    double LowerThresholdFatal = 12;
+    double MinReadingRangeTemp = 13;
+    double MaxReadingRangeTemp = 14;
+    .PhysicalContext.PhysicalContext PhysicalContext = 15;
+    repeated NavigationReference RelatedItem = 16;
+
+    // from Thermal.v1_3_0.Temperature
+    TemperatureActions Actions = 17;
+
+    // from Thermal.v1_4_0.Temperature
+    double DeltaReadingCelsius = 18;
+    .PhysicalContext.PhysicalContext DeltaPhysicalContext = 19;
+    int64 MaxAllowableOperatingValue = 20;
+    int64 MinAllowableOperatingValue = 21;
+    int64 AdjustedMaxAllowableOperatingValue = 22;
+    int64 AdjustedMinAllowableOperatingValue = 23;
+
+    // from Thermal.v1_6_0.Temperature
+    int64 UpperThresholdUser = 24;
+    int64 LowerThresholdUser = 25;
+}

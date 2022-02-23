@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package SecureBoot;
+
+enum ResetKeysType {
+    ResetKeysType_ResetAllKeysToDefault = 0;
+    ResetKeysType_DeleteAllKeys = 1;
+    ResetKeysType_DeletePK = 2;
+}

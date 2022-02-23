@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Processor;
+
+import "google/protobuf/any.proto";
+
+message EthernetInterface{
+    map<string, google.protobuf.Any> EthernetInterface = 1;
+}
+

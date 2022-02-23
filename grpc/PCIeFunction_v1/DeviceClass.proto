@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package PCIeFunction;
+
+enum DeviceClass {
+    DeviceClass_UnclassifiedDevice = 0;
+    DeviceClass_MassStorageController = 1;
+    DeviceClass_NetworkController = 2;
+    DeviceClass_DisplayController = 3;
+    DeviceClass_MultimediaController = 4;
+    DeviceClass_MemoryController = 5;
+    DeviceClass_Bridge = 6;
+    DeviceClass_CommunicationController = 7;
+    DeviceClass_GenericSystemPeripheral = 8;
+    DeviceClass_InputDeviceController = 9;
+    DeviceClass_DockingStation = 10;
+    DeviceClass_Processor = 11;
+    DeviceClass_SerialBusController = 12;
+    DeviceClass_WirelessController = 13;
+    DeviceClass_IntelligentController = 14;
+    DeviceClass_SatelliteCommunicationsController = 15;
+    DeviceClass_EncryptionController = 16;
+    DeviceClass_SignalProcessingController = 17;
+    DeviceClass_ProcessingAccelerators = 18;
+    DeviceClass_NonEssentialInstrumentation = 19;
+    DeviceClass_Coprocessor = 20;
+    DeviceClass_UnassignedClass = 21;
+    DeviceClass_Other = 22;
+}

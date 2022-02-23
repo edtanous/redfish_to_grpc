@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum SystemType {
+    SystemType_Physical = 0;
+    SystemType_Virtual = 1;
+    SystemType_OS = 2;
+    SystemType_PhysicallyPartitioned = 3;
+    SystemType_VirtuallyPartitioned = 4;
+    SystemType_Composed = 5;
+    SystemType_DPU = 6;
+}

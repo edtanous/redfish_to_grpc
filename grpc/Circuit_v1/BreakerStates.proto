@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Circuit;
+
+enum BreakerStates {
+    BreakerStates_Normal = 0;
+    BreakerStates_Tripped = 1;
+    BreakerStates_Off = 2;
+}

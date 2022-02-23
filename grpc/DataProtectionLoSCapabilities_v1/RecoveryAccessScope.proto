@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package DataProtectionLoSCapabilities;
+
+enum RecoveryAccessScope {
+    RecoveryAccessScope_OnlineActive = 0;
+    RecoveryAccessScope_OnlinePassive = 1;
+    RecoveryAccessScope_Nearline = 2;
+    RecoveryAccessScope_Offline = 3;
+}

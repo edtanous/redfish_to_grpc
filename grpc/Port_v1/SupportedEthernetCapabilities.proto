@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Port;
+
+enum SupportedEthernetCapabilities {
+    SupportedEthernetCapabilities_WakeOnLAN = 0;
+    SupportedEthernetCapabilities_EEE = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package StorageController;
+
+enum NVMeControllerType {
+    NVMeControllerType_Admin = 0;
+    NVMeControllerType_Discovery = 1;
+    NVMeControllerType_IO = 2;
+}

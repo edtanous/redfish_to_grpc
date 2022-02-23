@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Volume;
+
+enum EncryptionTypes {
+    EncryptionTypes_NativeDriveEncryption = 0;
+    EncryptionTypes_ControllerAssisted = 1;
+    EncryptionTypes_SoftwareAssisted = 2;
+}

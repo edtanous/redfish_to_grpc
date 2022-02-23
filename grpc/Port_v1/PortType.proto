@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Port;
+
+enum PortType {
+    PortType_UpstreamPort = 0;
+    PortType_DownstreamPort = 1;
+    PortType_InterswitchPort = 2;
+    PortType_ManagementPort = 3;
+    PortType_BidirectionalPort = 4;
+    PortType_UnconfiguredPort = 5;
+}

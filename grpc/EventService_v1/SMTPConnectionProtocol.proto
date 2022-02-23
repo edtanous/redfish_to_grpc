@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package EventService;
+
+enum SMTPConnectionProtocol {
+    SMTPConnectionProtocol_None = 0;
+    SMTPConnectionProtocol_AutoDetect = 1;
+    SMTPConnectionProtocol_StartTLS = 2;
+    SMTPConnectionProtocol_TLS_SSL = 3;
+}

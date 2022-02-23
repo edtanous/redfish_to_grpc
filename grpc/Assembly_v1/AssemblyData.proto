@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package Assembly;
+
+import "Assembly_v1/AssemblyDataActions.proto";
+import "google/protobuf/timestamp.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message AssemblyData {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Assembly.v1_0_0.AssemblyData
+    string Name = 3;
+    string Description = 4;
+    string Model = 5;
+    string PartNumber = 6;
+    string SparePartNumber = 7;
+    string SKU = 8;
+    string Vendor = 9;
+    google.protobuf.Timestamp ProductionDate = 10;
+    string Producer = 11;
+    string Version = 12;
+    string EngineeringChangeLevel = 13;
+    string BinaryDataURI = 14;
+    AssemblyDataActions Actions = 15;
+
+    // from Assembly.v1_1_0.AssemblyData
+    .Resource.Status Status = 16;
+
+    // from Assembly.v1_2_0.AssemblyData
+    string SerialNumber = 17;
+    .PhysicalContext.PhysicalContext PhysicalContext = 18;
+
+    // from Assembly.v1_3_0.AssemblyData
+    bool LocationIndicatorActive = 19;
+    .Resource.Location Location = 20;
+}

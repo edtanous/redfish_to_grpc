@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package DataSecurityLoSCapabilities;
+
+import "DataSecurityLineOfService_v1/DataSecurityLineOfService.proto";
+import "DataSecurityLoSCapabilities_v1/Actions.proto";
+import "DataSecurityLoSCapabilities_v1/AntiVirusScanTrigger.proto";
+import "DataSecurityLoSCapabilities_v1/AuthenticationType.proto";
+import "DataSecurityLoSCapabilities_v1/DataSanitizationPolicy.proto";
+import "DataSecurityLoSCapabilities_v1/KeySize.proto";
+import "DataSecurityLoSCapabilities_v1/SecureChannelProtocol.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+
+message DataSecurityLoSCapabilities {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from DataSecurityLoSCapabilities.v1_0_0.DataSecurityLoSCapabilities
+    .Resource.Identifier Identifier = 5;
+    repeated KeySize SupportedMediaEncryptionStrengths = 6;
+    repeated KeySize SupportedChannelEncryptionStrengths = 7;
+    repeated AuthenticationType SupportedHostAuthenticationTypes = 8;
+    repeated AuthenticationType SupportedUserAuthenticationTypes = 9;
+    repeated SecureChannelProtocol SupportedSecureChannelProtocols = 10;
+    repeated AntiVirusScanTrigger SupportedAntivirusScanPolicies = 11;
+    repeated string SupportedAntivirusEngineProviders = 12;
+    repeated DataSanitizationPolicy SupportedDataSanitizationPolicies = 13;
+    repeated .DataSecurityLineOfService.DataSecurityLineOfService SupportedLinesOfService = 14;
+
+    // from DataSecurityLoSCapabilities.v1_1_0.DataSecurityLoSCapabilities
+    Actions Actions = 15;
+}

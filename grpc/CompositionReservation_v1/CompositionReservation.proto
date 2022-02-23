@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package CompositionReservation;
+
+import "CompositionReservation_v1/Actions.proto";
+import "google/protobuf/timestamp.proto";
+import "Manifest_v1/Manifest.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message CompositionReservation {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from CompositionReservation.v1_0_0.CompositionReservation
+    google.protobuf.Timestamp ReservationTime = 5;
+    string Client = 6;
+    repeated NavigationReference ReservedResourceBlocks = 7;
+    .Manifest.Manifest Manifest = 8;
+    Actions Actions = 9;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package EthernetInterface;
+
+enum LinkStatus {
+    LinkStatus_LinkUp = 0;
+    LinkStatus_NoLink = 1;
+    LinkStatus_LinkDown = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package CollectionCapabilities;
+
+enum UseCase {
+    UseCase_ComputerSystemComposition = 0;
+    UseCase_ComputerSystemConstrainedComposition = 1;
+    UseCase_VolumeCreation = 2;
+    UseCase_ResourceBlockComposition = 3;
+    UseCase_ResourceBlockConstrainedComposition = 4;
+}

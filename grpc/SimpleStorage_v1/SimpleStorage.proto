@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package SimpleStorage;
+
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SimpleStorage_v1/Actions.proto";
+import "SimpleStorage_v1/Device.proto";
+import "SimpleStorage_v1/Links.proto";
+
+message SimpleStorage {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from SimpleStorage.v1_0_0.SimpleStorage
+    string UefiDevicePath = 5;
+    repeated Device Devices = 6;
+    .Resource.Status Status = 7;
+
+    // from SimpleStorage.v1_2_0.SimpleStorage
+    Links Links = 8;
+    Actions Actions = 9;
+}

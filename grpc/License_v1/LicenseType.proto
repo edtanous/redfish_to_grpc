@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package License;
+
+enum LicenseType {
+    LicenseType_Production = 0;
+    LicenseType_Prototype = 1;
+    LicenseType_Trial = 2;
+}

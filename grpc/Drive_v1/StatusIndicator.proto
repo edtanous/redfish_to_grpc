@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Drive;
+
+enum StatusIndicator {
+    StatusIndicator_OK = 0;
+    StatusIndicator_Fail = 1;
+    StatusIndicator_Rebuild = 2;
+    StatusIndicator_PredictiveFailureAnalysis = 3;
+    StatusIndicator_Hotspare = 4;
+    StatusIndicator_InACriticalArray = 5;
+    StatusIndicator_InAFailedArray = 6;
+}

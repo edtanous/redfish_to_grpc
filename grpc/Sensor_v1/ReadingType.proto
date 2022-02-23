@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package Sensor;
+
+enum ReadingType {
+    ReadingType_Temperature = 0;
+    ReadingType_Humidity = 1;
+    ReadingType_Power = 2;
+    ReadingType_EnergykWh = 3;
+    ReadingType_EnergyJoules = 4;
+    ReadingType_EnergyWh = 5;
+    ReadingType_ChargeAh = 6;
+    ReadingType_Voltage = 7;
+    ReadingType_Current = 8;
+    ReadingType_Frequency = 9;
+    ReadingType_Pressure = 10;
+    ReadingType_PressurekPa = 11;
+    ReadingType_LiquidLevel = 12;
+    ReadingType_Rotational = 13;
+    ReadingType_AirFlow = 14;
+    ReadingType_LiquidFlow = 15;
+    ReadingType_Barometric = 16;
+    ReadingType_Altitude = 17;
+    ReadingType_Percent = 18;
+    ReadingType_AbsoluteHumidity = 19;
+}

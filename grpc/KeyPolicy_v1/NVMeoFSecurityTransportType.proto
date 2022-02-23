@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package KeyPolicy;
+
+enum NVMeoFSecurityTransportType {
+    NVMeoFSecurityTransportType_TLSv2 = 0;
+    NVMeoFSecurityTransportType_TLSv3 = 1;
+}

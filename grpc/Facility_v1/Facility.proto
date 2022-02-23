@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package Facility;
+
+import "Facility_v1/Actions.proto";
+import "Facility_v1/FacilityType.proto";
+import "Facility_v1/Links.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Facility {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Facility.v1_0_0.Facility
+    FacilityType FacilityType = 5;
+    .Resource.Status Status = 6;
+    .Resource.Location Location = 7;
+    NavigationReference PowerDomains = 8;
+    Links Links = 9;
+    Actions Actions = 10;
+
+    // from Facility.v1_1_0.Facility
+    NavigationReference EnvironmentMetrics = 11;
+    NavigationReference AmbientMetrics = 12;
+}

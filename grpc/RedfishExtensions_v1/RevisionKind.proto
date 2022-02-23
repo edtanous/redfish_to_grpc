@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package RedfishExtensions;
+
+enum RevisionKind {
+    RevisionKind_Added = 0;
+    RevisionKind_Modified = 1;
+    RevisionKind_Deprecated = 2;
+}

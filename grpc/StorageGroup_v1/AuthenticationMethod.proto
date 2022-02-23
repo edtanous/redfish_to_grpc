@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package StorageGroup;
+
+enum AuthenticationMethod {
+    AuthenticationMethod_None = 0;
+    AuthenticationMethod_CHAP = 1;
+    AuthenticationMethod_MutualCHAP = 2;
+    AuthenticationMethod_DHCHAP = 3;
+}

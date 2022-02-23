@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package KeyService;
+
+import "KeyCollection_v1/KeyCollection.proto";
+import "KeyPolicyCollection_v1/KeyPolicyCollection.proto";
+import "KeyService_v1/Actions.proto";
+import "Resource_v1/Oem.proto";
+
+message KeyService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from KeyService.v1_0_0.KeyService
+    Actions Actions = 5;
+    .KeyCollection.KeyCollection NVMeoFSecrets = 6;
+    .KeyPolicyCollection.KeyPolicyCollection NVMeoFKeyPolicies = 7;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package LogService;
+
+enum LogDiagnosticDataTypes {
+    LogDiagnosticDataTypes_Manager = 0;
+    LogDiagnosticDataTypes_PreOS = 1;
+    LogDiagnosticDataTypes_OS = 2;
+    LogDiagnosticDataTypes_OEM = 3;
+}

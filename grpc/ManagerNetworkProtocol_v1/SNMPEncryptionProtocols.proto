@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ManagerNetworkProtocol;
+
+enum SNMPEncryptionProtocols {
+    SNMPEncryptionProtocols_None = 0;
+    SNMPEncryptionProtocols_Account = 1;
+    SNMPEncryptionProtocols_CBC_DES = 2;
+    SNMPEncryptionProtocols_CFB128_AES128 = 3;
+}

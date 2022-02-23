@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package LogEntry;
+
+import "Event_v1/EventType.proto";
+import "google/protobuf/timestamp.proto";
+import "LogEntry_v1/Actions.proto";
+import "LogEntry_v1/EventSeverity.proto";
+import "LogEntry_v1/Links.proto";
+import "LogEntry_v1/LogDiagnosticDataTypes.proto";
+import "LogEntry_v1/LogEntryType.proto";
+import "LogEntry_v1/OriginatorTypes.proto";
+import "Resource_v1/Oem.proto";
+
+message LogEntry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from LogEntry.v1_0_0.LogEntry
+    EventSeverity Severity = 5;
+    google.protobuf.Timestamp Created = 6;
+    LogEntryType EntryType = 7;
+    string OemRecordFormat = 8;
+    string EntryCode = 9;
+    string SensorType = 10;
+    int64 SensorNumber = 11;
+    string Message = 12;
+    string MessageId = 13;
+    repeated string MessageArgs = 14;
+    Links Links = 15;
+
+    // from LogEntry.v1_1_0.LogEntry
+    .Event.EventType EventType = 16;
+    string EventId = 17;
+    google.protobuf.Timestamp EventTimestamp = 18;
+
+    // from LogEntry.v1_2_0.LogEntry
+    Actions Actions = 19;
+
+    // from LogEntry.v1_3_0.LogEntry
+    string OemLogEntryCode = 20;
+    string OemSensorType = 21;
+
+    // from LogEntry.v1_4_0.LogEntry
+    int64 EventGroupId = 22;
+
+    // from LogEntry.v1_5_0.LogEntry
+    string GeneratorId = 23;
+
+    // from LogEntry.v1_6_0.LogEntry
+    google.protobuf.Timestamp Modified = 24;
+
+    // from LogEntry.v1_7_0.LogEntry
+    int64 AdditionalDataSizeBytes = 25;
+    string AdditionalDataURI = 26;
+    LogDiagnosticDataTypes DiagnosticDataType = 27;
+    string OEMDiagnosticDataType = 28;
+
+    // from LogEntry.v1_8_0.LogEntry
+    bool Resolved = 29;
+
+    // from LogEntry.v1_9_0.LogEntry
+    bool ServiceProviderNotified = 30;
+    string Resolution = 31;
+
+    // from LogEntry.v1_11_0.LogEntry
+    string Originator = 32;
+    OriginatorTypes OriginatorType = 33;
+}

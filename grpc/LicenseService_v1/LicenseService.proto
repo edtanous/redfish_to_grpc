@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package LicenseService;
+
+import "LicenseService_v1/Actions.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message LicenseService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from LicenseService.v1_0_0.LicenseService
+    bool ServiceEnabled = 5;
+    int64 LicenseExpirationWarningDays = 6;
+    Actions Actions = 7;
+    NavigationReference Licenses = 8;
+}

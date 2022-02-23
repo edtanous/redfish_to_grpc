@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package IPAddresses;
+
+enum IPv4AddressOrigin {
+    IPv4AddressOrigin_Static = 0;
+    IPv4AddressOrigin_DHCP = 1;
+    IPv4AddressOrigin_BOOTP = 2;
+    IPv4AddressOrigin_IPv4LinkLocal = 3;
+}

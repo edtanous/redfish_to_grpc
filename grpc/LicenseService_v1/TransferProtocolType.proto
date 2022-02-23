@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package LicenseService;
+
+enum TransferProtocolType {
+    TransferProtocolType_CIFS = 0;
+    TransferProtocolType_FTP = 1;
+    TransferProtocolType_SFTP = 2;
+    TransferProtocolType_HTTP = 3;
+    TransferProtocolType_HTTPS = 4;
+    TransferProtocolType_SCP = 5;
+    TransferProtocolType_TFTP = 6;
+    TransferProtocolType_OEM = 7;
+    TransferProtocolType_NFS = 8;
+}

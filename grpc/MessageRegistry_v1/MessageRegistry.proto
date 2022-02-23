@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package MessageRegistry;
+
+import "MessageRegistry_v1/Actions.proto";
+import "MessageRegistry_v1/MessageProperty.proto";
+import "Resource_v1/Oem.proto";
+
+message MessageRegistry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MessageRegistry.v1_0_0.MessageRegistry
+    string Language = 5;
+    string RegistryPrefix = 6;
+    string RegistryVersion = 7;
+    string OwningEntity = 8;
+    MessageProperty Messages = 9;
+
+    // from MessageRegistry.v1_1_0.MessageRegistry
+    Actions Actions = 10;
+}

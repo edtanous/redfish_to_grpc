@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package EventDestination;
+
+enum SubscriptionType {
+    SubscriptionType_RedfishEvent = 0;
+    SubscriptionType_SSE = 1;
+    SubscriptionType_SNMPTrap = 2;
+    SubscriptionType_SNMPInform = 3;
+    SubscriptionType_Syslog = 4;
+    SubscriptionType_OEM = 5;
+}

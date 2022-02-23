@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package PCIeDevice;
+
+enum DeviceType {
+    DeviceType_SingleFunction = 0;
+    DeviceType_MultiFunction = 1;
+    DeviceType_Simulated = 2;
+}

@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package Circuit;
+
+import "Circuit_v1/Actions.proto";
+import "Circuit_v1/BreakerStates.proto";
+import "Circuit_v1/CircuitType.proto";
+import "Circuit_v1/CurrentSensors.proto";
+import "Circuit_v1/EnergySensors.proto";
+import "Circuit_v1/Links.proto";
+import "Circuit_v1/NominalVoltageType.proto";
+import "Circuit_v1/PhaseWiringType.proto";
+import "Circuit_v1/PlugType.proto";
+import "Circuit_v1/PowerRestorePolicyTypes.proto";
+import "Circuit_v1/PowerSensors.proto";
+import "Circuit_v1/VoltageSensors.proto";
+import "Circuit_v1/VoltageType.proto";
+import "NavigationReference.proto";
+import "Resource_v1/IndicatorLED.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/PowerState.proto";
+import "Resource_v1/Status.proto";
+import "Sensor_v1/ElectricalContext.proto";
+
+message Circuit {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Circuit.v1_0_0.Circuit
+    .Resource.Status Status = 5;
+    CircuitType CircuitType = 6;
+    bool CriticalCircuit = 7;
+    .Sensor.ElectricalContext ElectricalContext = 8;
+    PhaseWiringType PhaseWiringType = 9;
+    VoltageType VoltageType = 10;
+    PlugType PlugType = 11;
+    NominalVoltageType NominalVoltage = 12;
+    double RatedCurrentAmps = 13;
+    .Resource.IndicatorLED IndicatorLED = 14;
+    BreakerStates BreakerState = 15;
+    double PowerOnDelaySeconds = 16;
+    double PowerOffDelaySeconds = 17;
+    double PowerCycleDelaySeconds = 18;
+    double PowerRestoreDelaySeconds = 19;
+    PowerRestorePolicyTypes PowerRestorePolicy = 20;
+    .Resource.PowerState PowerState = 21;
+    bool PowerEnabled = 22;
+    NavigationReference Voltage = 23;
+    NavigationReference CurrentAmps = 24;
+    NavigationReference PowerWatts = 25;
+    NavigationReference EnergykWh = 26;
+    NavigationReference FrequencyHz = 27;
+    VoltageSensors PolyPhaseVoltage = 28;
+    CurrentSensors PolyPhaseCurrentAmps = 29;
+    PowerSensors PolyPhasePowerWatts = 30;
+    EnergySensors PolyPhaseEnergykWh = 31;
+    Links Links = 32;
+    Actions Actions = 33;
+
+    // from Circuit.v1_1_0.Circuit
+    bool LocationIndicatorActive = 34;
+
+    // from Circuit.v1_3_0.Circuit
+    NavigationReference PowerLoadPercent = 35;
+
+    // from Circuit.v1_4_0.Circuit
+    string UserLabel = 36;
+    string ElectricalSourceManagerURI = 37;
+    string ElectricalSourceName = 38;
+    repeated string ElectricalConsumerNames = 39;
+
+    // from Circuit.v1_5_0.Circuit
+    NavigationReference UnbalancedVoltagePercent = 40;
+    NavigationReference UnbalancedCurrentPercent = 41;
+    bool PowerControlLocked = 42;
+    bool ConfigurationLocked = 43;
+    bool PowerStateInTransition = 44;
+}

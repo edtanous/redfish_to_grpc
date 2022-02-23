@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ComponentIntegrity;
+
+enum DMTFmeasurementTypes {
+    DMTFmeasurementTypes_ImmutableROM = 0;
+    DMTFmeasurementTypes_MutableFirmware = 1;
+    DMTFmeasurementTypes_HardwareConfiguration = 2;
+    DMTFmeasurementTypes_FirmwareConfiguration = 3;
+    DMTFmeasurementTypes_MutableFirmwareVersion = 4;
+    DMTFmeasurementTypes_MutableFirmwareSecurityVersionNumber = 5;
+    DMTFmeasurementTypes_MeasurementManifest = 6;
+}

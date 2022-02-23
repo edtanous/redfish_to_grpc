@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+import "Resource_v1/Oem.proto";
+import "StorageReplicaInfo_v1/Actions.proto";
+
+message StorageReplicaInfo {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from StorageReplicaInfo.v1_2_0.StorageReplicaInfo
+    Actions Actions = 5;
+}

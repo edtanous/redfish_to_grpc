@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package SpareResourceSet;
+
+import "google/protobuf/duration.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "SpareResourceSet_v1/Actions.proto";
+import "SpareResourceSet_v1/Links.proto";
+
+message SpareResourceSet {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from SpareResourceSet.v1_0_0.SpareResourceSet
+    string ResourceType = 5;
+    google.protobuf.Duration TimeToProvision = 6;
+    google.protobuf.Duration TimeToReplenish = 7;
+    .Resource.Location OnHandLocation = 8;
+    bool OnLine = 9;
+    Links Links = 10;
+
+    // from SpareResourceSet.v1_0_1.SpareResourceSet
+    Actions Actions = 11;
+}

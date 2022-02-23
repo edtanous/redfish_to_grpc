@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package EndpointGroup;
+
+import "EndpointGroup_v1/AccessState.proto";
+import "EndpointGroup_v1/Actions.proto";
+import "EndpointGroup_v1/GroupType.proto";
+import "EndpointGroup_v1/Links.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+
+message EndpointGroup {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from EndpointGroup.v1_0_0.EndpointGroup
+    .Resource.Identifier Identifier = 5;
+    GroupType GroupType = 6;
+    AccessState AccessState = 7;
+    int64 TargetEndpointGroupIdentifier = 8;
+    bool Preferred = 9;
+    repeated NavigationReference Endpoints = 10;
+    Links Links = 11;
+
+    // from EndpointGroup.v1_1_0.EndpointGroup
+    Actions Actions = 12;
+}

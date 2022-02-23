@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Thermal;
+
+import "google/protobuf/any.proto";
+
+message FanActions{
+    map<string, google.protobuf.Any> FanActions = 1;
+}
+

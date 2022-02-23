@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Thermal;
+
+enum ReadingUnits {
+    ReadingUnits_RPM = 0;
+    ReadingUnits_Percent = 1;
+}

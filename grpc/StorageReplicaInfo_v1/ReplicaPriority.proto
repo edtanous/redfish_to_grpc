@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaPriority {
+    ReplicaPriority_Low = 0;
+    ReplicaPriority_Same = 1;
+    ReplicaPriority_High = 2;
+    ReplicaPriority_Urgent = 3;
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package MetricReportDefinition;
+
+import "google/protobuf/duration.proto";
+import "MetricReportDefinition_v1/Actions.proto";
+import "MetricReportDefinition_v1/Links.proto";
+import "MetricReportDefinition_v1/Metric.proto";
+import "MetricReportDefinition_v1/MetricReportDefinitionType.proto";
+import "MetricReportDefinition_v1/ReportActionsEnum.proto";
+import "MetricReportDefinition_v1/ReportUpdatesEnum.proto";
+import "MetricReportDefinition_v1/Wildcard.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Schedule_v1/Schedule.proto";
+
+message MetricReportDefinition {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MetricReportDefinition.v1_0_0.MetricReportDefinition
+    MetricReportDefinitionType MetricReportDefinitionType = 5;
+    .Schedule.Schedule Schedule = 6;
+    repeated ReportActionsEnum ReportActions = 7;
+    ReportUpdatesEnum ReportUpdates = 8;
+    int64 AppendLimit = 9;
+    .Resource.Status Status = 10;
+    repeated Wildcard Wildcards = 11;
+    repeated string MetricProperties = 12;
+    repeated Metric Metrics = 13;
+    NavigationReference MetricReport = 14;
+    Actions Actions = 15;
+
+    // from MetricReportDefinition.v1_2_0.MetricReportDefinition
+    bool SuppressRepeatedMetricValue = 16;
+    google.protobuf.Duration MetricReportHeartbeatInterval = 17;
+    bool MetricReportDefinitionEnabled = 18;
+    Links Links = 19;
+
+    // from MetricReportDefinition.v1_3_0.MetricReportDefinition
+    google.protobuf.Duration ReportTimespan = 20;
+}

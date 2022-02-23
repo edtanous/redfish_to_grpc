@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package Chassis;
+
+enum ChassisType {
+    ChassisType_Rack = 0;
+    ChassisType_Blade = 1;
+    ChassisType_Enclosure = 2;
+    ChassisType_StandAlone = 3;
+    ChassisType_RackMount = 4;
+    ChassisType_Card = 5;
+    ChassisType_Cartridge = 6;
+    ChassisType_Row = 7;
+    ChassisType_Pod = 8;
+    ChassisType_Expansion = 9;
+    ChassisType_Sidecar = 10;
+    ChassisType_Zone = 11;
+    ChassisType_Sled = 12;
+    ChassisType_Shelf = 13;
+    ChassisType_Drawer = 14;
+    ChassisType_Module = 15;
+    ChassisType_Component = 16;
+    ChassisType_IPBasedDrive = 17;
+    ChassisType_RackGroup = 18;
+    ChassisType_StorageEnclosure = 19;
+    ChassisType_Other = 20;
+}

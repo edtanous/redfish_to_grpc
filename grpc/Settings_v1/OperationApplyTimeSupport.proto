@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Settings;
+
+import "google/protobuf/any.proto";
+
+message OperationApplyTimeSupport{
+    map<string, google.protobuf.Any> OperationApplyTimeSupport = 1;
+}
+

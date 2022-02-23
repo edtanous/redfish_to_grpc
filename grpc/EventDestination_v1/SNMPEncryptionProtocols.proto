@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package EventDestination;
+
+enum SNMPEncryptionProtocols {
+    SNMPEncryptionProtocols_None = 0;
+    SNMPEncryptionProtocols_CBC_DES = 1;
+    SNMPEncryptionProtocols_CFB128_AES128 = 2;
+}

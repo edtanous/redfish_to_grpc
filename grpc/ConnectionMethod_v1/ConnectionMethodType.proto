@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ConnectionMethod;
+
+enum ConnectionMethodType {
+    ConnectionMethodType_Redfish = 0;
+    ConnectionMethodType_SNMP = 1;
+    ConnectionMethodType_IPMI15 = 2;
+    ConnectionMethodType_IPMI20 = 3;
+    ConnectionMethodType_NETCONF = 4;
+    ConnectionMethodType_OEM = 5;
+}

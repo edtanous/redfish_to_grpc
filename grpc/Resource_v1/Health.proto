@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Resource;
+
+enum Health {
+    Health_OK = 0;
+    Health_Warning = 1;
+    Health_Critical = 2;
+}

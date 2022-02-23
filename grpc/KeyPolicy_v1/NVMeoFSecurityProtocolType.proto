@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package KeyPolicy;
+
+enum NVMeoFSecurityProtocolType {
+    NVMeoFSecurityProtocolType_DHHC = 0;
+    NVMeoFSecurityProtocolType_TLS_PSK = 1;
+    NVMeoFSecurityProtocolType_OEM = 2;
+}

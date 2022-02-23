@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum BootProgressTypes {
+    BootProgressTypes_None = 0;
+    BootProgressTypes_PrimaryProcessorInitializationStarted = 1;
+    BootProgressTypes_BusInitializationStarted = 2;
+    BootProgressTypes_MemoryInitializationStarted = 3;
+    BootProgressTypes_SecondaryProcessorInitializationStarted = 4;
+    BootProgressTypes_PCIResourceConfigStarted = 5;
+    BootProgressTypes_SystemHardwareInitializationComplete = 6;
+    BootProgressTypes_SetupEntered = 7;
+    BootProgressTypes_OSBootStarted = 8;
+    BootProgressTypes_OSRunning = 9;
+    BootProgressTypes_OEM = 10;
+}

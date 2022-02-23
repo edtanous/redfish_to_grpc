@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package Drive;
+
+import "Assembly_v1/Assembly.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "Drive_v1/Actions.proto";
+import "Drive_v1/EncryptionAbility.proto";
+import "Drive_v1/EncryptionStatus.proto";
+import "Drive_v1/HotspareReplacementModeType.proto";
+import "Drive_v1/HotspareType.proto";
+import "Drive_v1/Links.proto";
+import "Drive_v1/MediaType.proto";
+import "Drive_v1/Operations.proto";
+import "Drive_v1/StatusIndicator.proto";
+import "NavigationReference.proto";
+import "Protocol_v1/Protocol.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/IndicatorLED.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+
+message Drive {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Drive.v1_0_0.Drive
+    StatusIndicator StatusIndicator = 5;
+    .Resource.IndicatorLED IndicatorLED = 6;
+    string Model = 7;
+    string Revision = 8;
+    .Resource.Status Status = 9;
+    int64 CapacityBytes = 10;
+    bool FailurePredicted = 11;
+    .Protocol.Protocol Protocol = 12;
+    MediaType MediaType = 13;
+    string Manufacturer = 14;
+    string SKU = 15;
+    string SerialNumber = 16;
+    string PartNumber = 17;
+    string AssetTag = 18;
+    repeated .Resource.Identifier Identifiers = 19;
+    repeated .Resource.Location Location = 20;
+    HotspareType HotspareType = 21;
+    EncryptionAbility EncryptionAbility = 22;
+    EncryptionStatus EncryptionStatus = 23;
+    double RotationSpeedRPM = 24;
+    int64 BlockSizeBytes = 25;
+    double CapableSpeedGbs = 26;
+    double NegotiatedSpeedGbs = 27;
+    double PredictedMediaLifeLeftPercent = 28;
+    Links Links = 29;
+    Actions Actions = 30;
+
+    // from Drive.v1_1_0.Drive
+    repeated Operations Operations = 31;
+
+    // from Drive.v1_3_0.Drive
+    .Assembly.Assembly Assembly = 32;
+
+    // from Drive.v1_4_0.Drive
+    .Resource.Location PhysicalLocation = 33;
+
+    // from Drive.v1_5_0.Drive
+    HotspareReplacementModeType HotspareReplacementMode = 34;
+
+    // from Drive.v1_7_0.Drive
+    bool WriteCacheEnabled = 35;
+
+    // from Drive.v1_9_0.Drive
+    bool Multipath = 36;
+
+    // from Drive.v1_10_0.Drive
+    bool ReadyToRemove = 37;
+
+    // from Drive.v1_11_0.Drive
+    bool LocationIndicatorActive = 38;
+
+    // from Drive.v1_12_0.Drive
+    NavigationReference EnvironmentMetrics = 39;
+    .CertificateCollection.CertificateCollection Certificates = 40;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 41;
+}

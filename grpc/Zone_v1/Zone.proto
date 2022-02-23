@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package Zone;
+
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Zone_v1/Actions.proto";
+import "Zone_v1/ExternalAccessibility.proto";
+import "Zone_v1/Links.proto";
+import "Zone_v1/ZoneType.proto";
+
+message Zone {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Zone.v1_0_0.Zone
+    .Resource.Status Status = 5;
+    Links Links = 6;
+
+    // from Zone.v1_1_0.Zone
+    Actions Actions = 7;
+
+    // from Zone.v1_2_0.Zone
+    repeated .Resource.Identifier Identifiers = 8;
+
+    // from Zone.v1_3_0.Zone
+    ExternalAccessibility ExternalAccessibility = 9;
+
+    // from Zone.v1_4_0.Zone
+    ZoneType ZoneType = 10;
+    bool DefaultRoutingEnabled = 11;
+}

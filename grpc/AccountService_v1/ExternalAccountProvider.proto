@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package AccountService;
+
+import "google/protobuf/any.proto";
+
+message ExternalAccountProvider{
+    map<string, google.protobuf.Any> ExternalAccountProvider = 1;
+}
+

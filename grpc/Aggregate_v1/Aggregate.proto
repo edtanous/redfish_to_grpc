@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package Aggregate;
+
+import "Aggregate_v1/Actions.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message Aggregate {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Aggregate.v1_0_0.Aggregate
+    repeated NavigationReference Elements = 5;
+    int64 ElementsCount = 6;
+    Actions Actions = 7;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum WatchdogWarningActions {
+    WatchdogWarningActions_None = 0;
+    WatchdogWarningActions_DiagnosticInterrupt = 1;
+    WatchdogWarningActions_SMI = 2;
+    WatchdogWarningActions_MessagingInterrupt = 3;
+    WatchdogWarningActions_SCI = 4;
+    WatchdogWarningActions_OEM = 5;
+}

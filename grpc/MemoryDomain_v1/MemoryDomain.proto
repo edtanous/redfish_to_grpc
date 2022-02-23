@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package MemoryDomain;
+
+import "MemoryChunksCollection_v1/MemoryChunksCollection.proto";
+import "MemoryDomain_v1/Actions.proto";
+import "MemoryDomain_v1/Links.proto";
+import "MemoryDomain_v1/MemorySet.proto";
+import "Resource_v1/Oem.proto";
+
+message MemoryDomain {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MemoryDomain.v1_0_0.MemoryDomain
+    bool AllowsMemoryChunkCreation = 5;
+    bool AllowsBlockProvisioning = 6;
+    .MemoryChunksCollection.MemoryChunksCollection MemoryChunks = 7;
+    repeated MemorySet InterleavableMemorySets = 8;
+
+    // from MemoryDomain.v1_1_0.MemoryDomain
+    bool AllowsMirroring = 9;
+    bool AllowsSparing = 10;
+
+    // from MemoryDomain.v1_2_0.MemoryDomain
+    Actions Actions = 11;
+
+    // from MemoryDomain.v1_3_0.MemoryDomain
+    Links Links = 12;
+}

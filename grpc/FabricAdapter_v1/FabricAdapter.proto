@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package FabricAdapter;
+
+import "FabricAdapter_v1/Actions.proto";
+import "FabricAdapter_v1/GenZ.proto";
+import "FabricAdapter_v1/Links.proto";
+import "PCIeDevice_v1/PCIeInterface.proto";
+import "PortCollection_v1/PortCollection.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message FabricAdapter {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from FabricAdapter.v1_0_0.FabricAdapter
+    .Resource.Status Status = 5;
+    .PortCollection.PortCollection Ports = 6;
+    string Manufacturer = 7;
+    string Model = 8;
+    string SKU = 9;
+    string SerialNumber = 10;
+    string PartNumber = 11;
+    string SparePartNumber = 12;
+    string ASICRevisionIdentifier = 13;
+    string ASICPartNumber = 14;
+    string ASICManufacturer = 15;
+    string FirmwareVersion = 16;
+    string UUID = 17;
+    .PCIeDevice.PCIeInterface PCIeInterface = 18;
+    GenZ GenZ = 19;
+    Actions Actions = 20;
+    Links Links = 21;
+
+    // from FabricAdapter.v1_1_0.FabricAdapter
+    .Resource.Location Location = 22;
+}

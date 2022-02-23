@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package CompositionService;
+
+enum ComposeRequestType {
+    ComposeRequestType_Preview = 0;
+    ComposeRequestType_PreviewReserve = 1;
+    ComposeRequestType_Apply = 2;
+}

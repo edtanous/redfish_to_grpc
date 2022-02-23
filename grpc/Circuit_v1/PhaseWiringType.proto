@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Circuit;
+
+enum PhaseWiringType {
+    PhaseWiringType_OnePhase3Wire = 0;
+    PhaseWiringType_TwoPhase3Wire = 1;
+    PhaseWiringType_OneOrTwoPhase3Wire = 2;
+    PhaseWiringType_TwoPhase4Wire = 3;
+    PhaseWiringType_ThreePhase4Wire = 4;
+    PhaseWiringType_ThreePhase5Wire = 5;
+}

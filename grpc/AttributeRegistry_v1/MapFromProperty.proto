@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package AttributeRegistry;
+
+enum MapFromProperty {
+    MapFromProperty_CurrentValue = 0;
+    MapFromProperty_DefaultValue = 1;
+    MapFromProperty_ReadOnly = 2;
+    MapFromProperty_WriteOnly = 3;
+    MapFromProperty_GrayOut = 4;
+    MapFromProperty_Hidden = 5;
+    MapFromProperty_LowerBound = 6;
+    MapFromProperty_UpperBound = 7;
+    MapFromProperty_MinLength = 8;
+    MapFromProperty_MaxLength = 9;
+    MapFromProperty_ScalarIncrement = 10;
+}

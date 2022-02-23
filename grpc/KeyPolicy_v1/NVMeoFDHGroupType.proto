@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package KeyPolicy;
+
+enum NVMeoFDHGroupType {
+    NVMeoFDHGroupType_FFDHE2048 = 0;
+    NVMeoFDHGroupType_FFDHE3072 = 1;
+    NVMeoFDHGroupType_FFDHE4096 = 2;
+    NVMeoFDHGroupType_FFDHE6144 = 3;
+    NVMeoFDHGroupType_FFDHE8192 = 4;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package AllowDeny;
+
+import "AllowDeny_v1/Actions.proto";
+import "AllowDeny_v1/AllowType.proto";
+import "AllowDeny_v1/DataDirection.proto";
+import "AllowDeny_v1/IPAddressType.proto";
+import "Resource_v1/Oem.proto";
+
+message AllowDeny {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from AllowDeny.v1_0_0.AllowDeny
+    DataDirection Direction = 5;
+    AllowType AllowType = 6;
+    bool StatefulSession = 7;
+    IPAddressType IPAddressType = 8;
+    string IPAddressLower = 9;
+    string IPAddressUpper = 10;
+    int64 IANAProtocolNumber = 11;
+    int64 SourcePortLower = 12;
+    int64 SourcePortUpper = 13;
+    int64 DestinationPortLower = 14;
+    int64 DestinationPortUpper = 15;
+    Actions Actions = 16;
+}

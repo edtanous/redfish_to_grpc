@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Task;
+
+enum TaskState {
+    TaskState_New = 0;
+    TaskState_Starting = 1;
+    TaskState_Running = 2;
+    TaskState_Suspended = 3;
+    TaskState_Interrupted = 4;
+    TaskState_Pending = 5;
+    TaskState_Stopping = 6;
+    TaskState_Completed = 7;
+    TaskState_Killed = 8;
+    TaskState_Exception = 9;
+    TaskState_Service = 10;
+    TaskState_Cancelling = 11;
+    TaskState_Cancelled = 12;
+}

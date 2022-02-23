@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package KeyPolicy;
+
+enum NVMeoFCipherSuiteType {
+    NVMeoFCipherSuiteType_TLS_AES_128_GCM_SHA256 = 0;
+    NVMeoFCipherSuiteType_TLS_AES_256_GCM_SHA384 = 1;
+}

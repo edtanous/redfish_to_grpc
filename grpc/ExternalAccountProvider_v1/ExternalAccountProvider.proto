@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package ExternalAccountProvider;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "ExternalAccountProvider_v1/AccountProviderTypes.proto";
+import "ExternalAccountProvider_v1/Actions.proto";
+import "ExternalAccountProvider_v1/Authentication.proto";
+import "ExternalAccountProvider_v1/LDAPService.proto";
+import "ExternalAccountProvider_v1/Links.proto";
+import "ExternalAccountProvider_v1/OAuth2Service.proto";
+import "ExternalAccountProvider_v1/RoleMapping.proto";
+import "ExternalAccountProvider_v1/TACACSplusService.proto";
+import "Resource_v1/Oem.proto";
+
+message ExternalAccountProvider {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ExternalAccountProvider.v1_0_0.ExternalAccountProvider
+    AccountProviderTypes AccountProviderType = 5;
+    bool ServiceEnabled = 6;
+    repeated string ServiceAddresses = 7;
+    Authentication Authentication = 8;
+    LDAPService LDAPService = 9;
+    repeated RoleMapping RemoteRoleMapping = 10;
+    Links Links = 11;
+    Actions Actions = 12;
+
+    // from ExternalAccountProvider.v1_1_0.ExternalAccountProvider
+    .CertificateCollection.CertificateCollection Certificates = 13;
+
+    // from ExternalAccountProvider.v1_2_0.ExternalAccountProvider
+    TACACSplusService TACACSplusService = 14;
+    int64 Priority = 15;
+
+    // from ExternalAccountProvider.v1_3_0.ExternalAccountProvider
+    OAuth2Service OAuth2Service = 16;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package StorageGroup;
+
+enum AccessCapability {
+    AccessCapability_Read = 0;
+    AccessCapability_ReadWrite = 1;
+}

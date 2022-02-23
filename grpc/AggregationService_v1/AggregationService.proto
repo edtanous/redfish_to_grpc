@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package AggregationService;
+
+import "AggregateCollection_v1/AggregateCollection.proto";
+import "AggregationService_v1/Actions.proto";
+import "AggregationSourceCollection_v1/AggregationSourceCollection.proto";
+import "ConnectionMethodCollection_v1/ConnectionMethodCollection.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message AggregationService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from AggregationService.v1_0_0.AggregationService
+    bool ServiceEnabled = 5;
+    .Resource.Status Status = 6;
+    .AggregateCollection.AggregateCollection Aggregates = 7;
+    .AggregationSourceCollection.AggregationSourceCollection AggregationSources = 8;
+    .ConnectionMethodCollection.ConnectionMethodCollection ConnectionMethods = 9;
+    Actions Actions = 10;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum WatchdogTimeoutActions {
+    WatchdogTimeoutActions_None = 0;
+    WatchdogTimeoutActions_ResetSystem = 1;
+    WatchdogTimeoutActions_PowerCycle = 2;
+    WatchdogTimeoutActions_PowerDown = 3;
+    WatchdogTimeoutActions_OEM = 4;
+}

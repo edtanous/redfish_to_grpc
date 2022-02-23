@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Volume;
+
+enum WriteCachePolicyType {
+    WriteCachePolicyType_WriteThrough = 0;
+    WriteCachePolicyType_ProtectedWriteBack = 1;
+    WriteCachePolicyType_UnprotectedWriteBack = 2;
+    WriteCachePolicyType_Off = 3;
+}

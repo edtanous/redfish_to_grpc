@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package CompositionService;
+
+import "CompositionReservationCollection_v1/CompositionReservationCollection.proto";
+import "CompositionService_v1/Actions.proto";
+import "google/protobuf/duration.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "ResourceBlockCollection_v1/ResourceBlockCollection.proto";
+import "ZoneCollection_v1/ZoneCollection.proto";
+
+message CompositionService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from CompositionService.v1_0_0.CompositionService
+    .Resource.Status Status = 5;
+    bool ServiceEnabled = 6;
+    Actions Actions = 7;
+    .ResourceBlockCollection.ResourceBlockCollection ResourceBlocks = 8;
+    .ZoneCollection.ZoneCollection ResourceZones = 9;
+
+    // from CompositionService.v1_1_0.CompositionService
+    bool AllowOverprovisioning = 10;
+    bool AllowZoneAffinity = 11;
+
+    // from CompositionService.v1_2_0.CompositionService
+    .ResourceBlockCollection.ResourceBlockCollection ActivePool = 12;
+    .ResourceBlockCollection.ResourceBlockCollection FreePool = 13;
+    .CompositionReservationCollection.CompositionReservationCollection CompositionReservations = 14;
+    google.protobuf.Duration ReservationDuration = 15;
+}

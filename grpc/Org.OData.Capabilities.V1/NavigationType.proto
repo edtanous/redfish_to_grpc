@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Org;
+
+enum NavigationType {
+    NavigationType_Recursive = 0;
+    NavigationType_Single = 1;
+    NavigationType_None = 2;
+}

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package FileShare;
+
+import "DataStorageLoSCapabilities_v1/StorageAccessCapability.proto";
+import "EthernetInterfaceCollection_v1/EthernetInterfaceCollection.proto";
+import "FileShare_v1/Actions.proto";
+import "FileShare_v1/Links.proto";
+import "FileShare_v1/QuotaType.proto";
+import "FileSystem_v1/FileProtocol.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "StorageReplicaInfo_v1/ReplicaUpdateMode.proto";
+
+message FileShare {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from FileShare.v1_0_0.FileShare
+    string FileSharePath = 5;
+    repeated .FileSystem.FileProtocol FileSharingProtocols = 6;
+    .Resource.Status Status = 7;
+    repeated .DataStorageLoSCapabilities.StorageAccessCapability DefaultAccessCapabilities = 8;
+    bool ExecuteSupport = 9;
+    bool RootAccess = 10;
+    .StorageReplicaInfo.ReplicaUpdateMode WritePolicy = 11;
+    bool CASupported = 12;
+    int64 FileShareTotalQuotaBytes = 13;
+    int64 FileShareRemainingQuotaBytes = 14;
+    repeated int64 LowSpaceWarningThresholdPercents = 15;
+    QuotaType FileShareQuotaType = 16;
+    Links Links = 17;
+    .EthernetInterfaceCollection.EthernetInterfaceCollection EthernetInterfaces = 18;
+
+    // from FileShare.v1_1_0.FileShare
+    int64 RemainingCapacityPercent = 19;
+    Actions Actions = 20;
+}

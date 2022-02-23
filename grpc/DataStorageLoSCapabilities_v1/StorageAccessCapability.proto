@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package DataStorageLoSCapabilities;
+
+enum StorageAccessCapability {
+    StorageAccessCapability_Read = 0;
+    StorageAccessCapability_Write = 1;
+    StorageAccessCapability_WriteOnce = 2;
+    StorageAccessCapability_Append = 3;
+    StorageAccessCapability_Streaming = 4;
+    StorageAccessCapability_Execute = 5;
+}

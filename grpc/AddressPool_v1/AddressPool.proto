@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package AddressPool;
+
+import "AddressPool_v1/Actions.proto";
+import "AddressPool_v1/Ethernet.proto";
+import "AddressPool_v1/GenZ.proto";
+import "AddressPool_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message AddressPool {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from AddressPool.v1_0_0.AddressPool
+    .Resource.Status Status = 5;
+    GenZ GenZ = 6;
+    Links Links = 7;
+    Actions Actions = 8;
+
+    // from AddressPool.v1_1_0.AddressPool
+    Ethernet Ethernet = 9;
+}

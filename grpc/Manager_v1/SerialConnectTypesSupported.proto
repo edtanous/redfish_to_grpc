@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Manager;
+
+enum SerialConnectTypesSupported {
+    SerialConnectTypesSupported_SSH = 0;
+    SerialConnectTypesSupported_Telnet = 1;
+    SerialConnectTypesSupported_IPMI = 2;
+    SerialConnectTypesSupported_Oem = 3;
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package Battery;
+
+import "Assembly_v1/Assembly.proto";
+import "Battery_v1/Actions.proto";
+import "Battery_v1/ChargeState.proto";
+import "BatteryMetrics_v1/BatteryMetrics.proto";
+import "google/protobuf/timestamp.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Battery {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Battery.v1_0_0.Battery
+    string Manufacturer = 5;
+    string Model = 6;
+    string FirmwareVersion = 7;
+    string Version = 8;
+    google.protobuf.Timestamp ProductionDate = 9;
+    string SerialNumber = 10;
+    string PartNumber = 11;
+    string SparePartNumber = 12;
+    .Resource.Status Status = 13;
+    .Resource.Location Location = 14;
+    bool LocationIndicatorActive = 15;
+    bool HotPluggable = 16;
+    double CapacityRatedWattHours = 17;
+    double CapacityActualWattHours = 18;
+    double CapacityRatedAmpHours = 19;
+    double CapacityActualAmpHours = 20;
+    double MaxDischargeRateAmps = 21;
+    double MaxChargeRateAmps = 22;
+    double MaxChargeVoltage = 23;
+    ChargeState ChargeState = 24;
+    NavigationReference StateOfHealthPercent = 25;
+    .Assembly.Assembly Assembly = 26;
+    .BatteryMetrics.BatteryMetrics Metrics = 27;
+    Actions Actions = 28;
+}

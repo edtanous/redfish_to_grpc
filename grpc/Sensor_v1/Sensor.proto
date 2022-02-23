@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package Sensor;
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "NavigationReference.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "PhysicalContext_v1/PhysicalSubContext.proto";
+import "Redundancy_v1/RedundantGroup.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Sensor_v1/Actions.proto";
+import "Sensor_v1/ElectricalContext.proto";
+import "Sensor_v1/ImplementationType.proto";
+import "Sensor_v1/Links.proto";
+import "Sensor_v1/ReadingType.proto";
+import "Sensor_v1/Thresholds.proto";
+import "Sensor_v1/VoltageType.proto";
+
+message Sensor {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Sensor.v1_0_0.Sensor
+    ReadingType ReadingType = 5;
+    string DataSourceUri = 6;
+    .Resource.Status Status = 7;
+    double Reading = 8;
+    string ReadingUnits = 9;
+    .PhysicalContext.PhysicalContext PhysicalContext = 10;
+    .PhysicalContext.PhysicalSubContext PhysicalSubContext = 11;
+    double PeakReading = 12;
+    double MaxAllowableOperatingValue = 13;
+    double MinAllowableOperatingValue = 14;
+    double AdjustedMaxAllowableOperatingValue = 15;
+    double AdjustedMinAllowableOperatingValue = 16;
+    double ApparentVA = 17;
+    double ReactiveVAR = 18;
+    double PowerFactor = 19;
+    double LoadPercent = 20;
+    .Resource.Location Location = 21;
+    ElectricalContext ElectricalContext = 22;
+    VoltageType VoltageType = 23;
+    Thresholds Thresholds = 24;
+    double ReadingRangeMax = 25;
+    double ReadingRangeMin = 26;
+    double Precision = 27;
+    double Accuracy = 28;
+    double SensingFrequency = 29;
+    google.protobuf.Timestamp PeakReadingTime = 30;
+    google.protobuf.Timestamp SensorResetTime = 31;
+    Actions Actions = 32;
+
+    // from Sensor.v1_1_0.Sensor
+    double CrestFactor = 33;
+    double THDPercent = 34;
+    double LifetimeReading = 35;
+    google.protobuf.Duration SensingInterval = 36;
+    google.protobuf.Timestamp ReadingTime = 37;
+    ImplementationType Implementation = 38;
+
+    // from Sensor.v1_2_0.Sensor
+    repeated NavigationReference RelatedItem = 39;
+    double SpeedRPM = 40;
+    string DeviceName = 41;
+
+    // from Sensor.v1_3_0.Sensor
+    Links Links = 42;
+
+    // from Sensor.v1_4_0.Sensor
+    .Redundancy.RedundantGroup SensorGroup = 43;
+    double LowestReading = 44;
+    google.protobuf.Timestamp LowestReadingTime = 45;
+    double AverageReading = 46;
+    google.protobuf.Duration AveragingInterval = 47;
+    bool AveragingIntervalAchieved = 48;
+    double Calibration = 49;
+    google.protobuf.Timestamp CalibrationTime = 50;
+
+    // from Sensor.v1_5_0.Sensor
+    double ApparentkVAh = 51;
+    double ReactivekVARh = 52;
+    double PhaseAngleDegrees = 53;
+}

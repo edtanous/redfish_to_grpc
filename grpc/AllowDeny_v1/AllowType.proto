@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package AllowDeny;
+
+enum AllowType {
+    AllowType_Allow = 0;
+    AllowType_Deny = 1;
+}

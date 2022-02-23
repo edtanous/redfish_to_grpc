@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Volume;
+
+enum VolumeType {
+    VolumeType_RawDevice = 0;
+    VolumeType_NonRedundant = 1;
+    VolumeType_Mirrored = 2;
+    VolumeType_StripedWithParity = 3;
+    VolumeType_SpannedMirrors = 4;
+    VolumeType_SpannedStripesWithParity = 5;
+}

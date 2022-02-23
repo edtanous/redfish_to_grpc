@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package StorageService;
+
+import "ClassOfServiceCollection_v1/ClassOfServiceCollection.proto";
+import "ConsistencyGroupCollection_v1/ConsistencyGroupCollection.proto";
+import "DataProtectionLoSCapabilities_v1/DataProtectionLoSCapabilities.proto";
+import "DataSecurityLoSCapabilities_v1/DataSecurityLoSCapabilities.proto";
+import "DataStorageLoSCapabilities_v1/DataStorageLoSCapabilities.proto";
+import "DriveCollection_v1/DriveCollection.proto";
+import "EndpointCollection_v1/EndpointCollection.proto";
+import "EndpointGroupCollection_v1/EndpointGroupCollection.proto";
+import "FileSystemCollection_v1/FileSystemCollection.proto";
+import "IOConnectivityLoSCapabilities_v1/IOConnectivityLoSCapabilities.proto";
+import "IOPerformanceLoSCapabilities_v1/IOPerformanceLoSCapabilities.proto";
+import "IOStatistics_v1/IOStatistics.proto";
+import "LineOfServiceCollection_v1/LineOfServiceCollection.proto";
+import "NavigationReference.proto";
+import "Redundancy_v1/Redundancy.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SpareResourceSet_v1/SpareResourceSet.proto";
+import "StorageCollection_v1/StorageCollection.proto";
+import "StoragePoolCollection_v1/StoragePoolCollection.proto";
+import "StorageService_v1/Actions.proto";
+import "StorageService_v1/Links.proto";
+import "VolumeCollection_v1/VolumeCollection.proto";
+
+message StorageService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from StorageService.v1_0_0.StorageService
+    .Resource.Identifier Identifier = 5;
+    .Resource.Status Status = 6;
+    Links Links = 7;
+    .EndpointGroupCollection.EndpointGroupCollection EndpointGroups = 8;
+    .EndpointGroupCollection.EndpointGroupCollection ClientEndpointGroups = 9;
+    .EndpointGroupCollection.EndpointGroupCollection ServerEndpointGroups = 10;
+    .VolumeCollection.VolumeCollection Volumes = 11;
+    .FileSystemCollection.FileSystemCollection FileSystems = 12;
+    .StoragePoolCollection.StoragePoolCollection StoragePools = 13;
+    .DriveCollection.DriveCollection Drives = 14;
+    .EndpointCollection.EndpointCollection Endpoints = 15;
+    Actions Actions = 16;
+    repeated .Redundancy.Redundancy Redundancy = 17;
+    .ClassOfServiceCollection.ClassOfServiceCollection ClassesOfService = 18;
+
+    // from StorageService.v1_0_1.StorageService
+    .StorageCollection.StorageCollection StorageSubsystems = 19;
+
+    // from StorageService.v1_2_0.StorageService
+    .IOStatistics.IOStatistics IOStatistics = 20;
+    repeated .SpareResourceSet.SpareResourceSet SpareResourceSets = 21;
+    .DataProtectionLoSCapabilities.DataProtectionLoSCapabilities DataProtectionLoSCapabilities = 22;
+    .DataSecurityLoSCapabilities.DataSecurityLoSCapabilities DataSecurityLoSCapabilities = 23;
+    .DataStorageLoSCapabilities.DataStorageLoSCapabilities DataStorageLoSCapabilities = 24;
+    .IOConnectivityLoSCapabilities.IOConnectivityLoSCapabilities IOConnectivityLoSCapabilities = 25;
+    .IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities IOPerformanceLoSCapabilities = 26;
+    NavigationReference DefaultClassOfService = 27;
+
+    // from StorageService.v1_3_0.StorageService
+    .ConsistencyGroupCollection.ConsistencyGroupCollection ConsistencyGroups = 28;
+
+    // from StorageService.v1_4_0.StorageService
+    repeated .LineOfServiceCollection.LineOfServiceCollection LinesOfService = 29;
+}

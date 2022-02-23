@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package Resource;
+
+enum State {
+    State_Enabled = 0;
+    State_Disabled = 1;
+    State_StandbyOffline = 2;
+    State_StandbySpare = 3;
+    State_InTest = 4;
+    State_Starting = 5;
+    State_Absent = 6;
+    State_UnavailableOffline = 7;
+    State_Deferring = 8;
+    State_Quiesced = 9;
+    State_Updating = 10;
+    State_Qualified = 11;
+}

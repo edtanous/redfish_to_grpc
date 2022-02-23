@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package PowerDistribution;
+
+enum TransferSensitivityType {
+    TransferSensitivityType_High = 0;
+    TransferSensitivityType_Medium = 1;
+    TransferSensitivityType_Low = 2;
+}

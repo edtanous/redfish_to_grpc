@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package Bios;
+
+import "Bios_v1/Actions.proto";
+import "Bios_v1/Attributes.proto";
+import "Bios_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+
+message Bios {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Bios.v1_0_0.Bios
+    string AttributeRegistry = 5;
+    Actions Actions = 6;
+    Attributes Attributes = 7;
+
+    // from Bios.v1_1_0.Bios
+    Links Links = 8;
+
+    // from Bios.v1_2_0.Bios
+    bool ResetBiosToDefaultsPending = 9;
+}

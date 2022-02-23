@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package EndpointGroup;
+
+enum GroupType {
+    GroupType_Client = 0;
+    GroupType_Server = 1;
+    GroupType_Initiator = 2;
+    GroupType_Target = 3;
+}

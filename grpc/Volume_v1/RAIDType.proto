@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package Volume;
+
+enum RAIDType {
+    RAIDType_RAID0 = 0;
+    RAIDType_RAID1 = 1;
+    RAIDType_RAID3 = 2;
+    RAIDType_RAID4 = 3;
+    RAIDType_RAID5 = 4;
+    RAIDType_RAID6 = 5;
+    RAIDType_RAID10 = 6;
+    RAIDType_RAID01 = 7;
+    RAIDType_RAID6TP = 8;
+    RAIDType_RAID1E = 9;
+    RAIDType_RAID50 = 10;
+    RAIDType_RAID60 = 11;
+    RAIDType_RAID00 = 12;
+    RAIDType_RAID10E = 13;
+    RAIDType_RAID1Triple = 14;
+    RAIDType_RAID10Triple = 15;
+    RAIDType_None = 16;
+}

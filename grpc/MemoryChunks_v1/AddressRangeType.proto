@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package MemoryChunks;
+
+enum AddressRangeType {
+    AddressRangeType_Volatile = 0;
+    AddressRangeType_PMEM = 1;
+    AddressRangeType_Block = 2;
+}

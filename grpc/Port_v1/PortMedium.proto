@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Port;
+
+enum PortMedium {
+    PortMedium_Electrical = 0;
+    PortMedium_Optical = 1;
+}

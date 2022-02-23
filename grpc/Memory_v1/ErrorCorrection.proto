@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Memory;
+
+enum ErrorCorrection {
+    ErrorCorrection_NoECC = 0;
+    ErrorCorrection_SingleBitECC = 1;
+    ErrorCorrection_MultiBitECC = 2;
+    ErrorCorrection_AddressParity = 3;
+}

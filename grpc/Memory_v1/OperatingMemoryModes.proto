@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Memory;
+
+enum OperatingMemoryModes {
+    OperatingMemoryModes_Volatile = 0;
+    OperatingMemoryModes_PMEM = 1;
+    OperatingMemoryModes_Block = 2;
+}

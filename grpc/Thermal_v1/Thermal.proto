@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package Thermal;
+
+import "Redundancy_v1/Redundancy.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Thermal_v1/Fan.proto";
+import "Thermal_v1/Temperature.proto";
+import "Thermal_v1/ThermalActions.proto";
+
+message Thermal {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Thermal.v1_0_0.Thermal
+    repeated Temperature Temperatures = 5;
+    repeated Fan Fans = 6;
+    repeated .Redundancy.Redundancy Redundancy = 7;
+    .Resource.Status Status = 8;
+
+    // from Thermal.v1_3_0.Thermal
+    ThermalActions Actions = 9;
+}

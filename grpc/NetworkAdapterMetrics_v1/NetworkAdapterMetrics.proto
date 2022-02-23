@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package NetworkAdapterMetrics;
+
+import "NetworkAdapterMetrics_v1/Actions.proto";
+import "Resource_v1/Oem.proto";
+
+message NetworkAdapterMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from NetworkAdapterMetrics.v1_0_0.NetworkAdapterMetrics
+    double HostBusRXPercent = 5;
+    double HostBusTXPercent = 6;
+    double CPUCorePercent = 7;
+    int64 NCSIRXFrames = 8;
+    int64 NCSITXFrames = 9;
+    int64 NCSIRXBytes = 10;
+    int64 NCSITXBytes = 11;
+    int64 RXBytes = 12;
+    int64 RXMulticastFrames = 13;
+    int64 RXUnicastFrames = 14;
+    int64 TXBytes = 15;
+    int64 TXMulticastFrames = 16;
+    int64 TXUnicastFrames = 17;
+    Actions Actions = 18;
+}

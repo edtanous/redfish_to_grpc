@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum InterfaceTypeSelection {
+    InterfaceTypeSelection_None = 0;
+    InterfaceTypeSelection_FirmwareUpdate = 1;
+    InterfaceTypeSelection_BiosSetting = 2;
+    InterfaceTypeSelection_OemMethod = 3;
+}

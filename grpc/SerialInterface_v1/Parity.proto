@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package SerialInterface;
+
+enum Parity {
+    Parity_None = 0;
+    Parity_Even = 1;
+    Parity_Odd = 2;
+    Parity_Mark = 3;
+    Parity_Space = 4;
+}

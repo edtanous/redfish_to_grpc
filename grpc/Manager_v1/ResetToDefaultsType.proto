@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Manager;
+
+enum ResetToDefaultsType {
+    ResetToDefaultsType_ResetAll = 0;
+    ResetToDefaultsType_PreserveNetworkAndUsers = 1;
+    ResetToDefaultsType_PreserveNetwork = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Control;
+
+enum ImplementationType {
+    ImplementationType_Programmable = 0;
+    ImplementationType_Direct = 1;
+    ImplementationType_Monitored = 2;
+}

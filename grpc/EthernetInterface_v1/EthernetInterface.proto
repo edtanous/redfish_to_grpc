@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package EthernetInterface;
+
+import "EthernetInterface_v1/Actions.proto";
+import "EthernetInterface_v1/DHCPv4Configuration.proto";
+import "EthernetInterface_v1/DHCPv6Configuration.proto";
+import "EthernetInterface_v1/EthernetDeviceType.proto";
+import "EthernetInterface_v1/IPv6AddressPolicyEntry.proto";
+import "EthernetInterface_v1/Links.proto";
+import "EthernetInterface_v1/LinkStatus.proto";
+import "EthernetInterface_v1/StatelessAddressAutoConfiguration.proto";
+import "IPAddresses_v1/IPv4Address.proto";
+import "IPAddresses_v1/IPv6Address.proto";
+import "IPAddresses_v1/IPv6GatewayStaticAddress.proto";
+import "IPAddresses_v1/IPv6StaticAddress.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "VLanNetworkInterface_v1/VLAN.proto";
+import "VLanNetworkInterfaceCollection_v1/VLanNetworkInterfaceCollection.proto";
+
+message EthernetInterface {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from EthernetInterface.v1_0_0.EthernetInterface
+    string UefiDevicePath = 5;
+    .Resource.Status Status = 6;
+    bool InterfaceEnabled = 7;
+    string PermanentMACAddress = 8;
+    string MACAddress = 9;
+    int64 SpeedMbps = 10;
+    bool AutoNeg = 11;
+    bool FullDuplex = 12;
+    int64 MTUSize = 13;
+    string HostName = 14;
+    string FQDN = 15;
+    int64 MaxIPv6StaticAddresses = 16;
+    .VLanNetworkInterface.VLAN VLAN = 17;
+    repeated .IPAddresses.IPv4Address IPv4Addresses = 18;
+    repeated IPv6AddressPolicyEntry IPv6AddressPolicyTable = 19;
+    repeated .IPAddresses.IPv6Address IPv6Addresses = 20;
+    repeated .IPAddresses.IPv6StaticAddress IPv6StaticAddresses = 21;
+    string IPv6DefaultGateway = 22;
+    repeated string NameServers = 23;
+    .VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection VLANs = 24;
+
+    // from EthernetInterface.v1_1_0.EthernetInterface
+    LinkStatus LinkStatus = 25;
+    Links Links = 26;
+
+    // from EthernetInterface.v1_3_0.EthernetInterface
+    Actions Actions = 27;
+
+    // from EthernetInterface.v1_4_0.EthernetInterface
+    DHCPv4Configuration DHCPv4 = 28;
+    DHCPv6Configuration DHCPv6 = 29;
+    StatelessAddressAutoConfiguration StatelessAddressAutoConfig = 30;
+    repeated .IPAddresses.IPv6GatewayStaticAddress IPv6StaticDefaultGateways = 31;
+    repeated string StaticNameServers = 32;
+    repeated .IPAddresses.IPv4Address IPv4StaticAddresses = 33;
+
+    // from EthernetInterface.v1_6_0.EthernetInterface
+    EthernetDeviceType EthernetInterfaceType = 34;
+}

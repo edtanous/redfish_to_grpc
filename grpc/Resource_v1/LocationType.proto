@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Resource;
+
+enum LocationType {
+    LocationType_Slot = 0;
+    LocationType_Bay = 1;
+    LocationType_Connector = 2;
+    LocationType_Socket = 3;
+    LocationType_Backplane = 4;
+    LocationType_Embedded = 5;
+}

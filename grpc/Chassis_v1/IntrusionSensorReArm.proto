@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Chassis;
+
+enum IntrusionSensorReArm {
+    IntrusionSensorReArm_Manual = 0;
+    IntrusionSensorReArm_Automatic = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package IPAddresses;
+
+enum IPv6AddressOrigin {
+    IPv6AddressOrigin_Static = 0;
+    IPv6AddressOrigin_DHCPv6 = 1;
+    IPv6AddressOrigin_LinkLocal = 2;
+    IPv6AddressOrigin_SLAAC = 3;
+}

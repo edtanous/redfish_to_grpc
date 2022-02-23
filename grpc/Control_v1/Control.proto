@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package Control;
+
+import "Control_v1/Actions.proto";
+import "Control_v1/ControlLoop.proto";
+import "Control_v1/ControlMode.proto";
+import "Control_v1/ControlType.proto";
+import "Control_v1/ImplementationType.proto";
+import "Control_v1/SetPointType.proto";
+import "google/protobuf/timestamp.proto";
+import "NavigationReference.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "PhysicalContext_v1/PhysicalSubContext.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Control {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Control.v1_0_0.Control
+    ControlType ControlType = 5;
+    SetPointType SetPointType = 6;
+    string DataSourceUri = 7;
+    .Resource.Status Status = 8;
+    ControlMode ControlMode = 9;
+    double SetPoint = 10;
+    double SettingMin = 11;
+    double SettingMax = 12;
+    repeated double AllowableNumericValues = 13;
+    string SetPointUnits = 14;
+    double DeadBand = 15;
+    double ControlDelaySeconds = 16;
+    double AllowableMax = 17;
+    double AllowableMin = 18;
+    double Increment = 19;
+    double Accuracy = 20;
+    .PhysicalContext.PhysicalContext PhysicalContext = 21;
+    .PhysicalContext.PhysicalSubContext PhysicalSubContext = 22;
+    ImplementationType Implementation = 23;
+    google.protobuf.Timestamp SetPointUpdateTime = 24;
+    repeated NavigationReference RelatedItem = 25;
+    ControlLoop ControlLoop = 26;
+    double Reading = 27;
+    string ReadingUnits = 28;
+    NavigationReference Sensor = 29;
+    repeated NavigationReference AssociatedSensors = 30;
+    .Resource.Location Location = 31;
+    Actions Actions = 32;
+}

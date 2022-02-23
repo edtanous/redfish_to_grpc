@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Processor;
+
+enum SystemInterfaceType {
+    SystemInterfaceType_QPI = 0;
+    SystemInterfaceType_UPI = 1;
+    SystemInterfaceType_PCIe = 2;
+    SystemInterfaceType_Ethernet = 3;
+    SystemInterfaceType_AMBA = 4;
+    SystemInterfaceType_CCIX = 5;
+    SystemInterfaceType_CXL = 6;
+    SystemInterfaceType_OEM = 7;
+}

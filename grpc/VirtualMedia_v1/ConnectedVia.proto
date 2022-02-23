@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package VirtualMedia;
+
+enum ConnectedVia {
+    ConnectedVia_NotConnected = 0;
+    ConnectedVia_URI = 1;
+    ConnectedVia_Applet = 2;
+    ConnectedVia_Oem = 3;
+}

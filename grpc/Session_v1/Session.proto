@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package Session;
+
+import "Resource_v1/Oem.proto";
+import "Session_v1/Actions.proto";
+import "Session_v1/SessionTypes.proto";
+
+message Session {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Session.v1_0_0.Session
+    string UserName = 5;
+    string Password = 6;
+
+    // from Session.v1_1_0.Session
+    Actions Actions = 7;
+
+    // from Session.v1_2_0.Session
+    SessionTypes SessionType = 8;
+    string OemSessionType = 9;
+
+    // from Session.v1_3_0.Session
+    string ClientOriginIPAddress = 10;
+}

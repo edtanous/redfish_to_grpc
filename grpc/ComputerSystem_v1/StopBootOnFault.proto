@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum StopBootOnFault {
+    StopBootOnFault_Never = 0;
+    StopBootOnFault_AnyFault = 1;
+}

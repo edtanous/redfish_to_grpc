@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Endpoint;
+
+enum EntityRole {
+    EntityRole_Initiator = 0;
+    EntityRole_Target = 1;
+    EntityRole_Both = 2;
+}

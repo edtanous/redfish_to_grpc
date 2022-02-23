@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Volume;
+
+enum VolumeUsageType {
+    VolumeUsageType_Data = 0;
+    VolumeUsageType_SystemData = 1;
+    VolumeUsageType_CacheOnly = 2;
+    VolumeUsageType_SystemReserve = 3;
+    VolumeUsageType_ReplicationReserve = 4;
+}

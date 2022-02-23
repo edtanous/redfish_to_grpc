@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Memory;
+
+enum MemoryType {
+    MemoryType_DRAM = 0;
+    MemoryType_NVDIMM_N = 1;
+    MemoryType_NVDIMM_F = 2;
+    MemoryType_NVDIMM_P = 3;
+    MemoryType_IntelOptane = 4;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package NVMeDomain;
+
+import "NavigationReference.proto";
+import "NVMeDomain_v1/Actions.proto";
+import "NVMeDomain_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message NVMeDomain {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from NVMeDomain.v1_0_0.NVMeDomain
+    .Resource.Status Status = 5;
+    repeated NavigationReference DomainMembers = 6;
+    int64 TotalDomainCapacityBytes = 7;
+    int64 UnallocatedDomainCapacityBytes = 8;
+    int64 MaximumCapacityPerEnduranceGroupBytes = 9;
+    repeated NavigationReference AvailableFirmwareImages = 10;
+    Links Links = 11;
+    Actions Actions = 12;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package StoragePool;
+
+enum PoolType {
+    PoolType_Block = 0;
+    PoolType_File = 1;
+    PoolType_Object = 2;
+    PoolType_Pool = 3;
+}

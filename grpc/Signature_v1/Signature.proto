@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package Signature;
+
+import "Resource_v1/Oem.proto";
+import "Signature_v1/Actions.proto";
+import "Signature_v1/SignatureTypeRegistry.proto";
+
+message Signature {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Signature.v1_0_0.Signature
+    SignatureTypeRegistry SignatureTypeRegistry = 5;
+    string SignatureType = 6;
+    string SignatureString = 7;
+    string UefiSignatureOwner = 8;
+    Actions Actions = 9;
+}

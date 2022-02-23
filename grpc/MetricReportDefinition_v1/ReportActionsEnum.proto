@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package MetricReportDefinition;
+
+enum ReportActionsEnum {
+    ReportActionsEnum_LogToMetricReportsCollection = 0;
+    ReportActionsEnum_RedfishEvent = 1;
+}

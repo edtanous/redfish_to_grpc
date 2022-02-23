@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package Cable;
+
+import "Assembly_v1/Assembly.proto";
+import "Cable_v1/Actions.proto";
+import "Cable_v1/CableClass.proto";
+import "Cable_v1/CableStatus.proto";
+import "Cable_v1/ConnectorType.proto";
+import "Cable_v1/Links.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Cable {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Cable.v1_0_0.Cable
+    string UserDescription = 5;
+    string CableType = 6;
+    double LengthMeters = 7;
+    string DownstreamName = 8;
+    string UpstreamName = 9;
+    Actions Actions = 10;
+    string Model = 11;
+    string Manufacturer = 12;
+    string Vendor = 13;
+    string SKU = 14;
+    string SerialNumber = 15;
+    string PartNumber = 16;
+    string AssetTag = 17;
+    CableClass CableClass = 18;
+    repeated ConnectorType DownstreamConnectorTypes = 19;
+    repeated ConnectorType UpstreamConnectorTypes = 20;
+    Links Links = 21;
+    CableStatus CableStatus = 22;
+    .Resource.Status Status = 23;
+    .Resource.Location Location = 24;
+    .Assembly.Assembly Assembly = 25;
+
+    // from Cable.v1_1_0.Cable
+    string UserLabel = 26;
+}

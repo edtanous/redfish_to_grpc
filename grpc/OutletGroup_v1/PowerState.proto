@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package OutletGroup;
+
+enum PowerState {
+    PowerState_On = 0;
+    PowerState_Off = 1;
+    PowerState_PowerCycle = 2;
+}

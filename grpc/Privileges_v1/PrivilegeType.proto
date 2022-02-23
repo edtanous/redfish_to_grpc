@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Privileges;
+
+enum PrivilegeType {
+    PrivilegeType_Login = 0;
+    PrivilegeType_ConfigureManager = 1;
+    PrivilegeType_ConfigureUsers = 2;
+    PrivilegeType_ConfigureSelf = 3;
+    PrivilegeType_ConfigureComponents = 4;
+    PrivilegeType_NoAuth = 5;
+    PrivilegeType_ConfigureCompositionInfrastructure = 6;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Signature;
+
+enum SignatureTypeRegistry {
+    SignatureTypeRegistry_UEFI = 0;
+}

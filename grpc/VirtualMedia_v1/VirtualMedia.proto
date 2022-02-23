@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package VirtualMedia;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "VirtualMedia_v1/Actions.proto";
+import "VirtualMedia_v1/ConnectedVia.proto";
+import "VirtualMedia_v1/MediaType.proto";
+import "VirtualMedia_v1/TransferMethod.proto";
+import "VirtualMedia_v1/TransferProtocolType.proto";
+
+message VirtualMedia {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from VirtualMedia.v1_0_0.VirtualMedia
+    string ImageName = 5;
+    string Image = 6;
+    repeated MediaType MediaTypes = 7;
+    ConnectedVia ConnectedVia = 8;
+    bool Inserted = 9;
+    bool WriteProtected = 10;
+
+    // from VirtualMedia.v1_1_0.VirtualMedia
+    Actions Actions = 11;
+
+    // from VirtualMedia.v1_3_0.VirtualMedia
+    string UserName = 12;
+    string Password = 13;
+    TransferProtocolType TransferProtocolType = 14;
+    TransferMethod TransferMethod = 15;
+
+    // from VirtualMedia.v1_4_0.VirtualMedia
+    .Resource.Status Status = 16;
+    .CertificateCollection.CertificateCollection Certificates = 17;
+    bool VerifyCertificate = 18;
+
+    // from VirtualMedia.v1_5_0.VirtualMedia
+    .CertificateCollection.CertificateCollection ClientCertificates = 19;
+}

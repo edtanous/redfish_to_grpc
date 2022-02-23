@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Resource;
+
+enum PowerState {
+    PowerState_On = 0;
+    PowerState_Off = 1;
+    PowerState_PoweringOn = 2;
+    PowerState_PoweringOff = 3;
+    PowerState_Paused = 4;
+}

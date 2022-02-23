@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum AutomaticRetryConfig {
+    AutomaticRetryConfig_Disabled = 0;
+    AutomaticRetryConfig_RetryAttempts = 1;
+    AutomaticRetryConfig_RetryAlways = 2;
+}

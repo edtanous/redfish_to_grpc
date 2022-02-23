@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ConsistencyGroup;
+
+enum ConsistencyType {
+    ConsistencyType_CrashConsistent = 0;
+    ConsistencyType_ApplicationConsistent = 1;
+}

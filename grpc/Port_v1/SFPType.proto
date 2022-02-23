@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package Port;
+
+enum SFPType {
+    SFPType_SFP = 0;
+    SFPType_SFPPlus = 1;
+    SFPType_SFP28 = 2;
+    SFPType_cSFP = 3;
+    SFPType_SFPDD = 4;
+    SFPType_QSFP = 5;
+    SFPType_QSFPPlus = 6;
+    SFPType_QSFP14 = 7;
+    SFPType_QSFP28 = 8;
+    SFPType_QSFP56 = 9;
+    SFPType_MiniSASHD = 10;
+}

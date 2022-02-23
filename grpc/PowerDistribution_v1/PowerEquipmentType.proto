@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package PowerDistribution;
+
+enum PowerEquipmentType {
+    PowerEquipmentType_RackPDU = 0;
+    PowerEquipmentType_FloorPDU = 1;
+    PowerEquipmentType_ManualTransferSwitch = 2;
+    PowerEquipmentType_AutomaticTransferSwitch = 3;
+    PowerEquipmentType_Switchgear = 4;
+    PowerEquipmentType_PowerShelf = 5;
+    PowerEquipmentType_Bus = 6;
+}

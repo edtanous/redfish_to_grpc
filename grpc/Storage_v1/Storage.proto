@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package Storage;
+
+import "ConsistencyGroupCollection_v1/ConsistencyGroupCollection.proto";
+import "Drive_v1/Drive.proto";
+import "EndpointGroupCollection_v1/EndpointGroupCollection.proto";
+import "FileSystemCollection_v1/FileSystemCollection.proto";
+import "Redundancy_v1/Redundancy.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Storage_v1/Actions.proto";
+import "Storage_v1/Links.proto";
+import "Storage_v1/StorageController.proto";
+import "StorageControllerCollection_v1/StorageControllerCollection.proto";
+import "StoragePoolCollection_v1/StoragePoolCollection.proto";
+import "VolumeCollection_v1/VolumeCollection.proto";
+
+message Storage {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Storage.v1_0_0.Storage
+    repeated StorageController StorageControllers = 5;
+    repeated .Drive.Drive Drives = 6;
+    .VolumeCollection.VolumeCollection Volumes = 7;
+    Links Links = 8;
+    Actions Actions = 9;
+    .Resource.Status Status = 10;
+    repeated .Redundancy.Redundancy Redundancy = 11;
+
+    // from Storage.v1_8_0.Storage
+    .FileSystemCollection.FileSystemCollection FileSystems = 12;
+    .StoragePoolCollection.StoragePoolCollection StoragePools = 13;
+    .EndpointGroupCollection.EndpointGroupCollection EndpointGroups = 14;
+    .ConsistencyGroupCollection.ConsistencyGroupCollection ConsistencyGroups = 15;
+
+    // from Storage.v1_9_0.Storage
+    .StorageControllerCollection.StorageControllerCollection Controllers = 16;
+    repeated .Resource.Identifier Identifiers = 17;
+}

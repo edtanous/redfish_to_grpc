@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Storage;
+
+enum ResetToDefaultsType {
+    ResetToDefaultsType_ResetAll = 0;
+    ResetToDefaultsType_PreserveVolumes = 1;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package PrivilegeRegistry;
+
+import "PrivilegeRegistry_v1/Actions.proto";
+import "PrivilegeRegistry_v1/Mapping.proto";
+import "Privileges_v1/PrivilegeType.proto";
+import "Resource_v1/Oem.proto";
+
+message PrivilegeRegistry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PrivilegeRegistry.v1_0_0.PrivilegeRegistry
+    repeated .Privileges.PrivilegeType PrivilegesUsed = 5;
+    repeated string OEMPrivilegesUsed = 6;
+    repeated Mapping Mappings = 7;
+
+    // from PrivilegeRegistry.v1_1_0.PrivilegeRegistry
+    Actions Actions = 8;
+}

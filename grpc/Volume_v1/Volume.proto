@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package Volume;
+
+import "Capacity_v1/Capacity.proto";
+import "DataStorageLoSCapabilities_v1/ProvisioningPolicy.proto";
+import "DataStorageLoSCapabilities_v1/StorageAccessCapability.proto";
+import "IOStatistics_v1/IOStatistics.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "StorageReplicaInfo_v1/ReplicaInfo.proto";
+import "Volume_v1/Actions.proto";
+import "Volume_v1/EncryptionTypes.proto";
+import "Volume_v1/InitializeMethod.proto";
+import "Volume_v1/Links.proto";
+import "Volume_v1/NVMeNamespaceProperties.proto";
+import "Volume_v1/Operation.proto";
+import "Volume_v1/RAIDType.proto";
+import "Volume_v1/ReadCachePolicyType.proto";
+import "Volume_v1/VolumeType.proto";
+import "Volume_v1/VolumeUsageType.proto";
+import "Volume_v1/WriteCachePolicyType.proto";
+import "Volume_v1/WriteCacheStateType.proto";
+import "Volume_v1/WriteHoleProtectionPolicyType.proto";
+
+message Volume {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Volume.v1_0_0.Volume
+    .Resource.Status Status = 5;
+    int64 CapacityBytes = 6;
+    VolumeType VolumeType = 7;
+    bool Encrypted = 8;
+    repeated EncryptionTypes EncryptionTypes = 9;
+    repeated .Resource.Identifier Identifiers = 10;
+    int64 BlockSizeBytes = 11;
+    repeated Operation Operations = 12;
+    int64 OptimumIOSizeBytes = 13;
+    Links Links = 14;
+    Actions Actions = 15;
+
+    // from Volume.v1_1_0.Volume
+    repeated .DataStorageLoSCapabilities.StorageAccessCapability AccessCapabilities = 16;
+    int64 MaxBlockSizeBytes = 17;
+    .Capacity.Capacity Capacity = 18;
+    repeated int64 LowSpaceWarningThresholdPercents = 19;
+    string Manufacturer = 20;
+    string Model = 21;
+    .StorageReplicaInfo.ReplicaInfo ReplicaInfo = 22;
+
+    // from Volume.v1_2_0.Volume
+    .IOStatistics.IOStatistics IOStatistics = 23;
+    int64 RemainingCapacityPercent = 24;
+
+    // from Volume.v1_3_0.Volume
+    int64 RecoverableCapacitySourceCount = 25;
+    repeated NavigationReference ReplicaTargets = 26;
+
+    // from Volume.v1_3_1.Volume
+    RAIDType RAIDType = 27;
+
+    // from Volume.v1_4_0.Volume
+    .DataStorageLoSCapabilities.ProvisioningPolicy ProvisioningPolicy = 28;
+    int64 StripSizeBytes = 29;
+    ReadCachePolicyType ReadCachePolicy = 30;
+    VolumeUsageType VolumeUsage = 31;
+    WriteCachePolicyType WriteCachePolicy = 32;
+    WriteCacheStateType WriteCacheState = 33;
+    int64 LogicalUnitNumber = 34;
+    int64 MediaSpanCount = 35;
+    string DisplayName = 36;
+    WriteHoleProtectionPolicyType WriteHoleProtectionPolicy = 37;
+    bool Deduplicated = 38;
+    bool Compressed = 39;
+
+    // from Volume.v1_5_0.Volume
+    bool IOPerfModeEnabled = 40;
+    NVMeNamespaceProperties NVMeNamespaceProperties = 41;
+
+    // from Volume.v1_6_0.Volume
+    InitializeMethod InitializeMethod = 42;
+}

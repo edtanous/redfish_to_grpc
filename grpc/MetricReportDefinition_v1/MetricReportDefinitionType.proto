@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package MetricReportDefinition;
+
+enum MetricReportDefinitionType {
+    MetricReportDefinitionType_Periodic = 0;
+    MetricReportDefinitionType_OnChange = 1;
+    MetricReportDefinitionType_OnRequest = 2;
+}

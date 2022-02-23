@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package PowerSupply;
+
+enum LineStatus {
+    LineStatus_Normal = 0;
+    LineStatus_LossOfInput = 1;
+    LineStatus_OutOfRange = 2;
+}

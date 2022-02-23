@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Port;
+
+enum FlowControl {
+    FlowControl_None = 0;
+    FlowControl_TX = 1;
+    FlowControl_RX = 2;
+    FlowControl_TX_RX = 3;
+}

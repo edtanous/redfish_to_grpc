@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package Resource;
+
+enum ResetType {
+    ResetType_On = 0;
+    ResetType_ForceOff = 1;
+    ResetType_GracefulShutdown = 2;
+    ResetType_GracefulRestart = 3;
+    ResetType_ForceRestart = 4;
+    ResetType_Nmi = 5;
+    ResetType_ForceOn = 6;
+    ResetType_PushPowerButton = 7;
+    ResetType_PowerCycle = 8;
+    ResetType_Suspend = 9;
+    ResetType_Pause = 10;
+    ResetType_Resume = 11;
+}

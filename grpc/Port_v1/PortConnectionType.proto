@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package Port;
+
+enum PortConnectionType {
+    PortConnectionType_NotConnected = 0;
+    PortConnectionType_NPort = 1;
+    PortConnectionType_PointToPoint = 2;
+    PortConnectionType_PrivateLoop = 3;
+    PortConnectionType_PublicLoop = 4;
+    PortConnectionType_Generic = 5;
+    PortConnectionType_ExtenderFabric = 6;
+    PortConnectionType_FPort = 7;
+    PortConnectionType_EPort = 8;
+    PortConnectionType_TEPort = 9;
+    PortConnectionType_NPPort = 10;
+    PortConnectionType_GPort = 11;
+    PortConnectionType_NLPort = 12;
+    PortConnectionType_FLPort = 13;
+    PortConnectionType_EXPort = 14;
+    PortConnectionType_UPort = 15;
+    PortConnectionType_DPort = 16;
+}

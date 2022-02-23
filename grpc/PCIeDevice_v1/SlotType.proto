@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package PCIeDevice;
+
+enum SlotType {
+    SlotType_FullLength = 0;
+    SlotType_HalfLength = 1;
+    SlotType_LowProfile = 2;
+    SlotType_Mini = 3;
+    SlotType_M2 = 4;
+    SlotType_OEM = 5;
+    SlotType_OCP3Small = 6;
+    SlotType_OCP3Large = 7;
+    SlotType_U2 = 8;
+}

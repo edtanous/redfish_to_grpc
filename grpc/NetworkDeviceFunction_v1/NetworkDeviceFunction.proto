@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package NetworkDeviceFunction;
+
+import "NavigationReference.proto";
+import "NetworkDeviceFunction_v1/Actions.proto";
+import "NetworkDeviceFunction_v1/BootMode.proto";
+import "NetworkDeviceFunction_v1/Ethernet.proto";
+import "NetworkDeviceFunction_v1/FibreChannel.proto";
+import "NetworkDeviceFunction_v1/InfiniBand.proto";
+import "NetworkDeviceFunction_v1/iSCSIBoot.proto";
+import "NetworkDeviceFunction_v1/Limit.proto";
+import "NetworkDeviceFunction_v1/Links.proto";
+import "NetworkDeviceFunction_v1/NetworkDeviceTechnology.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message NetworkDeviceFunction {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from NetworkDeviceFunction.v1_0_0.NetworkDeviceFunction
+    .Resource.Status Status = 5;
+    NetworkDeviceTechnology NetDevFuncType = 6;
+    bool DeviceEnabled = 7;
+    repeated NetworkDeviceTechnology NetDevFuncCapabilities = 8;
+    Ethernet Ethernet = 9;
+    iSCSIBoot iSCSIBoot = 10;
+    FibreChannel FibreChannel = 11;
+    repeated NavigationReference AssignablePhysicalPorts = 12;
+    NavigationReference PhysicalPortAssignment = 13;
+    BootMode BootMode = 14;
+    bool VirtualFunctionsEnabled = 15;
+    int64 MaxVirtualFunctions = 16;
+    Links Links = 17;
+
+    // from NetworkDeviceFunction.v1_1_0.NetworkDeviceFunction
+    Actions Actions = 18;
+
+    // from NetworkDeviceFunction.v1_5_0.NetworkDeviceFunction
+    repeated NavigationReference AssignablePhysicalNetworkPorts = 19;
+    NavigationReference PhysicalNetworkPortAssignment = 20;
+    InfiniBand InfiniBand = 21;
+
+    // from NetworkDeviceFunction.v1_6_0.NetworkDeviceFunction
+    NavigationReference Metrics = 22;
+
+    // from NetworkDeviceFunction.v1_7_0.NetworkDeviceFunction
+    bool SAVIEnabled = 23;
+    repeated Limit Limits = 24;
+    NavigationReference AllowDeny = 25;
+}

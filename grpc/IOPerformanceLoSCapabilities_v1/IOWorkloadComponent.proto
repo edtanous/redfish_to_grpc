@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package IOPerformanceLoSCapabilities;
+
+import "google/protobuf/any.proto";
+
+message IOWorkloadComponent{
+    map<string, google.protobuf.Any> IOWorkloadComponent = 1;
+}
+

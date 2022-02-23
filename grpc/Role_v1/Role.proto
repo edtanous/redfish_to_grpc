@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package Role;
+
+import "Privileges_v1/PrivilegeType.proto";
+import "Resource_v1/Oem.proto";
+import "Role_v1/Actions.proto";
+
+message Role {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Role.v1_0_0.Role
+    bool IsPredefined = 5;
+    repeated .Privileges.PrivilegeType AssignedPrivileges = 6;
+    repeated string OemPrivileges = 7;
+
+    // from Role.v1_1_0.Role
+    Actions Actions = 8;
+
+    // from Role.v1_2_0.Role
+    string RoleId = 9;
+
+    // from Role.v1_3_0.Role
+    bool Restricted = 10;
+    string AlternateRoleId = 11;
+}

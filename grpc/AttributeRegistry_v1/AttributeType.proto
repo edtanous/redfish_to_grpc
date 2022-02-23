@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package AttributeRegistry;
+
+enum AttributeType {
+    AttributeType_Enumeration = 0;
+    AttributeType_String = 1;
+    AttributeType_Integer = 2;
+    AttributeType_Boolean = 3;
+    AttributeType_Password = 4;
+}

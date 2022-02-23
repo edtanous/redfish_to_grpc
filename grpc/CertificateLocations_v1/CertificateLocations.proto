@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package CertificateLocations;
+
+import "CertificateLocations_v1/Actions.proto";
+import "CertificateLocations_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+
+message CertificateLocations {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from CertificateLocations.v1_0_0.CertificateLocations
+    Links Links = 5;
+    Actions Actions = 6;
+}

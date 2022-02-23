@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package Cable;
+
+enum ConnectorType {
+    ConnectorType_ACPower = 0;
+    ConnectorType_DB9 = 1;
+    ConnectorType_DCPower = 2;
+    ConnectorType_DisplayPort = 3;
+    ConnectorType_HDMI = 4;
+    ConnectorType_ICI = 5;
+    ConnectorType_IPASS = 6;
+    ConnectorType_PCIe = 7;
+    ConnectorType_Proprietary = 8;
+    ConnectorType_RJ45 = 9;
+    ConnectorType_SATA = 10;
+    ConnectorType_SCSI = 11;
+    ConnectorType_SlimSAS = 12;
+    ConnectorType_SFP = 13;
+    ConnectorType_SFPPlus = 14;
+    ConnectorType_USBA = 15;
+    ConnectorType_USBC = 16;
+    ConnectorType_QSFP = 17;
+    ConnectorType_CDFP = 18;
+    ConnectorType_OSFP = 19;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package PCIeDevice;
+
+enum LaneSplittingType {
+    LaneSplittingType_None = 0;
+    LaneSplittingType_Bridged = 1;
+    LaneSplittingType_Bifurcated = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Certificate;
+
+enum CertificateType {
+    CertificateType_PEM = 0;
+    CertificateType_PEMchain = 1;
+    CertificateType_PKCS7 = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Key;
+
+enum KeyType {
+    KeyType_NVMeoF = 0;
+}

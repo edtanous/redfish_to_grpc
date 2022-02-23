@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package Resource;
+
+enum DurableNameFormat {
+    DurableNameFormat_NAA = 0;
+    DurableNameFormat_iQN = 1;
+    DurableNameFormat_FC_WWN = 2;
+    DurableNameFormat_UUID = 3;
+    DurableNameFormat_EUI = 4;
+    DurableNameFormat_NQN = 5;
+    DurableNameFormat_NSID = 6;
+    DurableNameFormat_NGUID = 7;
+    DurableNameFormat_MACAddress = 8;
+}

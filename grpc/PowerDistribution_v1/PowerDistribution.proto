@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package PowerDistribution;
+
+import "google/protobuf/timestamp.proto";
+import "NavigationReference.proto";
+import "PowerDistribution_v1/Actions.proto";
+import "PowerDistribution_v1/Links.proto";
+import "PowerDistribution_v1/PowerEquipmentType.proto";
+import "PowerDistribution_v1/TransferConfiguration.proto";
+import "PowerDistribution_v1/TransferCriteria.proto";
+import "Redundancy_v1/RedundantGroup.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message PowerDistribution {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PowerDistribution.v1_0_0.PowerDistribution
+    PowerEquipmentType EquipmentType = 5;
+    string Model = 6;
+    string Manufacturer = 7;
+    string SerialNumber = 8;
+    string PartNumber = 9;
+    string Version = 10;
+    string FirmwareVersion = 11;
+    google.protobuf.Timestamp ProductionDate = 12;
+    string AssetTag = 13;
+    string UUID = 14;
+    .Resource.Location Location = 15;
+    TransferConfiguration TransferConfiguration = 16;
+    TransferCriteria TransferCriteria = 17;
+    NavigationReference Sensors = 18;
+    .Resource.Status Status = 19;
+    NavigationReference Mains = 20;
+    NavigationReference Branches = 21;
+    NavigationReference Feeders = 22;
+    NavigationReference Subfeeds = 23;
+    NavigationReference Outlets = 24;
+    NavigationReference OutletGroups = 25;
+    NavigationReference Metrics = 26;
+    Links Links = 27;
+    Actions Actions = 28;
+
+    // from PowerDistribution.v1_1_0.PowerDistribution
+    NavigationReference PowerSupplies = 29;
+    repeated .Redundancy.RedundantGroup PowerSupplyRedundancy = 30;
+    .Redundancy.RedundantGroup MainsRedundancy = 31;
+}

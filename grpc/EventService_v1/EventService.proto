@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package EventService;
+
+import "Event_v1/EventType.proto";
+import "EventDestination_v1/EventFormatType.proto";
+import "EventDestinationCollection_v1/EventDestinationCollection.proto";
+import "EventService_v1/Actions.proto";
+import "EventService_v1/SMTP.proto";
+import "EventService_v1/SSEFilterPropertiesSupported.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message EventService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from EventService.v1_0_0.EventService
+    bool ServiceEnabled = 5;
+    int64 DeliveryRetryAttempts = 6;
+    int64 DeliveryRetryIntervalSeconds = 7;
+    repeated .Event.EventType EventTypesForSubscription = 8;
+    Actions Actions = 9;
+    .EventDestinationCollection.EventDestinationCollection Subscriptions = 10;
+    .Resource.Status Status = 11;
+
+    // from EventService.v1_1_0.EventService
+    string ServerSentEventUri = 12;
+
+    // from EventService.v1_2_0.EventService
+    repeated string RegistryPrefixes = 13;
+    repeated string ResourceTypes = 14;
+    bool SubordinateResourcesSupported = 15;
+    repeated .EventDestination.EventFormatType EventFormatTypes = 16;
+    SSEFilterPropertiesSupported SSEFilterPropertiesSupported = 17;
+
+    // from EventService.v1_5_0.EventService
+    SMTP SMTP = 18;
+
+    // from EventService.v1_6_0.EventService
+    bool IncludeOriginOfConditionSupported = 19;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package Outlet;
+
+enum ReceptacleType {
+    ReceptacleType_NEMA_5_15R = 0;
+    ReceptacleType_NEMA_5_20R = 1;
+    ReceptacleType_NEMA_L5_20R = 2;
+    ReceptacleType_NEMA_L5_30R = 3;
+    ReceptacleType_NEMA_L6_20R = 4;
+    ReceptacleType_NEMA_L6_30R = 5;
+    ReceptacleType_IEC_60320_C13 = 6;
+    ReceptacleType_IEC_60320_C19 = 7;
+    ReceptacleType_CEE_7_Type_E = 8;
+    ReceptacleType_CEE_7_Type_F = 9;
+    ReceptacleType_SEV_1011_TYPE_12 = 10;
+    ReceptacleType_SEV_1011_TYPE_23 = 11;
+    ReceptacleType_BS_1363_Type_G = 12;
+    ReceptacleType_BusConnection = 13;
+}

@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package PCIeDevice;
+
+import "NavigationReference.proto";
+import "PCIeDevice_v1/Actions.proto";
+import "PCIeDevice_v1/DeviceType.proto";
+import "PCIeDevice_v1/Links.proto";
+import "PCIeDevice_v1/PCIeInterface.proto";
+import "PCIeDevice_v1/Slot.proto";
+import "PCIeFunctionCollection_v1/PCIeFunctionCollection.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message PCIeDevice {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PCIeDevice.v1_0_0.PCIeDevice
+    string Manufacturer = 5;
+    string Model = 6;
+    string SKU = 7;
+    string SerialNumber = 8;
+    string PartNumber = 9;
+    string AssetTag = 10;
+    DeviceType DeviceType = 11;
+    string FirmwareVersion = 12;
+    .Resource.Status Status = 13;
+    Links Links = 14;
+
+    // from PCIeDevice.v1_1_0.PCIeDevice
+    Actions Actions = 15;
+
+    // from PCIeDevice.v1_2_0.PCIeDevice
+    NavigationReference Assembly = 16;
+
+    // from PCIeDevice.v1_3_0.PCIeDevice
+    PCIeInterface PCIeInterface = 17;
+
+    // from PCIeDevice.v1_4_0.PCIeDevice
+    .PCIeFunctionCollection.PCIeFunctionCollection PCIeFunctions = 18;
+
+    // from PCIeDevice.v1_5_0.PCIeDevice
+    string UUID = 19;
+
+    // from PCIeDevice.v1_6_0.PCIeDevice
+    string SparePartNumber = 20;
+
+    // from PCIeDevice.v1_7_0.PCIeDevice
+    bool ReadyToRemove = 21;
+    NavigationReference EnvironmentMetrics = 22;
+
+    // from PCIeDevice.v1_9_0.PCIeDevice
+    Slot Slot = 23;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package HostInterface;
+
+enum AuthenticationMode {
+    AuthenticationMode_AuthNone = 0;
+    AuthenticationMode_BasicAuth = 1;
+    AuthenticationMode_RedfishSessionAuth = 2;
+    AuthenticationMode_OemAuth = 3;
+}

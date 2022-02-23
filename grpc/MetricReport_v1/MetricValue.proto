@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package MetricReport;
+
+import "google/protobuf/any.proto";
+
+message MetricValue{
+    map<string, google.protobuf.Any> MetricValue = 1;
+}
+

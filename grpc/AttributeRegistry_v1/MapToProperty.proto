@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package AttributeRegistry;
+
+enum MapToProperty {
+    MapToProperty_CurrentValue = 0;
+    MapToProperty_DefaultValue = 1;
+    MapToProperty_ReadOnly = 2;
+    MapToProperty_WriteOnly = 3;
+    MapToProperty_GrayOut = 4;
+    MapToProperty_Hidden = 5;
+    MapToProperty_Immutable = 6;
+    MapToProperty_HelpText = 7;
+    MapToProperty_WarningText = 8;
+    MapToProperty_DisplayName = 9;
+    MapToProperty_DisplayOrder = 10;
+    MapToProperty_LowerBound = 11;
+    MapToProperty_UpperBound = 12;
+    MapToProperty_MinLength = 13;
+    MapToProperty_MaxLength = 14;
+    MapToProperty_ScalarIncrement = 15;
+    MapToProperty_ValueExpression = 16;
+}

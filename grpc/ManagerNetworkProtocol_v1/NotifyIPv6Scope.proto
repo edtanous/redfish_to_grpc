@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ManagerNetworkProtocol;
+
+enum NotifyIPv6Scope {
+    NotifyIPv6Scope_Link = 0;
+    NotifyIPv6Scope_Site = 1;
+    NotifyIPv6Scope_Organization = 2;
+}

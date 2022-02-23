@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package MetricReportDefinition;
+
+enum ReportUpdatesEnum {
+    ReportUpdatesEnum_Overwrite = 0;
+    ReportUpdatesEnum_AppendWrapsWhenFull = 1;
+    ReportUpdatesEnum_AppendStopsWhenFull = 2;
+    ReportUpdatesEnum_NewReport = 3;
+}

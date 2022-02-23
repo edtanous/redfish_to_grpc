@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package TaskService;
+
+enum OverWritePolicy {
+    OverWritePolicy_Manual = 0;
+    OverWritePolicy_Oldest = 1;
+}

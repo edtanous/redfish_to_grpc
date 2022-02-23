@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Drive;
+
+enum MediaType {
+    MediaType_HDD = 0;
+    MediaType_SSD = 1;
+    MediaType_SMR = 2;
+}

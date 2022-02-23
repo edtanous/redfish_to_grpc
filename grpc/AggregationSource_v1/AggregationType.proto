@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package AggregationSource;
+
+enum AggregationType {
+    AggregationType_NotificationsOnly = 0;
+    AggregationType_Full = 1;
+}

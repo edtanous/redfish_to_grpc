@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package IPAddresses;
+
+enum AddressState {
+    AddressState_Preferred = 0;
+    AddressState_Deprecated = 1;
+    AddressState_Tentative = 2;
+    AddressState_Failed = 3;
+}

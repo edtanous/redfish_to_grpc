@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Schedule;
+
+enum DayOfWeek {
+    DayOfWeek_Monday = 0;
+    DayOfWeek_Tuesday = 1;
+    DayOfWeek_Wednesday = 2;
+    DayOfWeek_Thursday = 3;
+    DayOfWeek_Friday = 4;
+    DayOfWeek_Saturday = 5;
+    DayOfWeek_Sunday = 6;
+    DayOfWeek_Every = 7;
+}

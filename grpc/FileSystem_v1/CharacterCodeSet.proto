@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package FileSystem;
+
+enum CharacterCodeSet {
+    CharacterCodeSet_ASCII = 0;
+    CharacterCodeSet_Unicode = 1;
+    CharacterCodeSet_ISO2022 = 2;
+    CharacterCodeSet_ISO8859_1 = 3;
+    CharacterCodeSet_ExtendedUNIXCode = 4;
+    CharacterCodeSet_UTF_8 = 5;
+    CharacterCodeSet_UTF_16 = 6;
+    CharacterCodeSet_UCS_2 = 7;
+}

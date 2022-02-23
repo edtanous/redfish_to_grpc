@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package MediaController;
+
+import "MediaController_v1/Actions.proto";
+import "MediaController_v1/Links.proto";
+import "MediaController_v1/MediaControllerType.proto";
+import "NavigationReference.proto";
+import "PortCollection_v1/PortCollection.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message MediaController {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MediaController.v1_0_0.MediaController
+    Links Links = 5;
+    string Manufacturer = 6;
+    string Model = 7;
+    string SerialNumber = 8;
+    string PartNumber = 9;
+    .Resource.Status Status = 10;
+    .PortCollection.PortCollection Ports = 11;
+    MediaControllerType MediaControllerType = 12;
+    Actions Actions = 13;
+
+    // from MediaController.v1_1_0.MediaController
+    string UUID = 14;
+
+    // from MediaController.v1_2_0.MediaController
+    NavigationReference EnvironmentMetrics = 15;
+}

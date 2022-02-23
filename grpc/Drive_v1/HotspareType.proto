@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Drive;
+
+enum HotspareType {
+    HotspareType_None = 0;
+    HotspareType_Global = 1;
+    HotspareType_Chassis = 2;
+    HotspareType_Dedicated = 3;
+}

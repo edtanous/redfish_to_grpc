@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package MetricDefinition;
+
+enum MetricDataType {
+    MetricDataType_Boolean = 0;
+    MetricDataType_DateTime = 1;
+    MetricDataType_Decimal = 2;
+    MetricDataType_Integer = 3;
+    MetricDataType_String = 4;
+    MetricDataType_Enumeration = 5;
+}

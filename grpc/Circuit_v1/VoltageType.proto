@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Circuit;
+
+enum VoltageType {
+    VoltageType_AC = 0;
+    VoltageType_DC = 1;
+}

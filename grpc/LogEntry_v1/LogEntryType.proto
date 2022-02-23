@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package LogEntry;
+
+enum LogEntryType {
+    LogEntryType_Event = 0;
+    LogEntryType_SEL = 1;
+    LogEntryType_Oem = 2;
+}

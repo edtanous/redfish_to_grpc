@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package Protocol;
+
+enum Protocol {
+    Protocol_PCIe = 0;
+    Protocol_AHCI = 1;
+    Protocol_UHCI = 2;
+    Protocol_SAS = 3;
+    Protocol_SATA = 4;
+    Protocol_USB = 5;
+    Protocol_NVMe = 6;
+    Protocol_FC = 7;
+    Protocol_iSCSI = 8;
+    Protocol_FCoE = 9;
+    Protocol_FCP = 10;
+    Protocol_FICON = 11;
+    Protocol_NVMeOverFabrics = 12;
+    Protocol_SMB = 13;
+    Protocol_NFSv3 = 14;
+    Protocol_NFSv4 = 15;
+    Protocol_HTTP = 16;
+    Protocol_HTTPS = 17;
+    Protocol_FTP = 18;
+    Protocol_SFTP = 19;
+    Protocol_iWARP = 20;
+    Protocol_RoCE = 21;
+    Protocol_RoCEv2 = 22;
+    Protocol_I2C = 23;
+    Protocol_TCP = 24;
+    Protocol_UDP = 25;
+    Protocol_TFTP = 26;
+    Protocol_GenZ = 27;
+    Protocol_MultiProtocol = 28;
+    Protocol_InfiniBand = 29;
+    Protocol_Ethernet = 30;
+    Protocol_NVLink = 31;
+    Protocol_OEM = 32;
+    Protocol_DisplayPort = 33;
+    Protocol_HDMI = 34;
+    Protocol_VGA = 35;
+    Protocol_DVI = 36;
+}

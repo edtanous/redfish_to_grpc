@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Resource;
+
+import "Resource_v1/Oem.proto";
+
+message ReferenceableMember {
+    // from Resource.Item
+    Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+}

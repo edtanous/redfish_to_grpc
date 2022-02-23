@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package LogEntryCollection;
+
+import "LogEntry_v1/LogEntry.proto";
+import "Resource_v1/Oem.proto";
+
+message LogEntryCollection {
+    // from Resource.v1_0_0.ResourceCollection
+    string Description = 1;
+    string Name = 2;
+    .Resource.Oem Oem = 3;
+
+    // from LogEntryCollection.LogEntryCollection
+    repeated .LogEntry.LogEntry Members = 4;
+}

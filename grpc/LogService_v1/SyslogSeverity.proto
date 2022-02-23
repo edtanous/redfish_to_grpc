@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package LogService;
+
+enum SyslogSeverity {
+    SyslogSeverity_Emergency = 0;
+    SyslogSeverity_Alert = 1;
+    SyslogSeverity_Critical = 2;
+    SyslogSeverity_Error = 3;
+    SyslogSeverity_Warning = 4;
+    SyslogSeverity_Notice = 5;
+    SyslogSeverity_Informational = 6;
+    SyslogSeverity_Debug = 7;
+    SyslogSeverity_All = 8;
+}

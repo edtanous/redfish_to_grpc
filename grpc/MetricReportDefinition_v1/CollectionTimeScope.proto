@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package MetricReportDefinition;
+
+enum CollectionTimeScope {
+    CollectionTimeScope_Point = 0;
+    CollectionTimeScope_Interval = 1;
+    CollectionTimeScope_StartupInterval = 2;
+}

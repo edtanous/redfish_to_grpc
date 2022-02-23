@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package PowerDistributionMetrics;
+
+import "NavigationReference.proto";
+import "PowerDistributionMetrics_v1/Actions.proto";
+import "Resource_v1/Oem.proto";
+
+message PowerDistributionMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PowerDistributionMetrics.v1_0_0.PowerDistributionMetrics
+    NavigationReference PowerWatts = 5;
+    NavigationReference EnergykWh = 6;
+    Actions Actions = 7;
+
+    // from PowerDistributionMetrics.v1_1_0.PowerDistributionMetrics
+    NavigationReference TemperatureCelsius = 8;
+    NavigationReference HumidityPercent = 9;
+
+    // from PowerDistributionMetrics.v1_2_0.PowerDistributionMetrics
+    NavigationReference PowerLoadPercent = 10;
+
+    // from PowerDistributionMetrics.v1_3_0.PowerDistributionMetrics
+    NavigationReference AbsoluteHumidity = 11;
+}

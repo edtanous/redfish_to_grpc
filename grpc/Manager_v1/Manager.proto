@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package Manager;
+
+import "AccountService_v1/AccountService.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "EthernetInterfaceCollection_v1/EthernetInterfaceCollection.proto";
+import "google/protobuf/timestamp.proto";
+import "LogServiceCollection_v1/LogServiceCollection.proto";
+import "Manager_v1/Actions.proto";
+import "Manager_v1/CommandShell.proto";
+import "Manager_v1/GraphicalConsole.proto";
+import "Manager_v1/Links.proto";
+import "Manager_v1/ManagerType.proto";
+import "Manager_v1/SerialConsole.proto";
+import "ManagerNetworkProtocol_v1/ManagerNetworkProtocol.proto";
+import "NavigationReference.proto";
+import "Redundancy_v1/Redundancy.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/PowerState.proto";
+import "Resource_v1/Status.proto";
+import "SerialInterfaceCollection_v1/SerialInterfaceCollection.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+import "VirtualMediaCollection_v1/VirtualMediaCollection.proto";
+
+message Manager {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Manager.v1_0_0.Manager
+    ManagerType ManagerType = 5;
+    Links Links = 6;
+    .EthernetInterfaceCollection.EthernetInterfaceCollection EthernetInterfaces = 7;
+    .SerialInterfaceCollection.SerialInterfaceCollection SerialInterfaces = 8;
+    .ManagerNetworkProtocol.ManagerNetworkProtocol NetworkProtocol = 9;
+    .LogServiceCollection.LogServiceCollection LogServices = 10;
+    .VirtualMediaCollection.VirtualMediaCollection VirtualMedia = 11;
+    string ServiceEntryPointUUID = 12;
+    string UUID = 13;
+    string Model = 14;
+    google.protobuf.Timestamp DateTime = 15;
+    string DateTimeLocalOffset = 16;
+    string FirmwareVersion = 17;
+    SerialConsole SerialConsole = 18;
+    CommandShell CommandShell = 19;
+    GraphicalConsole GraphicalConsole = 20;
+    Actions Actions = 21;
+    .Resource.Status Status = 22;
+    repeated .Redundancy.Redundancy Redundancy = 23;
+
+    // from Manager.v1_2_0.Manager
+    .Resource.PowerState PowerState = 24;
+
+    // from Manager.v1_3_0.Manager
+    NavigationReference HostInterfaces = 25;
+
+    // from Manager.v1_4_0.Manager
+    bool AutoDSTEnabled = 26;
+
+    // from Manager.v1_5_0.Manager
+    string RemoteRedfishServiceUri = 27;
+    .AccountService.AccountService RemoteAccountService = 28;
+
+    // from Manager.v1_7_0.Manager
+    string Manufacturer = 29;
+    string SerialNumber = 30;
+    string PartNumber = 31;
+
+    // from Manager.v1_9_0.Manager
+    google.protobuf.Timestamp LastResetTime = 32;
+
+    // from Manager.v1_10_0.Manager
+    string TimeZoneName = 33;
+
+    // from Manager.v1_11_0.Manager
+    .Resource.Location Location = 34;
+    bool LocationIndicatorActive = 35;
+    string SparePartNumber = 36;
+
+    // from Manager.v1_12_0.Manager
+    NavigationReference USBPorts = 37;
+
+    // from Manager.v1_13_0.Manager
+    .CertificateCollection.CertificateCollection Certificates = 38;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 39;
+
+    // from Manager.v1_14_0.Manager
+    NavigationReference ManagerDiagnosticData = 40;
+}

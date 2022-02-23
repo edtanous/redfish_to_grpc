@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package Memory;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "LogService_v1/LogService.proto";
+import "Memory_v1/Actions.proto";
+import "Memory_v1/BaseModuleType.proto";
+import "Memory_v1/ErrorCorrection.proto";
+import "Memory_v1/Links.proto";
+import "Memory_v1/MemoryDeviceType.proto";
+import "Memory_v1/MemoryLocation.proto";
+import "Memory_v1/MemoryMedia.proto";
+import "Memory_v1/MemoryType.proto";
+import "Memory_v1/OperatingMemoryModes.proto";
+import "Memory_v1/PowerManagementPolicy.proto";
+import "Memory_v1/RegionSet.proto";
+import "Memory_v1/SecurityCapabilities.proto";
+import "Memory_v1/SecurityStates.proto";
+import "MemoryMetrics_v1/MemoryMetrics.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+
+message Memory {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Memory.v1_0_0.Memory
+    MemoryType MemoryType = 5;
+    MemoryDeviceType MemoryDeviceType = 6;
+    BaseModuleType BaseModuleType = 7;
+    repeated MemoryMedia MemoryMedia = 8;
+    int64 CapacityMiB = 9;
+    int64 DataWidthBits = 10;
+    int64 BusWidthBits = 11;
+    string Manufacturer = 12;
+    string SerialNumber = 13;
+    string PartNumber = 14;
+    repeated int64 AllowedSpeedsMHz = 15;
+    string FirmwareRevision = 16;
+    string FirmwareApiVersion = 17;
+    repeated string FunctionClasses = 18;
+    string VendorID = 19;
+    string DeviceID = 20;
+    string SubsystemVendorID = 21;
+    string SubsystemDeviceID = 22;
+    repeated int64 MaxTDPMilliWatts = 23;
+    SecurityCapabilities SecurityCapabilities = 24;
+    int64 SpareDeviceCount = 25;
+    int64 RankCount = 26;
+    string DeviceLocator = 27;
+    MemoryLocation MemoryLocation = 28;
+    ErrorCorrection ErrorCorrection = 29;
+    int64 OperatingSpeedMhz = 30;
+    int64 VolatileRegionSizeLimitMiB = 31;
+    int64 PersistentRegionSizeLimitMiB = 32;
+    repeated RegionSet Regions = 33;
+    repeated OperatingMemoryModes OperatingMemoryModes = 34;
+    PowerManagementPolicy PowerManagementPolicy = 35;
+    bool IsSpareDeviceEnabled = 36;
+    bool IsRankSpareEnabled = 37;
+    .MemoryMetrics.MemoryMetrics Metrics = 38;
+    Actions Actions = 39;
+
+    // from Memory.v1_1_0.Memory
+    .Resource.Status Status = 40;
+
+    // from Memory.v1_2_0.Memory
+    int64 VolatileRegionNumberLimit = 41;
+    int64 PersistentRegionNumberLimit = 42;
+    int64 VolatileRegionSizeMaxMiB = 43;
+    int64 PersistentRegionSizeMaxMiB = 44;
+    int64 AllocationIncrementMiB = 45;
+    int64 AllocationAlignmentMiB = 46;
+    Links Links = 47;
+
+    // from Memory.v1_3_0.Memory
+    string ModuleManufacturerID = 48;
+    string ModuleProductID = 49;
+    string MemorySubsystemControllerManufacturerID = 50;
+    string MemorySubsystemControllerProductID = 51;
+
+    // from Memory.v1_4_0.Memory
+    int64 VolatileSizeMiB = 52;
+    int64 NonVolatileSizeMiB = 53;
+    int64 CacheSizeMiB = 54;
+    int64 LogicalSizeMiB = 55;
+    .Resource.Location Location = 56;
+    NavigationReference Assembly = 57;
+
+    // from Memory.v1_7_0.Memory
+    SecurityStates SecurityState = 58;
+    bool ConfigurationLocked = 59;
+
+    // from Memory.v1_10_0.Memory
+    bool LocationIndicatorActive = 60;
+
+    // from Memory.v1_11_0.Memory
+    string SparePartNumber = 61;
+    string Model = 62;
+    NavigationReference EnvironmentMetrics = 63;
+    .CertificateCollection.CertificateCollection Certificates = 64;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 65;
+
+    // from Memory.v1_12_0.Memory
+    bool Enabled = 66;
+
+    // from Memory.v1_13_0.Memory
+    .LogService.LogService Log = 67;
+    NavigationReference OperatingSpeedRangeMHz = 68;
+}

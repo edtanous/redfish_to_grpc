@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package LogEntry;
+
+enum EventSeverity {
+    EventSeverity_OK = 0;
+    EventSeverity_Warning = 1;
+    EventSeverity_Critical = 2;
+}

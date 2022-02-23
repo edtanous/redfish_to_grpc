@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package Chassis;
+
+import "Assembly_v1/Assembly.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "Chassis_v1/Actions.proto";
+import "Chassis_v1/ChassisType.proto";
+import "Chassis_v1/EnvironmentalClass.proto";
+import "Chassis_v1/IndicatorLED.proto";
+import "Chassis_v1/Links.proto";
+import "Chassis_v1/PhysicalSecurity.proto";
+import "Chassis_v1/PowerState.proto";
+import "ControlCollection_v1/ControlCollection.proto";
+import "DriveCollection_v1/DriveCollection.proto";
+import "LogServiceCollection_v1/LogServiceCollection.proto";
+import "MediaControllerCollection_v1/MediaControllerCollection.proto";
+import "MemoryCollection_v1/MemoryCollection.proto";
+import "MemoryDomainCollection_v1/MemoryDomainCollection.proto";
+import "NavigationReference.proto";
+import "NetworkAdapterCollection_v1/NetworkAdapterCollection.proto";
+import "PCIeDeviceCollection_v1/PCIeDeviceCollection.proto";
+import "PCIeSlots_v1/PCIeSlots.proto";
+import "Power_v1/Power.proto";
+import "PowerSubsystem_v1/PowerSubsystem.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+import "Thermal_v1/Thermal.proto";
+import "ThermalSubsystem_v1/ThermalSubsystem.proto";
+
+message Chassis {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Chassis.v1_0_0.Chassis
+    ChassisType ChassisType = 5;
+    string Manufacturer = 6;
+    string Model = 7;
+    string SKU = 8;
+    string SerialNumber = 9;
+    string PartNumber = 10;
+    string AssetTag = 11;
+    IndicatorLED IndicatorLED = 12;
+    Links Links = 13;
+    Actions Actions = 14;
+    .Resource.Status Status = 15;
+    .LogServiceCollection.LogServiceCollection LogServices = 16;
+    .Thermal.Thermal Thermal = 17;
+    .Power.Power Power = 18;
+
+    // from Chassis.v1_0_1.Chassis
+    PowerState PowerState = 19;
+
+    // from Chassis.v1_1_0.Chassis
+    PhysicalSecurity PhysicalSecurity = 20;
+
+    // from Chassis.v1_2_0.Chassis
+    .Resource.Location Location = 21;
+
+    // from Chassis.v1_4_0.Chassis
+    double HeightMm = 22;
+    double WidthMm = 23;
+    double DepthMm = 24;
+    double WeightKg = 25;
+    .NetworkAdapterCollection.NetworkAdapterCollection NetworkAdapters = 26;
+
+    // from Chassis.v1_6_0.Chassis
+    .Assembly.Assembly Assembly = 27;
+
+    // from Chassis.v1_7_0.Chassis
+    string UUID = 28;
+
+    // from Chassis.v1_8_0.Chassis
+    .PCIeSlots.PCIeSlots PCIeSlots = 29;
+
+    // from Chassis.v1_9_0.Chassis
+    EnvironmentalClass EnvironmentalClass = 30;
+    NavigationReference Sensors = 31;
+
+    // from Chassis.v1_10_0.Chassis
+    .PCIeDeviceCollection.PCIeDeviceCollection PCIeDevices = 32;
+
+    // from Chassis.v1_11_0.Chassis
+    .MediaControllerCollection.MediaControllerCollection MediaControllers = 33;
+    .MemoryCollection.MemoryCollection Memory = 34;
+    .MemoryDomainCollection.MemoryDomainCollection MemoryDomains = 35;
+
+    // from Chassis.v1_12_0.Chassis
+    double MaxPowerWatts = 36;
+    double MinPowerWatts = 37;
+
+    // from Chassis.v1_14_0.Chassis
+    bool LocationIndicatorActive = 38;
+    .DriveCollection.DriveCollection Drives = 39;
+
+    // from Chassis.v1_15_0.Chassis
+    .PowerSubsystem.PowerSubsystem PowerSubsystem = 40;
+    .ThermalSubsystem.ThermalSubsystem ThermalSubsystem = 41;
+    NavigationReference EnvironmentMetrics = 42;
+    .CertificateCollection.CertificateCollection Certificates = 43;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 44;
+
+    // from Chassis.v1_16_0.Chassis
+    string SparePartNumber = 45;
+
+    // from Chassis.v1_17_0.Chassis
+    .ControlCollection.ControlCollection Controls = 46;
+
+    // from Chassis.v1_18_0.Chassis
+    repeated string ElectricalSourceManagerURIs = 47;
+    repeated string ElectricalSourceNames = 48;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package Connection;
+
+import "Connection_v1/Actions.proto";
+import "Connection_v1/ConnectionKey.proto";
+import "Connection_v1/ConnectionType.proto";
+import "Connection_v1/Links.proto";
+import "Connection_v1/MemoryChunkInfo.proto";
+import "Connection_v1/VolumeInfo.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Connection {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Connection.v1_0_0.Connection
+    .Resource.Status Status = 5;
+    ConnectionType ConnectionType = 6;
+    repeated VolumeInfo VolumeInfo = 7;
+    Links Links = 8;
+    Actions Actions = 9;
+
+    // from Connection.v1_1_0.Connection
+    repeated MemoryChunkInfo MemoryChunkInfo = 10;
+    ConnectionKey ConnectionKeys = 11;
+}

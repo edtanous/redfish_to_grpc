@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package Event;
+
+import "Event_v1/EventRecordActions.proto";
+import "Event_v1/EventType.proto";
+import "google/protobuf/timestamp.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Health.proto";
+import "Resource_v1/Oem.proto";
+
+message EventRecord {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Event.v1_0_0.EventRecord
+    EventType EventType = 3;
+    string EventId = 4;
+    google.protobuf.Timestamp EventTimestamp = 5;
+    string Severity = 6;
+    string Message = 7;
+    string MessageId = 8;
+    repeated string MessageArgs = 9;
+    string Context = 10;
+    NavigationReference OriginOfCondition = 11;
+
+    // from Event.v1_2_0.EventRecord
+    EventRecordActions Actions = 12;
+
+    // from Event.v1_3_0.EventRecord
+    int64 EventGroupId = 13;
+
+    // from Event.v1_5_0.EventRecord
+    .Resource.Health MessageSeverity = 14;
+
+    // from Event.v1_6_0.EventRecord
+    bool SpecificEventExistsInGroup = 15;
+
+    // from Event.v1_7_0.EventRecord
+    NavigationReference LogEntry = 16;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Zone;
+
+enum ExternalAccessibility {
+    ExternalAccessibility_GloballyAccessible = 0;
+    ExternalAccessibility_NonZonedAccessible = 1;
+    ExternalAccessibility_ZoneOnly = 2;
+    ExternalAccessibility_NoInternalRouting = 3;
+}

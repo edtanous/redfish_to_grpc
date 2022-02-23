@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Port;
+
+enum MediumType {
+    MediumType_Copper = 0;
+    MediumType_FiberOptic = 1;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package AttributeRegistry;
+
+import "AttributeRegistry_v1/Actions.proto";
+import "AttributeRegistry_v1/RegistryEntries.proto";
+import "AttributeRegistry_v1/SupportedSystems.proto";
+import "Resource_v1/Oem.proto";
+
+message AttributeRegistry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from AttributeRegistry.v1_0_0.AttributeRegistry
+    string Language = 5;
+    string RegistryVersion = 6;
+    string OwningEntity = 7;
+    repeated SupportedSystems SupportedSystems = 8;
+    RegistryEntries RegistryEntries = 9;
+
+    // from AttributeRegistry.v1_1_0.AttributeRegistry
+    Actions Actions = 10;
+}

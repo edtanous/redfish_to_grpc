@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaUpdateMode {
+    ReplicaUpdateMode_Active = 0;
+    ReplicaUpdateMode_Synchronous = 1;
+    ReplicaUpdateMode_Asynchronous = 2;
+    ReplicaUpdateMode_Adaptive = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Manifest;
+
+enum Expand {
+    Expand_None = 0;
+    Expand_All = 1;
+    Expand_Relevant = 2;
+}

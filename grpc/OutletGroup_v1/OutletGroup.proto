@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package OutletGroup;
+
+import "Circuit_v1/PowerRestorePolicyTypes.proto";
+import "NavigationReference.proto";
+import "OutletGroup_v1/Actions.proto";
+import "OutletGroup_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/PowerState.proto";
+import "Resource_v1/Status.proto";
+
+message OutletGroup {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from OutletGroup.v1_0_0.OutletGroup
+    .Resource.Status Status = 5;
+    string CreatedBy = 6;
+    double PowerOnDelaySeconds = 7;
+    double PowerOffDelaySeconds = 8;
+    double PowerCycleDelaySeconds = 9;
+    double PowerRestoreDelaySeconds = 10;
+    .Circuit.PowerRestorePolicyTypes PowerRestorePolicy = 11;
+    .Resource.PowerState PowerState = 12;
+    bool PowerEnabled = 13;
+    NavigationReference PowerWatts = 14;
+    NavigationReference EnergykWh = 15;
+    Links Links = 16;
+    Actions Actions = 17;
+
+    // from OutletGroup.v1_1_0.OutletGroup
+    bool PowerControlLocked = 18;
+    bool ConfigurationLocked = 19;
+    bool PowerStateInTransition = 20;
+}

@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package EventDestination;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "Event_v1/EventType.proto";
+import "EventDestination_v1/Actions.proto";
+import "EventDestination_v1/DeliveryRetryPolicy.proto";
+import "EventDestination_v1/EventDestinationProtocol.proto";
+import "EventDestination_v1/EventFormatType.proto";
+import "EventDestination_v1/HttpHeaderProperty.proto";
+import "EventDestination_v1/SNMPSettings.proto";
+import "EventDestination_v1/SubscriptionType.proto";
+import "EventDestination_v1/SyslogFilter.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message EventDestination {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from EventDestination.v1_0_0.EventDestination
+    string Destination = 5;
+    repeated .Event.EventType EventTypes = 6;
+    string Context = 7;
+    EventDestinationProtocol Protocol = 8;
+    repeated HttpHeaderProperty HttpHeaders = 9;
+
+    // from EventDestination.v1_1_0.EventDestination
+    repeated NavigationReference OriginResources = 10;
+    repeated string MessageIds = 11;
+
+    // from EventDestination.v1_2_0.EventDestination
+    Actions Actions = 12;
+
+    // from EventDestination.v1_3_0.EventDestination
+    SubscriptionType SubscriptionType = 13;
+
+    // from EventDestination.v1_4_0.EventDestination
+    repeated string RegistryPrefixes = 14;
+    repeated string ResourceTypes = 15;
+    bool SubordinateResources = 16;
+    EventFormatType EventFormatType = 17;
+
+    // from EventDestination.v1_6_0.EventDestination
+    DeliveryRetryPolicy DeliveryRetryPolicy = 18;
+    .Resource.Status Status = 19;
+    repeated NavigationReference MetricReportDefinitions = 20;
+
+    // from EventDestination.v1_7_0.EventDestination
+    SNMPSettings SNMP = 21;
+
+    // from EventDestination.v1_8_0.EventDestination
+    bool IncludeOriginOfCondition = 22;
+
+    // from EventDestination.v1_9_0.EventDestination
+    .CertificateCollection.CertificateCollection Certificates = 23;
+    bool VerifyCertificate = 24;
+    repeated SyslogFilter SyslogFilters = 25;
+    string OEMProtocol = 26;
+    string OEMSubscriptionType = 27;
+
+    // from EventDestination.v1_11_0.EventDestination
+    bool SendHeartbeat = 28;
+    int64 HeartbeatIntervalMinutes = 29;
+    .CertificateCollection.CertificateCollection ClientCertificates = 30;
+}

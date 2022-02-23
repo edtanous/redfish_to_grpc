@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaProgressStatus {
+    ReplicaProgressStatus_Completed = 0;
+    ReplicaProgressStatus_Dormant = 1;
+    ReplicaProgressStatus_Initializing = 2;
+    ReplicaProgressStatus_Preparing = 3;
+    ReplicaProgressStatus_Synchronizing = 4;
+    ReplicaProgressStatus_Resyncing = 5;
+    ReplicaProgressStatus_Restoring = 6;
+    ReplicaProgressStatus_Fracturing = 7;
+    ReplicaProgressStatus_Splitting = 8;
+    ReplicaProgressStatus_FailingOver = 9;
+    ReplicaProgressStatus_FailingBack = 10;
+    ReplicaProgressStatus_Detaching = 11;
+    ReplicaProgressStatus_Aborting = 12;
+    ReplicaProgressStatus_Mixed = 13;
+    ReplicaProgressStatus_Suspending = 14;
+    ReplicaProgressStatus_RequiresFracture = 15;
+    ReplicaProgressStatus_RequiresResync = 16;
+    ReplicaProgressStatus_RequiresActivate = 17;
+    ReplicaProgressStatus_Pending = 18;
+    ReplicaProgressStatus_RequiresDetach = 19;
+    ReplicaProgressStatus_Terminating = 20;
+    ReplicaProgressStatus_RequiresSplit = 21;
+    ReplicaProgressStatus_RequiresResume = 22;
+}

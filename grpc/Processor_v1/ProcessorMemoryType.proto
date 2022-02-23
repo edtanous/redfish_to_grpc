@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package Processor;
+
+enum ProcessorMemoryType {
+    ProcessorMemoryType_L1Cache = 0;
+    ProcessorMemoryType_L2Cache = 1;
+    ProcessorMemoryType_L3Cache = 2;
+    ProcessorMemoryType_L4Cache = 3;
+    ProcessorMemoryType_L5Cache = 4;
+    ProcessorMemoryType_L6Cache = 5;
+    ProcessorMemoryType_L7Cache = 6;
+    ProcessorMemoryType_HBM1 = 7;
+    ProcessorMemoryType_HBM2 = 8;
+    ProcessorMemoryType_HBM3 = 9;
+    ProcessorMemoryType_SGRAM = 10;
+    ProcessorMemoryType_GDDR = 11;
+    ProcessorMemoryType_GDDR2 = 12;
+    ProcessorMemoryType_GDDR3 = 13;
+    ProcessorMemoryType_GDDR4 = 14;
+    ProcessorMemoryType_GDDR5 = 15;
+    ProcessorMemoryType_GDDR5X = 16;
+    ProcessorMemoryType_GDDR6 = 17;
+    ProcessorMemoryType_DDR = 18;
+    ProcessorMemoryType_DDR2 = 19;
+    ProcessorMemoryType_DDR3 = 20;
+    ProcessorMemoryType_DDR4 = 21;
+    ProcessorMemoryType_DDR5 = 22;
+    ProcessorMemoryType_SDRAM = 23;
+    ProcessorMemoryType_SRAM = 24;
+    ProcessorMemoryType_Flash = 25;
+    ProcessorMemoryType_OEM = 26;
+}

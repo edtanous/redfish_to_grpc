@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package BootOption;
+
+import "BootOption_v1/Actions.proto";
+import "ComputerSystem_v1/BootSource.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message BootOption {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from BootOption.v1_0_0.BootOption
+    string BootOptionReference = 5;
+    string DisplayName = 6;
+    bool BootOptionEnabled = 7;
+    string UefiDevicePath = 8;
+    .ComputerSystem.BootSource Alias = 9;
+    repeated NavigationReference RelatedItem = 10;
+    Actions Actions = 11;
+}

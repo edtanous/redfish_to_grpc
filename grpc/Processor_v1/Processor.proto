@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package Processor;
+
+import "AccelerationFunctionCollection_v1/AccelerationFunctionCollection.proto";
+import "Assembly_v1/Assembly.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "NavigationReference.proto";
+import "PortCollection_v1/PortCollection.proto";
+import "Processor_v1/Actions.proto";
+import "Processor_v1/BaseSpeedPriorityState.proto";
+import "Processor_v1/FPGA.proto";
+import "Processor_v1/Links.proto";
+import "Processor_v1/MemorySummary.proto";
+import "Processor_v1/ProcessorId.proto";
+import "Processor_v1/ProcessorInterface.proto";
+import "Processor_v1/ProcessorMemory.proto";
+import "Processor_v1/ProcessorType.proto";
+import "Processor_v1/TurboState.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+
+message Processor {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Processor.v1_0_0.Processor
+    string Socket = 5;
+    ProcessorType ProcessorType = 6;
+    string ProcessorArchitecture = 7;
+    string InstructionSet = 8;
+    ProcessorId ProcessorId = 9;
+    .Resource.Status Status = 10;
+    string Manufacturer = 11;
+    string Model = 12;
+    int64 MaxSpeedMHz = 13;
+    int64 TotalCores = 14;
+    int64 TotalThreads = 15;
+
+    // from Processor.v1_1_0.Processor
+    Links Links = 16;
+    Actions Actions = 17;
+
+    // from Processor.v1_2_0.Processor
+    .Resource.Location Location = 18;
+    .Assembly.Assembly Assembly = 19;
+
+    // from Processor.v1_4_0.Processor
+    int64 TDPWatts = 20;
+    int64 MaxTDPWatts = 21;
+    NavigationReference Metrics = 22;
+    string UUID = 23;
+    repeated ProcessorMemory ProcessorMemory = 24;
+    FPGA FPGA = 25;
+    .AccelerationFunctionCollection.AccelerationFunctionCollection AccelerationFunctions = 26;
+
+    // from Processor.v1_5_0.Processor
+    int64 TotalEnabledCores = 27;
+
+    // from Processor.v1_7_0.Processor
+    string SerialNumber = 28;
+    string PartNumber = 29;
+    string Version = 30;
+    string FirmwareVersion = 31;
+
+    // from Processor.v1_8_0.Processor
+    ProcessorInterface SystemInterface = 32;
+    int64 OperatingSpeedMHz = 33;
+    int64 MinSpeedMHz = 34;
+
+    // from Processor.v1_9_0.Processor
+    TurboState TurboState = 35;
+    BaseSpeedPriorityState BaseSpeedPriorityState = 36;
+    repeated int64 HighSpeedCoreIDs = 37;
+    NavigationReference OperatingConfigs = 38;
+    NavigationReference AppliedOperatingConfig = 39;
+
+    // from Processor.v1_10_0.Processor
+    bool LocationIndicatorActive = 40;
+    int64 BaseSpeedMHz = 41;
+    int64 SpeedLimitMHz = 42;
+    bool SpeedLocked = 43;
+
+    // from Processor.v1_11_0.Processor
+    MemorySummary MemorySummary = 44;
+    NavigationReference EnvironmentMetrics = 45;
+    string SparePartNumber = 46;
+    .CertificateCollection.CertificateCollection Certificates = 47;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 48;
+
+    // from Processor.v1_12_0.Processor
+    bool Enabled = 49;
+
+    // from Processor.v1_13_0.Processor
+    NavigationReference OperatingSpeedRangeMHz = 50;
+    .PortCollection.PortCollection Ports = 51;
+}

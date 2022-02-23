@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum PowerMode {
+    PowerMode_MaximumPerformance = 0;
+    PowerMode_BalancedPerformance = 1;
+    PowerMode_PowerSaving = 2;
+    PowerMode_Static = 3;
+    PowerMode_OSControlled = 4;
+    PowerMode_OEM = 5;
+}

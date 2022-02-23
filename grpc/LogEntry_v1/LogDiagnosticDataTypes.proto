@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package LogEntry;
+
+enum LogDiagnosticDataTypes {
+    LogDiagnosticDataTypes_Manager = 0;
+    LogDiagnosticDataTypes_PreOS = 1;
+    LogDiagnosticDataTypes_OS = 2;
+    LogDiagnosticDataTypes_OEM = 3;
+    LogDiagnosticDataTypes_CPER = 4;
+    LogDiagnosticDataTypes_CPERSection = 5;
+}

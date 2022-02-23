@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Triggers;
+
+enum DiscreteTriggerConditionEnum {
+    DiscreteTriggerConditionEnum_Specified = 0;
+    DiscreteTriggerConditionEnum_Changed = 1;
+}

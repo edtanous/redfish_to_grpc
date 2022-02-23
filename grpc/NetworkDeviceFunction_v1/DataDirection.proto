@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package NetworkDeviceFunction;
+
+enum DataDirection {
+    DataDirection_None = 0;
+    DataDirection_Ingress = 1;
+    DataDirection_Egress = 2;
+}

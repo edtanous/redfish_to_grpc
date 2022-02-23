@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package VCATEntry;
+
+import "Resource_v1/Oem.proto";
+import "VCATEntry_v1/Actions.proto";
+import "VCATEntry_v1/VCATableEntry.proto";
+
+message VCATEntry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from VCATEntry.v1_0_0.VCATEntry
+    string RawEntryHex = 5;
+    repeated VCATableEntry VCEntries = 6;
+    Actions Actions = 7;
+}

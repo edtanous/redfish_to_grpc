@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ComponentIntegrity;
+
+enum ComponentIntegrityType {
+    ComponentIntegrityType_SPDM = 0;
+    ComponentIntegrityType_TPM = 1;
+    ComponentIntegrityType_OEM = 2;
+}

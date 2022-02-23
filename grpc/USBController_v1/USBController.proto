@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package USBController;
+
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "USBController_v1/Actions.proto";
+import "USBController_v1/Links.proto";
+
+message USBController {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from USBController.v1_0_0.USBController
+    string Manufacturer = 5;
+    string Model = 6;
+    string SKU = 7;
+    string SerialNumber = 8;
+    string PartNumber = 9;
+    string SparePartNumber = 10;
+    .Resource.Status Status = 11;
+    NavigationReference Ports = 12;
+    Links Links = 13;
+    Actions Actions = 14;
+}

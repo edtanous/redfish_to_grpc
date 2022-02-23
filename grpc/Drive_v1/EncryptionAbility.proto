@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Drive;
+
+enum EncryptionAbility {
+    EncryptionAbility_None = 0;
+    EncryptionAbility_SelfEncryptingDrive = 1;
+    EncryptionAbility_Other = 2;
+}

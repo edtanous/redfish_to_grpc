@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package Fabric;
+
+import "AddressPoolCollection_v1/AddressPoolCollection.proto";
+import "ConnectionCollection_v1/ConnectionCollection.proto";
+import "EndpointCollection_v1/EndpointCollection.proto";
+import "EndpointGroupCollection_v1/EndpointGroupCollection.proto";
+import "Fabric_v1/Actions.proto";
+import "Fabric_v1/Links.proto";
+import "Protocol_v1/Protocol.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SwitchCollection_v1/SwitchCollection.proto";
+import "ZoneCollection_v1/ZoneCollection.proto";
+
+message Fabric {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Fabric.v1_0_0.Fabric
+    .Protocol.Protocol FabricType = 5;
+    .Resource.Status Status = 6;
+    int64 MaxZones = 7;
+    .ZoneCollection.ZoneCollection Zones = 8;
+    .EndpointCollection.EndpointCollection Endpoints = 9;
+    .SwitchCollection.SwitchCollection Switches = 10;
+    Links Links = 11;
+    Actions Actions = 12;
+
+    // from Fabric.v1_1_0.Fabric
+    .AddressPoolCollection.AddressPoolCollection AddressPools = 13;
+
+    // from Fabric.v1_2_0.Fabric
+    .ConnectionCollection.ConnectionCollection Connections = 14;
+    .EndpointGroupCollection.EndpointGroupCollection EndpointGroups = 15;
+
+    // from Fabric.v1_3_0.Fabric
+    string UUID = 16;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package JsonSchemaFile;
+
+import "JsonSchemaFile_v1/Actions.proto";
+import "JsonSchemaFile_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+
+message JsonSchemaFile {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from JsonSchemaFile.v1_0_0.JsonSchemaFile
+    repeated string Languages = 5;
+    string Schema = 6;
+    repeated Location Location = 7;
+
+    // from JsonSchemaFile.v1_1_0.JsonSchemaFile
+    Actions Actions = 8;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package NetworkDeviceFunctionMetrics;
+
+import "NetworkDeviceFunctionMetrics_v1/Actions.proto";
+import "NetworkDeviceFunctionMetrics_v1/Ethernet.proto";
+import "NetworkDeviceFunctionMetrics_v1/FibreChannel.proto";
+import "Resource_v1/Oem.proto";
+
+message NetworkDeviceFunctionMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from NetworkDeviceFunctionMetrics.v1_0_0.NetworkDeviceFunctionMetrics
+    Ethernet Ethernet = 5;
+    double TXAvgQueueDepthPercent = 6;
+    double RXAvgQueueDepthPercent = 7;
+    int64 RXFrames = 8;
+    int64 RXBytes = 9;
+    int64 RXUnicastFrames = 10;
+    int64 RXMulticastFrames = 11;
+    int64 TXFrames = 12;
+    int64 TXBytes = 13;
+    int64 TXUnicastFrames = 14;
+    int64 TXMulticastFrames = 15;
+    bool TXQueuesEmpty = 16;
+    bool RXQueuesEmpty = 17;
+    int64 TXQueuesFull = 18;
+    int64 RXQueuesFull = 19;
+    Actions Actions = 20;
+
+    // from NetworkDeviceFunctionMetrics.v1_1_0.NetworkDeviceFunctionMetrics
+    FibreChannel FibreChannel = 21;
+}

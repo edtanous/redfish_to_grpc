@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package NVMeFirmwareImage;
+
+import "NVMeFirmwareImage_v1/Actions.proto";
+import "NVMeFirmwareImage_v1/NVMeDeviceType.proto";
+import "Resource_v1/Oem.proto";
+
+message NVMeFirmwareImage {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from NVMeFirmwareImage.v1_0_0.NVMeFirmwareImage
+    string FirmwareVersion = 5;
+    string Vendor = 6;
+    NVMeDeviceType NVMeDeviceType = 7;
+    Actions Actions = 8;
+}

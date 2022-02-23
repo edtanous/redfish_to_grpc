@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package DataProtectionLoSCapabilities;
+
+enum FailureDomainScope {
+    FailureDomainScope_Server = 0;
+    FailureDomainScope_Rack = 1;
+    FailureDomainScope_RackGroup = 2;
+    FailureDomainScope_Row = 3;
+    FailureDomainScope_Datacenter = 4;
+    FailureDomainScope_Region = 5;
+}

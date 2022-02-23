@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Control;
+
+enum ControlMode {
+    ControlMode_Automatic = 0;
+    ControlMode_Override = 1;
+    ControlMode_Manual = 2;
+    ControlMode_Disabled = 3;
+}

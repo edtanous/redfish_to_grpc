@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Org;
+
+enum ConformanceLevelType {
+    ConformanceLevelType_Minimal = 0;
+    ConformanceLevelType_Intermediate = 1;
+    ConformanceLevelType_Advanced = 2;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package AccelerationFunction;
+
+import "AccelerationFunction_v1/AccelerationFunctionType.proto";
+import "AccelerationFunction_v1/Actions.proto";
+import "AccelerationFunction_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message AccelerationFunction {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from AccelerationFunction.v1_0_0.AccelerationFunction
+    .Resource.Status Status = 5;
+    string UUID = 6;
+    repeated string FpgaReconfigurationSlots = 7;
+    AccelerationFunctionType AccelerationFunctionType = 8;
+    string Manufacturer = 9;
+    string Version = 10;
+    int64 PowerWatts = 11;
+    Links Links = 12;
+    Actions Actions = 13;
+}

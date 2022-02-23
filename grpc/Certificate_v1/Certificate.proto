@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package Certificate;
+
+import "Certificate_v1/Actions.proto";
+import "Certificate_v1/CertificateType.proto";
+import "Certificate_v1/CertificateUsageType.proto";
+import "Certificate_v1/Identifier.proto";
+import "Certificate_v1/KeyUsage.proto";
+import "Certificate_v1/Links.proto";
+import "Certificate_v1/SPDM.proto";
+import "google/protobuf/timestamp.proto";
+import "Resource_v1/Oem.proto";
+
+message Certificate {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Certificate.v1_0_0.Certificate
+    string CertificateString = 5;
+    CertificateType CertificateType = 6;
+    Identifier Issuer = 7;
+    Identifier Subject = 8;
+    google.protobuf.Timestamp ValidNotBefore = 9;
+    google.protobuf.Timestamp ValidNotAfter = 10;
+    repeated KeyUsage KeyUsage = 11;
+    Actions Actions = 12;
+
+    // from Certificate.v1_2_0.Certificate
+    string UefiSignatureOwner = 13;
+
+    // from Certificate.v1_3_0.Certificate
+    string SerialNumber = 14;
+    string Fingerprint = 15;
+    string FingerprintHashAlgorithm = 16;
+    string SignatureAlgorithm = 17;
+
+    // from Certificate.v1_4_0.Certificate
+    Links Links = 18;
+    repeated CertificateUsageType CertificateUsageTypes = 19;
+
+    // from Certificate.v1_5_0.Certificate
+    SPDM SPDM = 20;
+}

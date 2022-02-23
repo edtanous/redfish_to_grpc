@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Event;
+
+enum EventType {
+    EventType_StatusChange = 0;
+    EventType_ResourceUpdated = 1;
+    EventType_ResourceAdded = 2;
+    EventType_ResourceRemoved = 3;
+    EventType_Alert = 4;
+    EventType_MetricReport = 5;
+    EventType_Other = 6;
+}

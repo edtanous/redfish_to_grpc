@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package Cable;
+
+enum CableClass {
+    CableClass_Power = 0;
+    CableClass_Network = 1;
+    CableClass_Storage = 2;
+    CableClass_Fan = 3;
+    CableClass_PCIe = 4;
+    CableClass_USB = 5;
+    CableClass_Video = 6;
+    CableClass_Fabric = 7;
+    CableClass_Serial = 8;
+    CableClass_General = 9;
+}

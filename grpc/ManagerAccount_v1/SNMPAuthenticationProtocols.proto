@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ManagerAccount;
+
+enum SNMPAuthenticationProtocols {
+    SNMPAuthenticationProtocols_None = 0;
+    SNMPAuthenticationProtocols_HMAC_MD5 = 1;
+    SNMPAuthenticationProtocols_HMAC_SHA96 = 2;
+    SNMPAuthenticationProtocols_HMAC128_SHA224 = 3;
+    SNMPAuthenticationProtocols_HMAC192_SHA256 = 4;
+    SNMPAuthenticationProtocols_HMAC256_SHA384 = 5;
+    SNMPAuthenticationProtocols_HMAC384_SHA512 = 6;
+}

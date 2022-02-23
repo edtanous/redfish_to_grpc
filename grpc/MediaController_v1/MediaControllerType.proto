@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package MediaController;
+
+enum MediaControllerType {
+    MediaControllerType_Memory = 0;
+}

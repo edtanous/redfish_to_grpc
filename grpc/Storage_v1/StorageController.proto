@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package Storage;
+
+import "Assembly_v1/Assembly.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "PCIeDevice_v1/PCIeInterface.proto";
+import "PortCollection_v1/PortCollection.proto";
+import "Protocol_v1/Protocol.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+import "Storage_v1/CacheSummary.proto";
+import "Storage_v1/Rates.proto";
+import "Storage_v1/StorageControllerActions.proto";
+import "Storage_v1/StorageControllerLinks.proto";
+import "Volume_v1/RAIDType.proto";
+
+message StorageController {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Storage.v1_0_0.StorageController
+    .Resource.Status Status = 3;
+    double SpeedGbps = 4;
+    string FirmwareVersion = 5;
+    string Manufacturer = 6;
+    string Model = 7;
+    string SKU = 8;
+    string SerialNumber = 9;
+    string PartNumber = 10;
+    string AssetTag = 11;
+    repeated .Protocol.Protocol SupportedControllerProtocols = 12;
+    repeated .Protocol.Protocol SupportedDeviceProtocols = 13;
+    repeated .Resource.Identifier Identifiers = 14;
+
+    // from Storage.v1_1_0.StorageController
+    StorageControllerLinks Links = 15;
+
+    // from Storage.v1_2_0.StorageController
+    StorageControllerActions Actions = 16;
+
+    // from Storage.v1_3_0.StorageController
+    string Name = 17;
+
+    // from Storage.v1_4_0.StorageController
+    .Resource.Location Location = 18;
+    .Assembly.Assembly Assembly = 19;
+
+    // from Storage.v1_5_0.StorageController
+    CacheSummary CacheSummary = 20;
+    .PCIeDevice.PCIeInterface PCIeInterface = 21;
+
+    // from Storage.v1_6_0.StorageController
+    repeated .Volume.RAIDType SupportedRAIDTypes = 22;
+
+    // from Storage.v1_7_0.StorageController
+    .PortCollection.PortCollection Ports = 23;
+    Rates ControllerRates = 24;
+
+    // from Storage.v1_10_0.StorageController
+    .CertificateCollection.CertificateCollection Certificates = 25;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 26;
+}

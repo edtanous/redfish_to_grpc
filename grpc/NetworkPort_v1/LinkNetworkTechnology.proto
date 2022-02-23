@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package NetworkPort;
+
+enum LinkNetworkTechnology {
+    LinkNetworkTechnology_Ethernet = 0;
+    LinkNetworkTechnology_InfiniBand = 1;
+    LinkNetworkTechnology_FibreChannel = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package DataStorageLoSCapabilities;
+
+enum ProvisioningPolicy {
+    ProvisioningPolicy_Fixed = 0;
+    ProvisioningPolicy_Thin = 1;
+}

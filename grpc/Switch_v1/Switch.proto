@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package Switch;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "LogServiceCollection_v1/LogServiceCollection.proto";
+import "NavigationReference.proto";
+import "PortCollection_v1/PortCollection.proto";
+import "Protocol_v1/Protocol.proto";
+import "Redundancy_v1/Redundancy.proto";
+import "Resource_v1/IndicatorLED.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/PowerState.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+import "Switch_v1/Actions.proto";
+import "Switch_v1/Links.proto";
+
+message Switch {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Switch.v1_0_0.Switch
+    .Protocol.Protocol SwitchType = 5;
+    .Resource.Status Status = 6;
+    string Manufacturer = 7;
+    string Model = 8;
+    string SKU = 9;
+    string SerialNumber = 10;
+    string PartNumber = 11;
+    string AssetTag = 12;
+    int64 DomainID = 13;
+    bool IsManaged = 14;
+    int64 TotalSwitchWidth = 15;
+    .Resource.IndicatorLED IndicatorLED = 16;
+    .Resource.PowerState PowerState = 17;
+    .PortCollection.PortCollection Ports = 18;
+    repeated .Redundancy.Redundancy Redundancy = 19;
+    Links Links = 20;
+    .LogServiceCollection.LogServiceCollection LogServices = 21;
+    Actions Actions = 22;
+
+    // from Switch.v1_1_0.Switch
+    .Resource.Location Location = 23;
+
+    // from Switch.v1_2_0.Switch
+    string FirmwareVersion = 24;
+
+    // from Switch.v1_3_0.Switch
+    repeated .Protocol.Protocol SupportedProtocols = 25;
+    string UUID = 26;
+
+    // from Switch.v1_4_0.Switch
+    bool LocationIndicatorActive = 27;
+    double CurrentBandwidthGbps = 28;
+    double MaxBandwidthGbps = 29;
+
+    // from Switch.v1_5_0.Switch
+    .CertificateCollection.CertificateCollection Certificates = 30;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 31;
+
+    // from Switch.v1_6_0.Switch
+    bool Enabled = 32;
+    NavigationReference EnvironmentMetrics = 33;
+
+    // from Switch.v1_7_0.Switch
+    NavigationReference Metrics = 34;
+}

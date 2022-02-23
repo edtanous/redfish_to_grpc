@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package FileShare;
+
+enum QuotaType {
+    QuotaType_Soft = 0;
+    QuotaType_Hard = 1;
+}

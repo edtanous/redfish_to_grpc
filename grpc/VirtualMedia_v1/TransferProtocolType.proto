@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package VirtualMedia;
+
+enum TransferProtocolType {
+    TransferProtocolType_CIFS = 0;
+    TransferProtocolType_FTP = 1;
+    TransferProtocolType_SFTP = 2;
+    TransferProtocolType_HTTP = 3;
+    TransferProtocolType_HTTPS = 4;
+    TransferProtocolType_NFS = 5;
+    TransferProtocolType_SCP = 6;
+    TransferProtocolType_TFTP = 7;
+    TransferProtocolType_OEM = 8;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package EndpointGroup;
+
+enum AccessState {
+    AccessState_Optimized = 0;
+    AccessState_NonOptimized = 1;
+    AccessState_Standby = 2;
+    AccessState_Unavailable = 3;
+    AccessState_Transitioning = 4;
+}

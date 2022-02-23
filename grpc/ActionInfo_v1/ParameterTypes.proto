@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ActionInfo;
+
+enum ParameterTypes {
+    ParameterTypes_Boolean = 0;
+    ParameterTypes_Number = 1;
+    ParameterTypes_NumberArray = 2;
+    ParameterTypes_String = 3;
+    ParameterTypes_StringArray = 4;
+    ParameterTypes_Object = 5;
+    ParameterTypes_ObjectArray = 6;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ManagerDiagnosticData;
+
+import "ManagerDiagnosticData_v1/Actions.proto";
+import "ManagerDiagnosticData_v1/BootTimeStatistics.proto";
+import "ManagerDiagnosticData_v1/I2CBusStatistics.proto";
+import "ManagerDiagnosticData_v1/MemoryECCStatistics.proto";
+import "ManagerDiagnosticData_v1/MemoryStatistics.proto";
+import "ManagerDiagnosticData_v1/ProcessorStatistics.proto";
+import "ManagerDiagnosticData_v1/ProcessStatistics.proto";
+import "Resource_v1/Oem.proto";
+
+message ManagerDiagnosticData {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ManagerDiagnosticData.v1_0_0.ManagerDiagnosticData
+    repeated I2CBusStatistics I2CBuses = 5;
+    MemoryStatistics MemoryStatistics = 6;
+    ProcessorStatistics ProcessorStatistics = 7;
+    BootTimeStatistics BootTimeStatistics = 8;
+    int64 FreeStorageSpaceKiB = 9;
+    MemoryECCStatistics MemoryECCStatistics = 10;
+    repeated ProcessStatistics TopProcesses = 11;
+    Actions Actions = 12;
+}

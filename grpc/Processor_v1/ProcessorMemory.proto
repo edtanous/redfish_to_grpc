@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Processor;
+
+import "google/protobuf/any.proto";
+
+message ProcessorMemory{
+    map<string, google.protobuf.Any> ProcessorMemory = 1;
+}
+

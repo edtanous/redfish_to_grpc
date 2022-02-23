@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package MemoryMetrics;
+
+import "MemoryMetrics_v1/Actions.proto";
+import "MemoryMetrics_v1/CurrentPeriod.proto";
+import "MemoryMetrics_v1/HealthData.proto";
+import "MemoryMetrics_v1/LifeTime.proto";
+import "Resource_v1/Oem.proto";
+
+message MemoryMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MemoryMetrics.v1_0_0.MemoryMetrics
+    int64 BlockSizeBytes = 5;
+    CurrentPeriod CurrentPeriod = 6;
+    LifeTime LifeTime = 7;
+    HealthData HealthData = 8;
+    Actions Actions = 9;
+
+    // from MemoryMetrics.v1_2_0.MemoryMetrics
+    double BandwidthPercent = 10;
+
+    // from MemoryMetrics.v1_3_0.MemoryMetrics
+    int64 OperatingSpeedMHz = 11;
+}

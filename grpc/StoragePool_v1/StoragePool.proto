@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package StoragePool;
+
+import "Capacity_v1/Capacity.proto";
+import "ClassOfServiceCollection_v1/ClassOfServiceCollection.proto";
+import "DataStorageLoSCapabilities_v1/ProvisioningPolicy.proto";
+import "IOStatistics_v1/IOStatistics.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "StoragePool_v1/Actions.proto";
+import "StoragePool_v1/Links.proto";
+import "StoragePool_v1/NVMeEnduranceGroupProperties.proto";
+import "StoragePool_v1/NVMeSetProperties.proto";
+import "StoragePool_v1/PoolType.proto";
+import "Volume_v1/RAIDType.proto";
+import "VolumeCollection_v1/VolumeCollection.proto";
+
+message StoragePool {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from StoragePool.v1_0_0.StoragePool
+    .Resource.Identifier Identifier = 5;
+    int64 BlockSizeBytes = 6;
+    .Capacity.Capacity Capacity = 7;
+    repeated int64 LowSpaceWarningThresholdPercents = 8;
+    .VolumeCollection.VolumeCollection AllocatedVolumes = 9;
+    .ClassOfServiceCollection.ClassOfServiceCollection ClassesOfService = 10;
+    Links Links = 11;
+    .Resource.Status Status = 12;
+
+    // from StoragePool.v1_1_0.StoragePool
+    int64 RemainingCapacityPercent = 13;
+
+    // from StoragePool.v1_1_1.StoragePool
+    int64 MaxBlockSizeBytes = 14;
+
+    // from StoragePool.v1_2_0.StoragePool
+    .IOStatistics.IOStatistics IOStatistics = 15;
+    int64 RecoverableCapacitySourceCount = 16;
+    NavigationReference DefaultClassOfService = 17;
+
+    // from StoragePool.v1_3_0.StoragePool
+    repeated .Volume.RAIDType SupportedRAIDTypes = 18;
+    repeated .DataStorageLoSCapabilities.ProvisioningPolicy SupportedProvisioningPolicies = 19;
+    bool Deduplicated = 20;
+    bool Compressed = 21;
+    bool Encrypted = 22;
+    Actions Actions = 23;
+
+    // from StoragePool.v1_4_0.StoragePool
+    NVMeSetProperties NVMeSetProperties = 24;
+    NVMeEnduranceGroupProperties NVMeEnduranceGroupProperties = 25;
+
+    // from StoragePool.v1_7_0.StoragePool
+    repeated PoolType SupportedPoolTypes = 26;
+}

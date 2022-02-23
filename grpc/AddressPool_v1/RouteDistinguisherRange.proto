@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package AddressPool;
+
+import "google/protobuf/any.proto";
+
+message RouteDistinguisherRange{
+    map<string, google.protobuf.Any> RouteDistinguisherRange = 1;
+}
+

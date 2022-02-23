@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package IOStatistics;
+
+import "google/protobuf/any.proto";
+
+message IOStatistics{
+    map<string, google.protobuf.Any> IOStatistics = 1;
+}
+

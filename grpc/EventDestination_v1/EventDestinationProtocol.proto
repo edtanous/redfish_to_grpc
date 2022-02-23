@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package EventDestination;
+
+enum EventDestinationProtocol {
+    EventDestinationProtocol_Redfish = 0;
+    EventDestinationProtocol_SNMPv1 = 1;
+    EventDestinationProtocol_SNMPv2c = 2;
+    EventDestinationProtocol_SNMPv3 = 3;
+    EventDestinationProtocol_SMTP = 4;
+    EventDestinationProtocol_SyslogTLS = 5;
+    EventDestinationProtocol_SyslogTCP = 6;
+    EventDestinationProtocol_SyslogUDP = 7;
+    EventDestinationProtocol_SyslogRELP = 8;
+    EventDestinationProtocol_OEM = 9;
+}

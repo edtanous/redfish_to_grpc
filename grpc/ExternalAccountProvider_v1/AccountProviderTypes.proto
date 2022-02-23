@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ExternalAccountProvider;
+
+enum AccountProviderTypes {
+    AccountProviderTypes_RedfishService = 0;
+    AccountProviderTypes_ActiveDirectoryService = 1;
+    AccountProviderTypes_LDAPService = 2;
+    AccountProviderTypes_OEM = 3;
+    AccountProviderTypes_TACACSplus = 4;
+    AccountProviderTypes_OAuth2 = 5;
+}

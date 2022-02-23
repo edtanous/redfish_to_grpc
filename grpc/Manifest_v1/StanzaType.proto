@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Manifest;
+
+enum StanzaType {
+    StanzaType_ComposeSystem = 0;
+    StanzaType_DecomposeSystem = 1;
+    StanzaType_ComposeResource = 2;
+    StanzaType_DecomposeResource = 3;
+    StanzaType_OEM = 4;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package NetworkDeviceFunction;
+
+enum NetworkDeviceTechnology {
+    NetworkDeviceTechnology_Disabled = 0;
+    NetworkDeviceTechnology_Ethernet = 1;
+    NetworkDeviceTechnology_FibreChannel = 2;
+    NetworkDeviceTechnology_iSCSI = 3;
+    NetworkDeviceTechnology_FibreChannelOverEthernet = 4;
+    NetworkDeviceTechnology_InfiniBand = 5;
+}

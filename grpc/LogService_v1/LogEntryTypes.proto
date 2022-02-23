@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package LogService;
+
+enum LogEntryTypes {
+    LogEntryTypes_Event = 0;
+    LogEntryTypes_SEL = 1;
+    LogEntryTypes_Multiple = 2;
+    LogEntryTypes_OEM = 3;
+}

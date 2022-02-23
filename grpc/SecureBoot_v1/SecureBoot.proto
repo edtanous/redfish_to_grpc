@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package SecureBoot;
+
+import "Resource_v1/Oem.proto";
+import "SecureBoot_v1/Actions.proto";
+import "SecureBoot_v1/SecureBootCurrentBootType.proto";
+import "SecureBoot_v1/SecureBootModeType.proto";
+import "SecureBootDatabaseCollection_v1/SecureBootDatabaseCollection.proto";
+
+message SecureBoot {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from SecureBoot.v1_0_0.SecureBoot
+    bool SecureBootEnable = 5;
+    SecureBootCurrentBootType SecureBootCurrentBoot = 6;
+    SecureBootModeType SecureBootMode = 7;
+    Actions Actions = 8;
+
+    // from SecureBoot.v1_1_0.SecureBoot
+    .SecureBootDatabaseCollection.SecureBootDatabaseCollection SecureBootDatabases = 9;
+}

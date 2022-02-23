@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Resource;
+
+import "Resource_v1/Oem.proto";
+
+message Item {
+    // from Resource.Item
+    Oem Oem = 1;
+}

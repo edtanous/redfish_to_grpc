@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaState {
+    ReplicaState_Initialized = 0;
+    ReplicaState_Unsynchronized = 1;
+    ReplicaState_Synchronized = 2;
+    ReplicaState_Broken = 3;
+    ReplicaState_Fractured = 4;
+    ReplicaState_Split = 5;
+    ReplicaState_Inactive = 6;
+    ReplicaState_Suspended = 7;
+    ReplicaState_Failedover = 8;
+    ReplicaState_Prepared = 9;
+    ReplicaState_Aborted = 10;
+    ReplicaState_Skewed = 11;
+    ReplicaState_Mixed = 12;
+    ReplicaState_Partitioned = 13;
+    ReplicaState_Invalid = 14;
+    ReplicaState_Restored = 15;
+}

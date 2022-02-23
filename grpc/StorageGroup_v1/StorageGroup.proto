@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package StorageGroup;
+
+import "EndpointGroup_v1/AccessState.proto";
+import "EndpointGroup_v1/EndpointGroup.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "StorageGroup_v1/Actions.proto";
+import "StorageGroup_v1/AuthenticationMethod.proto";
+import "StorageGroup_v1/CHAPInformation.proto";
+import "StorageGroup_v1/DHCHAPInformation.proto";
+import "StorageGroup_v1/Links.proto";
+import "StorageGroup_v1/MappedVolume.proto";
+import "StorageReplicaInfo_v1/ReplicaInfo.proto";
+
+message StorageGroup {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from StorageGroup.v1_0_0.StorageGroup
+    .Resource.Identifier Identifier = 5;
+    .EndpointGroup.AccessState AccessState = 6;
+    bool MembersAreConsistent = 7;
+    bool VolumesAreExposed = 8;
+    .Resource.Status Status = 9;
+    Links Links = 10;
+    .StorageReplicaInfo.ReplicaInfo ReplicaInfo = 11;
+    repeated .EndpointGroup.EndpointGroup ClientEndpointGroups = 12;
+    repeated .EndpointGroup.EndpointGroup ServerEndpointGroups = 13;
+    repeated NavigationReference Volumes = 14;
+    Actions Actions = 15;
+
+    // from StorageGroup.v1_1_0.StorageGroup
+    repeated MappedVolume MappedVolumes = 16;
+
+    // from StorageGroup.v1_1_1.StorageGroup
+    repeated NavigationReference ReplicaTargets = 17;
+
+    // from StorageGroup.v1_2_0.StorageGroup
+    AuthenticationMethod AuthenticationMethod = 18;
+    repeated CHAPInformation ChapInfo = 19;
+
+    // from StorageGroup.v1_3_0.StorageGroup
+    repeated DHCHAPInformation DHChapInfo = 20;
+}

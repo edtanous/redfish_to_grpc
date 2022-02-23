@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ConsistencyGroup;
+
+enum ApplicationConsistencyMethod {
+    ApplicationConsistencyMethod_HotStandby = 0;
+    ApplicationConsistencyMethod_VASA = 1;
+    ApplicationConsistencyMethod_VDI = 2;
+    ApplicationConsistencyMethod_VSS = 3;
+    ApplicationConsistencyMethod_Other = 4;
+}

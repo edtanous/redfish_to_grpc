@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package Memory;
+
+enum BaseModuleType {
+    BaseModuleType_RDIMM = 0;
+    BaseModuleType_UDIMM = 1;
+    BaseModuleType_SO_DIMM = 2;
+    BaseModuleType_LRDIMM = 3;
+    BaseModuleType_Mini_RDIMM = 4;
+    BaseModuleType_Mini_UDIMM = 5;
+    BaseModuleType_SO_RDIMM_72b = 6;
+    BaseModuleType_SO_UDIMM_72b = 7;
+    BaseModuleType_SO_DIMM_16b = 8;
+    BaseModuleType_SO_DIMM_32b = 9;
+    BaseModuleType_Die = 10;
+}

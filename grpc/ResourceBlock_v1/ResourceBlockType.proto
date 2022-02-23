@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ResourceBlock;
+
+enum ResourceBlockType {
+    ResourceBlockType_Compute = 0;
+    ResourceBlockType_Processor = 1;
+    ResourceBlockType_Memory = 2;
+    ResourceBlockType_Network = 3;
+    ResourceBlockType_Storage = 4;
+    ResourceBlockType_ComputerSystem = 5;
+    ResourceBlockType_Expansion = 6;
+    ResourceBlockType_IndependentResource = 7;
+}

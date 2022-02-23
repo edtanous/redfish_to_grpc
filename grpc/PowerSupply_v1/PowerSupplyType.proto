@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package PowerSupply;
+
+enum PowerSupplyType {
+    PowerSupplyType_AC = 0;
+    PowerSupplyType_DC = 1;
+    PowerSupplyType_ACorDC = 2;
+}

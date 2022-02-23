@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ComponentIntegrity;
+
+enum SecureSessionType {
+    SecureSessionType_Plain = 0;
+    SecureSessionType_EncryptedAuthenticated = 1;
+    SecureSessionType_AuthenticatedOnly = 2;
+}

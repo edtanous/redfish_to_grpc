@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Memory;
+
+enum MemoryClassification {
+    MemoryClassification_Volatile = 0;
+    MemoryClassification_ByteAccessiblePersistent = 1;
+    MemoryClassification_Block = 2;
+}

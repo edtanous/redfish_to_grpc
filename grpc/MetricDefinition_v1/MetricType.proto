@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package MetricDefinition;
+
+enum MetricType {
+    MetricType_Numeric = 0;
+    MetricType_Discrete = 1;
+    MetricType_Gauge = 2;
+    MetricType_Counter = 3;
+    MetricType_Countdown = 4;
+    MetricType_String = 5;
+}

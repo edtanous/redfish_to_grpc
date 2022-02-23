@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Triggers;
+
+enum DirectionOfCrossingEnum {
+    DirectionOfCrossingEnum_Increasing = 0;
+    DirectionOfCrossingEnum_Decreasing = 1;
+}

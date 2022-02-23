@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package RouteEntry;
+
+import "Resource_v1/Oem.proto";
+import "RouteEntry_v1/Actions.proto";
+import "RouteSetEntryCollection_v1/RouteSetEntryCollection.proto";
+
+message RouteEntry {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from RouteEntry.v1_0_0.RouteEntry
+    .RouteSetEntryCollection.RouteSetEntryCollection RouteSet = 5;
+    string RawEntryHex = 6;
+    int64 MinimumHopCount = 7;
+    Actions Actions = 8;
+}

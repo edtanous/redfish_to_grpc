@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package NetworkPort;
+
+import "NetworkPort_v1/Actions.proto";
+import "NetworkPort_v1/FlowControl.proto";
+import "NetworkPort_v1/LinkNetworkTechnology.proto";
+import "NetworkPort_v1/LinkStatus.proto";
+import "NetworkPort_v1/NetDevFuncMaxBWAlloc.proto";
+import "NetworkPort_v1/NetDevFuncMinBWAlloc.proto";
+import "NetworkPort_v1/PortConnectionType.proto";
+import "NetworkPort_v1/SupportedEthernetCapabilities.proto";
+import "NetworkPort_v1/SupportedLinkCapabilities.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message NetworkPort {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from NetworkPort.v1_0_0.NetworkPort
+    .Resource.Status Status = 5;
+    string PhysicalPortNumber = 6;
+    LinkStatus LinkStatus = 7;
+    repeated SupportedLinkCapabilities SupportedLinkCapabilities = 8;
+    LinkNetworkTechnology ActiveLinkTechnology = 9;
+    repeated SupportedEthernetCapabilities SupportedEthernetCapabilities = 10;
+    repeated NetDevFuncMinBWAlloc NetDevFuncMinBWAlloc = 11;
+    repeated NetDevFuncMaxBWAlloc NetDevFuncMaxBWAlloc = 12;
+    repeated string AssociatedNetworkAddresses = 13;
+    bool EEEEnabled = 14;
+    bool WakeOnLANEnabled = 15;
+    int64 PortMaximumMTU = 16;
+    FlowControl FlowControlStatus = 17;
+    FlowControl FlowControlConfiguration = 18;
+    bool SignalDetected = 19;
+
+    // from NetworkPort.v1_1_0.NetworkPort
+    Actions Actions = 20;
+
+    // from NetworkPort.v1_2_0.NetworkPort
+    PortConnectionType FCPortConnectionType = 21;
+    int64 NumberDiscoveredRemotePorts = 22;
+    int64 MaxFrameSize = 23;
+    string VendorId = 24;
+    string FCFabricName = 25;
+    int64 CurrentLinkSpeedMbps = 26;
+}

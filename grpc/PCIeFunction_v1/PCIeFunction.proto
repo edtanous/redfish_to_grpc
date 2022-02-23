@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package PCIeFunction;
+
+import "PCIeFunction_v1/Actions.proto";
+import "PCIeFunction_v1/DeviceClass.proto";
+import "PCIeFunction_v1/FunctionType.proto";
+import "PCIeFunction_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message PCIeFunction {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PCIeFunction.v1_0_0.PCIeFunction
+    int64 FunctionId = 5;
+    FunctionType FunctionType = 6;
+    DeviceClass DeviceClass = 7;
+    string DeviceId = 8;
+    string VendorId = 9;
+    string ClassCode = 10;
+    string RevisionId = 11;
+    string SubsystemId = 12;
+    string SubsystemVendorId = 13;
+    .Resource.Status Status = 14;
+    Links Links = 15;
+
+    // from PCIeFunction.v1_1_0.PCIeFunction
+    Actions Actions = 16;
+
+    // from PCIeFunction.v1_3_0.PCIeFunction
+    bool Enabled = 17;
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package TaskService;
+
+import "google/protobuf/timestamp.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "TaskCollection_v1/TaskCollection.proto";
+import "TaskService_v1/Actions.proto";
+import "TaskService_v1/OverWritePolicy.proto";
+
+message TaskService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from TaskService.v1_0_0.TaskService
+    OverWritePolicy CompletedTaskOverWritePolicy = 5;
+    google.protobuf.Timestamp DateTime = 6;
+    bool LifeCycleEventOnTaskStateChange = 7;
+    bool ServiceEnabled = 8;
+    .Resource.Status Status = 9;
+    .TaskCollection.TaskCollection Tasks = 10;
+
+    // from TaskService.v1_1_0.TaskService
+    Actions Actions = 11;
+
+    // from TaskService.v1_2_0.TaskService
+    int64 TaskAutoDeleteTimeoutMinutes = 12;
+}

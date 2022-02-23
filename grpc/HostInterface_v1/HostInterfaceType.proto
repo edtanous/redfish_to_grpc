@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package HostInterface;
+
+enum HostInterfaceType {
+    HostInterfaceType_NetworkHostInterface = 0;
+}

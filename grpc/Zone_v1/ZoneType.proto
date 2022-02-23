@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Zone;
+
+enum ZoneType {
+    ZoneType_Default = 0;
+    ZoneType_ZoneOfEndpoints = 1;
+    ZoneType_ZoneOfZones = 2;
+    ZoneType_ZoneOfResourceBlocks = 3;
+}

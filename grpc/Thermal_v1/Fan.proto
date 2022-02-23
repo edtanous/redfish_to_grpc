@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package Thermal;
+
+import "Assembly_v1/Assembly.proto";
+import "NavigationReference.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "Resource_v1/IndicatorLED.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "Thermal_v1/FanActions.proto";
+import "Thermal_v1/ReadingUnits.proto";
+
+message Fan {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Thermal.v1_0_0.Fan
+    string FanName = 3;
+    .PhysicalContext.PhysicalContext PhysicalContext = 4;
+    .Resource.Status Status = 5;
+    int64 Reading = 6;
+    int64 UpperThresholdNonCritical = 7;
+    int64 UpperThresholdCritical = 8;
+    int64 UpperThresholdFatal = 9;
+    int64 LowerThresholdNonCritical = 10;
+    int64 LowerThresholdCritical = 11;
+    int64 LowerThresholdFatal = 12;
+    int64 MinReadingRange = 13;
+    int64 MaxReadingRange = 14;
+    repeated NavigationReference RelatedItem = 15;
+    repeated NavigationReference Redundancy = 16;
+
+    // from Thermal.v1_0_1.Fan
+    ReadingUnits ReadingUnits = 17;
+
+    // from Thermal.v1_1_0.Fan
+    string Name = 18;
+
+    // from Thermal.v1_2_0.Fan
+    string Manufacturer = 19;
+    string Model = 20;
+    string SerialNumber = 21;
+    string PartNumber = 22;
+    string SparePartNumber = 23;
+    .Resource.IndicatorLED IndicatorLED = 24;
+
+    // from Thermal.v1_3_0.Fan
+    FanActions Actions = 25;
+
+    // from Thermal.v1_4_0.Fan
+    bool HotPluggable = 26;
+    .Resource.Location Location = 27;
+    .Assembly.Assembly Assembly = 28;
+
+    // from Thermal.v1_5_0.Fan
+    int64 SensorNumber = 29;
+}

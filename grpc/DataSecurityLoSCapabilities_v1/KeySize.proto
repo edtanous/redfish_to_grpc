@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package DataSecurityLoSCapabilities;
+
+enum KeySize {
+    KeySize_Bits_0 = 0;
+    KeySize_Bits_112 = 1;
+    KeySize_Bits_128 = 2;
+    KeySize_Bits_192 = 3;
+    KeySize_Bits_256 = 4;
+}

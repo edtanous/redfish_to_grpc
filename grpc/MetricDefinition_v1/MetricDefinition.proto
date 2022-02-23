@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package MetricDefinition;
+
+import "google/protobuf/duration.proto";
+import "MetricDefinition_v1/Actions.proto";
+import "MetricDefinition_v1/Calculable.proto";
+import "MetricDefinition_v1/CalculationAlgorithmEnum.proto";
+import "MetricDefinition_v1/CalculationParamsType.proto";
+import "MetricDefinition_v1/ImplementationType.proto";
+import "MetricDefinition_v1/MetricDataType.proto";
+import "MetricDefinition_v1/MetricType.proto";
+import "MetricDefinition_v1/Wildcard.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "Resource_v1/Oem.proto";
+
+message MetricDefinition {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from MetricDefinition.v1_0_0.MetricDefinition
+    MetricType MetricType = 5;
+    MetricDataType MetricDataType = 6;
+    string Units = 7;
+    ImplementationType Implementation = 8;
+    Calculable Calculable = 9;
+    bool IsLinear = 10;
+    repeated Wildcard Wildcards = 11;
+    repeated string MetricProperties = 12;
+    repeated CalculationParamsType CalculationParameters = 13;
+    .PhysicalContext.PhysicalContext PhysicalContext = 14;
+    google.protobuf.Duration SensingInterval = 15;
+    repeated string DiscreteValues = 16;
+    int64 Precision = 17;
+    double Accuracy = 18;
+    double Calibration = 19;
+    google.protobuf.Duration TimestampAccuracy = 20;
+    double MinReadingRange = 21;
+    double MaxReadingRange = 22;
+    CalculationAlgorithmEnum CalculationAlgorithm = 23;
+    google.protobuf.Duration CalculationTimeInterval = 24;
+    Actions Actions = 25;
+
+    // from MetricDefinition.v1_1_0.MetricDefinition
+    string OEMCalculationAlgorithm = 26;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package VirtualMedia;
+
+enum MediaType {
+    MediaType_CD = 0;
+    MediaType_Floppy = 1;
+    MediaType_USBStick = 2;
+    MediaType_DVD = 3;
+}

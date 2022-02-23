@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package Power;
+
+import "NavigationReference.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "Power_v1/PowerControlActions.proto";
+import "Power_v1/PowerLimit.proto";
+import "Power_v1/PowerMetric.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message PowerControl {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Power.v1_0_0.PowerControl
+    string Name = 3;
+    double PowerConsumedWatts = 4;
+    double PowerRequestedWatts = 5;
+    double PowerAvailableWatts = 6;
+    double PowerCapacityWatts = 7;
+    double PowerAllocatedWatts = 8;
+    PowerMetric PowerMetrics = 9;
+    PowerLimit PowerLimit = 10;
+    .Resource.Status Status = 11;
+    repeated NavigationReference RelatedItem = 12;
+
+    // from Power.v1_3_0.PowerControl
+    PowerControlActions Actions = 13;
+
+    // from Power.v1_4_0.PowerControl
+    .PhysicalContext.PhysicalContext PhysicalContext = 14;
+}

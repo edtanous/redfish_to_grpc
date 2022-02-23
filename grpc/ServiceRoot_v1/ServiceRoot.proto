@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package ServiceRoot;
+
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "ServiceRoot_v1/Links.proto";
+import "ServiceRoot_v1/ProtocolFeaturesSupported.proto";
+
+message ServiceRoot {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ServiceRoot.v1_0_0.ServiceRoot
+    string RedfishVersion = 5;
+    string UUID = 6;
+    NavigationReference Systems = 7;
+    NavigationReference Chassis = 8;
+    NavigationReference Managers = 9;
+    NavigationReference Tasks = 10;
+    NavigationReference SessionService = 11;
+    NavigationReference AccountService = 12;
+    NavigationReference EventService = 13;
+    NavigationReference Registries = 14;
+    NavigationReference JsonSchemas = 15;
+    Links Links = 16;
+
+    // from ServiceRoot.v1_1_0.ServiceRoot
+    NavigationReference StorageSystems = 17;
+    NavigationReference StorageServices = 18;
+    NavigationReference Fabrics = 19;
+    NavigationReference UpdateService = 20;
+
+    // from ServiceRoot.v1_2_0.ServiceRoot
+    NavigationReference CompositionService = 21;
+
+    // from ServiceRoot.v1_3_0.ServiceRoot
+    string Product = 22;
+    ProtocolFeaturesSupported ProtocolFeaturesSupported = 23;
+
+    // from ServiceRoot.v1_4_0.ServiceRoot
+    NavigationReference JobService = 24;
+    NavigationReference TelemetryService = 25;
+
+    // from ServiceRoot.v1_5_0.ServiceRoot
+    string Vendor = 26;
+    NavigationReference CertificateService = 27;
+    NavigationReference ResourceBlocks = 28;
+
+    // from ServiceRoot.v1_6_0.ServiceRoot
+    NavigationReference PowerEquipment = 29;
+    NavigationReference Facilities = 30;
+
+    // from ServiceRoot.v1_8_0.ServiceRoot
+    NavigationReference AggregationService = 31;
+
+    // from ServiceRoot.v1_9_0.ServiceRoot
+    NavigationReference Storage = 32;
+
+    // from ServiceRoot.v1_10_0.ServiceRoot
+    NavigationReference NVMeDomains = 33;
+
+    // from ServiceRoot.v1_11_0.ServiceRoot
+    NavigationReference KeyService = 34;
+    NavigationReference Cables = 35;
+
+    // from ServiceRoot.v1_12_0.ServiceRoot
+    NavigationReference LicenseService = 36;
+
+    // from ServiceRoot.v1_13_0.ServiceRoot
+    NavigationReference ServiceConditions = 37;
+    NavigationReference ComponentIntegrity = 38;
+    NavigationReference RegisteredClients = 39;
+}

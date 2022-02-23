@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package FileSystem;
+
+import "Capacity_v1/Capacity.proto";
+import "DataStorageLoSCapabilities_v1/StorageAccessCapability.proto";
+import "FileShareCollection_v1/FileShareCollection.proto";
+import "FileSystem_v1/Actions.proto";
+import "FileSystem_v1/CharacterCodeSet.proto";
+import "FileSystem_v1/ImportedShare.proto";
+import "FileSystem_v1/Links.proto";
+import "IOStatistics_v1/IOStatistics.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Identifier.proto";
+import "Resource_v1/Oem.proto";
+import "StorageReplicaInfo_v1/ReplicaInfo.proto";
+
+message FileSystem {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from FileSystem.v1_0_0.FileSystem
+    int64 BlockSizeBytes = 5;
+    .Capacity.Capacity Capacity = 6;
+    .Capacity.Capacity RemainingCapacity = 7;
+    repeated int64 LowSpaceWarningThresholdPercents = 8;
+    repeated .DataStorageLoSCapabilities.StorageAccessCapability AccessCapabilities = 9;
+    bool CaseSensitive = 10;
+    bool CasePreserved = 11;
+    repeated CharacterCodeSet CharacterCodeSet = 12;
+    int64 MaxFileNameLengthBytes = 13;
+    int64 ClusterSizeBytes = 14;
+    .StorageReplicaInfo.ReplicaInfo ReplicaInfo = 15;
+    .FileShareCollection.FileShareCollection ExportedShares = 16;
+    Links Links = 17;
+
+    // from FileSystem.v1_0_1.FileSystem
+    repeated ImportedShare ImportedShares = 18;
+
+    // from FileSystem.v1_1_0.FileSystem
+    int64 RemainingCapacityPercent = 19;
+    Actions Actions = 20;
+
+    // from FileSystem.v1_1_1.FileSystem
+    repeated .Resource.Identifier Identifiers = 21;
+
+    // from FileSystem.v1_2_0.FileSystem
+    .IOStatistics.IOStatistics IOStatistics = 22;
+    int64 RecoverableCapacitySourceCount = 23;
+
+    // from FileSystem.v1_2_1.FileSystem
+    repeated NavigationReference ReplicaTargets = 24;
+}

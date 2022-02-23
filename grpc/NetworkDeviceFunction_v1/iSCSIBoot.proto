@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package NetworkDeviceFunction;
+
+import "google/protobuf/any.proto";
+
+message iSCSIBoot{
+    map<string, google.protobuf.Any> iSCSIBoot = 1;
+}
+

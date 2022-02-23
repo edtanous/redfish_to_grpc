@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ConnectionMethod;
+
+import "ConnectionMethod_v1/Actions.proto";
+import "ConnectionMethod_v1/ConnectionMethodType.proto";
+import "ConnectionMethod_v1/Links.proto";
+import "Resource_v1/Oem.proto";
+
+message ConnectionMethod {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ConnectionMethod.v1_0_0.ConnectionMethod
+    ConnectionMethodType ConnectionMethodType = 5;
+    string ConnectionMethodVariant = 6;
+    Links Links = 7;
+    Actions Actions = 8;
+}

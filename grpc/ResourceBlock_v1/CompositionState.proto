@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ResourceBlock;
+
+enum CompositionState {
+    CompositionState_Composing = 0;
+    CompositionState_ComposedAndAvailable = 1;
+    CompositionState_Composed = 2;
+    CompositionState_Unused = 3;
+    CompositionState_Failed = 4;
+    CompositionState_Unavailable = 5;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package JobService;
+
+import "google/protobuf/timestamp.proto";
+import "JobCollection_v1/JobCollection.proto";
+import "JobService_v1/Actions.proto";
+import "JobService_v1/JobServiceCapabilities.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message JobService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from JobService.v1_0_0.JobService
+    google.protobuf.Timestamp DateTime = 5;
+    bool ServiceEnabled = 6;
+    JobServiceCapabilities ServiceCapabilities = 7;
+    .Resource.Status Status = 8;
+    NavigationReference Log = 9;
+    .JobCollection.JobCollection Jobs = 10;
+    Actions Actions = 11;
+}

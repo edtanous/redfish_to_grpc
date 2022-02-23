@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package ManagerAccount;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "google/protobuf/timestamp.proto";
+import "ManagerAccount_v1/AccountTypes.proto";
+import "ManagerAccount_v1/Actions.proto";
+import "ManagerAccount_v1/Links.proto";
+import "ManagerAccount_v1/SNMPUserInfo.proto";
+import "Resource_v1/Oem.proto";
+
+message ManagerAccount {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ManagerAccount.v1_0_0.ManagerAccount
+    string Password = 5;
+    string UserName = 6;
+    string RoleId = 7;
+    bool Locked = 8;
+    bool Enabled = 9;
+    Links Links = 10;
+
+    // from ManagerAccount.v1_1_0.ManagerAccount
+    Actions Actions = 11;
+
+    // from ManagerAccount.v1_2_0.ManagerAccount
+    .CertificateCollection.CertificateCollection Certificates = 12;
+
+    // from ManagerAccount.v1_3_0.ManagerAccount
+    bool PasswordChangeRequired = 13;
+
+    // from ManagerAccount.v1_4_0.ManagerAccount
+    SNMPUserInfo SNMP = 14;
+    repeated AccountTypes AccountTypes = 15;
+    repeated string OEMAccountTypes = 16;
+
+    // from ManagerAccount.v1_6_0.ManagerAccount
+    google.protobuf.Timestamp PasswordExpiration = 17;
+
+    // from ManagerAccount.v1_7_0.ManagerAccount
+    bool StrictAccountTypes = 18;
+
+    // from ManagerAccount.v1_8_0.ManagerAccount
+    google.protobuf.Timestamp AccountExpiration = 19;
+    bool HostBootstrapAccount = 20;
+}

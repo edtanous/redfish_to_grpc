@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package EventDestination;
+
+enum DeliveryRetryPolicy {
+    DeliveryRetryPolicy_TerminateAfterRetries = 0;
+    DeliveryRetryPolicy_SuspendRetries = 1;
+    DeliveryRetryPolicy_RetryForever = 2;
+    DeliveryRetryPolicy_RetryForeverWithBackoff = 3;
+}

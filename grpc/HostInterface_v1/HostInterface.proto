@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package HostInterface;
+
+import "EthernetInterfaceCollection_v1/EthernetInterfaceCollection.proto";
+import "HostInterface_v1/Actions.proto";
+import "HostInterface_v1/AuthenticationMode.proto";
+import "HostInterface_v1/CredentialBootstrapping.proto";
+import "HostInterface_v1/HostInterfaceType.proto";
+import "HostInterface_v1/Links.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message HostInterface {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from HostInterface.v1_0_0.HostInterface
+    HostInterfaceType HostInterfaceType = 5;
+    .Resource.Status Status = 6;
+    bool InterfaceEnabled = 7;
+    bool ExternallyAccessible = 8;
+    repeated AuthenticationMode AuthenticationModes = 9;
+    string KernelAuthRoleId = 10;
+    bool KernelAuthEnabled = 11;
+    string FirmwareAuthRoleId = 12;
+    bool FirmwareAuthEnabled = 13;
+    .EthernetInterfaceCollection.EthernetInterfaceCollection HostEthernetInterfaces = 14;
+    NavigationReference ManagerEthernetInterface = 15;
+    NavigationReference NetworkProtocol = 16;
+    Links Links = 17;
+
+    // from HostInterface.v1_1_0.HostInterface
+    Actions Actions = 18;
+
+    // from HostInterface.v1_2_0.HostInterface
+    string AuthNoneRoleId = 19;
+
+    // from HostInterface.v1_3_0.HostInterface
+    CredentialBootstrapping CredentialBootstrapping = 20;
+}

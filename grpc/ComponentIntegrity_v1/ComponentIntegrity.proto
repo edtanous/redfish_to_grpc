@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package ComponentIntegrity;
+
+import "ComponentIntegrity_v1/Actions.proto";
+import "ComponentIntegrity_v1/ComponentIntegrityType.proto";
+import "ComponentIntegrity_v1/Links.proto";
+import "ComponentIntegrity_v1/SPDMinfo.proto";
+import "ComponentIntegrity_v1/TPMinfo.proto";
+import "google/protobuf/timestamp.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message ComponentIntegrity {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ComponentIntegrity.v1_0_0.ComponentIntegrity
+    Actions Actions = 5;
+    .Resource.Status Status = 6;
+    ComponentIntegrityType ComponentIntegrityType = 7;
+    string ComponentIntegrityTypeVersion = 8;
+    bool ComponentIntegrityEnabled = 9;
+    string TargetComponentURI = 10;
+    Links Links = 11;
+    google.protobuf.Timestamp LastUpdated = 12;
+    SPDMinfo SPDM = 13;
+    TPMinfo TPM = 14;
+}

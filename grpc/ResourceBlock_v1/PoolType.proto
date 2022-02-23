@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ResourceBlock;
+
+enum PoolType {
+    PoolType_Free = 0;
+    PoolType_Active = 1;
+    PoolType_Unassigned = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum PowerState {
+    PowerState_On = 0;
+    PowerState_Off = 1;
+    PowerState_PoweringOn = 2;
+    PowerState_PoweringOff = 3;
+}

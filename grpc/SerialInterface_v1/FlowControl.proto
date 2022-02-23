@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package SerialInterface;
+
+enum FlowControl {
+    FlowControl_None = 0;
+    FlowControl_Software = 1;
+    FlowControl_Hardware = 2;
+}

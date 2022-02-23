@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package PowerSupplyMetrics;
+
+import "NavigationReference.proto";
+import "PowerSupplyMetrics_v1/Actions.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message PowerSupplyMetrics {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from PowerSupplyMetrics.v1_0_0.PowerSupplyMetrics
+    .Resource.Status Status = 5;
+    NavigationReference InputVoltage = 6;
+    NavigationReference InputCurrentAmps = 7;
+    NavigationReference InputPowerWatts = 8;
+    NavigationReference EnergykWh = 9;
+    NavigationReference FrequencyHz = 10;
+    NavigationReference OutputPowerWatts = 11;
+    repeated NavigationReference RailVoltage = 12;
+    repeated NavigationReference RailCurrentAmps = 13;
+    repeated NavigationReference RailPowerWatts = 14;
+    NavigationReference TemperatureCelsius = 15;
+    NavigationReference FanSpeedPercent = 16;
+    Actions Actions = 17;
+}

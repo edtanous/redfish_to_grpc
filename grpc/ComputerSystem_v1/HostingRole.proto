@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum HostingRole {
+    HostingRole_ApplicationServer = 0;
+    HostingRole_StorageServer = 1;
+    HostingRole_Switch = 2;
+    HostingRole_Appliance = 3;
+    HostingRole_BareMetalServer = 4;
+    HostingRole_VirtualMachineServer = 5;
+    HostingRole_ContainerServer = 6;
+}

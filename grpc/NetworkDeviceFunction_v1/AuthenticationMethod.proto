@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package NetworkDeviceFunction;
+
+enum AuthenticationMethod {
+    AuthenticationMethod_None = 0;
+    AuthenticationMethod_CHAP = 1;
+    AuthenticationMethod_MutualCHAP = 2;
+}

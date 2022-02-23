@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package NetworkDeviceFunction;
+
+enum BootMode {
+    BootMode_Disabled = 0;
+    BootMode_PXE = 1;
+    BootMode_iSCSI = 2;
+    BootMode_FibreChannel = 3;
+    BootMode_FibreChannelOverEthernet = 4;
+}

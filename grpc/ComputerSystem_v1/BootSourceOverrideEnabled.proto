@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum BootSourceOverrideEnabled {
+    BootSourceOverrideEnabled_Disabled = 0;
+    BootSourceOverrideEnabled_Once = 1;
+    BootSourceOverrideEnabled_Continuous = 2;
+}

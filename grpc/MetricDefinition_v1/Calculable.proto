@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package MetricDefinition;
+
+enum Calculable {
+    Calculable_NonCalculatable = 0;
+    Calculable_Summable = 1;
+    Calculable_NonSummable = 2;
+}

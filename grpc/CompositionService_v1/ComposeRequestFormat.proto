@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package CompositionService;
+
+enum ComposeRequestFormat {
+    ComposeRequestFormat_Manifest = 0;
+}

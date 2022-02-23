@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Memory;
+
+enum SecurityStates {
+    SecurityStates_Enabled = 0;
+    SecurityStates_Disabled = 1;
+    SecurityStates_Unlocked = 2;
+    SecurityStates_Locked = 3;
+    SecurityStates_Frozen = 4;
+    SecurityStates_Passphraselimit = 5;
+}

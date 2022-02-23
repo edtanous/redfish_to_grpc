@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package Fan;
+
+import "Assembly_v1/Assembly.proto";
+import "Fan_v1/Actions.proto";
+import "NavigationReference.proto";
+import "PhysicalContext_v1/PhysicalContext.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Fan {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Fan.v1_0_0.Fan
+    .PhysicalContext.PhysicalContext PhysicalContext = 5;
+    .Resource.Status Status = 6;
+    NavigationReference SpeedPercent = 7;
+    string Manufacturer = 8;
+    string Model = 9;
+    string SerialNumber = 10;
+    string PartNumber = 11;
+    string SparePartNumber = 12;
+    .Resource.Location Location = 13;
+    bool LocationIndicatorActive = 14;
+    bool HotPluggable = 15;
+    .Assembly.Assembly Assembly = 16;
+    Actions Actions = 17;
+
+    // from Fan.v1_1_0.Fan
+    NavigationReference PowerWatts = 18;
+}

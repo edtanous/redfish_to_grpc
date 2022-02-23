@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Triggers;
+
+enum ThresholdActivation {
+    ThresholdActivation_Increasing = 0;
+    ThresholdActivation_Decreasing = 1;
+    ThresholdActivation_Either = 2;
+}

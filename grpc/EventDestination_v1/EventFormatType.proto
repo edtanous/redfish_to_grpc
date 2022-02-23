@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package EventDestination;
+
+enum EventFormatType {
+    EventFormatType_Event = 0;
+    EventFormatType_MetricReport = 1;
+}

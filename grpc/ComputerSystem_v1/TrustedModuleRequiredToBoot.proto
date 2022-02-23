@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum TrustedModuleRequiredToBoot {
+    TrustedModuleRequiredToBoot_Disabled = 0;
+    TrustedModuleRequiredToBoot_Required = 1;
+}

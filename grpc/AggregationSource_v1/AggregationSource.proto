@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package AggregationSource;
+
+import "AggregationSource_v1/Actions.proto";
+import "AggregationSource_v1/AggregationType.proto";
+import "AggregationSource_v1/Links.proto";
+import "AggregationSource_v1/SNMPSettings.proto";
+import "Resource_v1/Oem.proto";
+
+message AggregationSource {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from AggregationSource.v1_0_0.AggregationSource
+    string HostName = 5;
+    string UserName = 6;
+    string Password = 7;
+    Links Links = 8;
+    Actions Actions = 9;
+
+    // from AggregationSource.v1_1_0.AggregationSource
+    SNMPSettings SNMP = 10;
+
+    // from AggregationSource.v1_2_0.AggregationSource
+    AggregationType AggregationType = 11;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Volume;
+
+import "google/protobuf/any.proto";
+
+message NVMeNamespaceProperties{
+    map<string, google.protobuf.Any> NVMeNamespaceProperties = 1;
+}
+

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Redundancy;
+
+enum RedundancyType {
+    RedundancyType_Failover = 0;
+    RedundancyType_NPlusM = 1;
+    RedundancyType_Sharing = 2;
+    RedundancyType_Sparing = 3;
+    RedundancyType_NotRedundant = 4;
+}

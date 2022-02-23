@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Settings;
+
+enum OperationApplyTime {
+    OperationApplyTime_Immediate = 0;
+    OperationApplyTime_OnReset = 1;
+    OperationApplyTime_AtMaintenanceWindowStart = 2;
+    OperationApplyTime_InMaintenanceWindowOnReset = 3;
+    OperationApplyTime_OnStartUpdateRequest = 4;
+}

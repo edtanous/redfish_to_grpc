@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Org;
+
+enum FilterExpressionType {
+    FilterExpressionType_SingleValue = 0;
+    FilterExpressionType_MultiValue = 1;
+    FilterExpressionType_SingleInterval = 2;
+}

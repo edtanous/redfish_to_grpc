@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package DataSecurityLoSCapabilities;
+
+enum DataSanitizationPolicy {
+    DataSanitizationPolicy_None = 0;
+    DataSanitizationPolicy_Clear = 1;
+    DataSanitizationPolicy_CryptographicErase = 2;
+}

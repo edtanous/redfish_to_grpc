@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Chassis;
+
+enum IntrusionSensor {
+    IntrusionSensor_Normal = 0;
+    IntrusionSensor_HardwareIntrusion = 1;
+    IntrusionSensor_TamperingDetected = 2;
+}

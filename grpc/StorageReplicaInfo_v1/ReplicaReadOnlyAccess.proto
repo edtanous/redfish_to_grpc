@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaReadOnlyAccess {
+    ReplicaReadOnlyAccess_SourceElement = 0;
+    ReplicaReadOnlyAccess_ReplicaElement = 1;
+    ReplicaReadOnlyAccess_Both = 2;
+}

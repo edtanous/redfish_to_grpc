@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package IOPerformanceLoSCapabilities;
+
+enum IOAccessPattern {
+    IOAccessPattern_ReadWrite = 0;
+    IOAccessPattern_SequentialRead = 1;
+    IOAccessPattern_SequentialWrite = 2;
+    IOAccessPattern_RandomReadNew = 3;
+    IOAccessPattern_RandomReadAgain = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package VirtualMedia;
+
+enum TransferMethod {
+    TransferMethod_Stream = 0;
+    TransferMethod_Upload = 1;
+}

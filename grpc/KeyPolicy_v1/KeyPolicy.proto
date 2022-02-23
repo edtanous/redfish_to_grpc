@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package KeyPolicy;
+
+import "KeyPolicy_v1/Actions.proto";
+import "KeyPolicy_v1/KeyPolicyType.proto";
+import "KeyPolicy_v1/NVMeoF.proto";
+import "Resource_v1/Oem.proto";
+
+message KeyPolicy {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from KeyPolicy.v1_0_0.KeyPolicy
+    KeyPolicyType KeyPolicyType = 5;
+    bool IsDefault = 6;
+    NVMeoF NVMeoF = 7;
+    Actions Actions = 8;
+}

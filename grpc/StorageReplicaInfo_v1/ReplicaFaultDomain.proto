@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package StorageReplicaInfo;
+
+enum ReplicaFaultDomain {
+    ReplicaFaultDomain_Local = 0;
+    ReplicaFaultDomain_Remote = 1;
+}

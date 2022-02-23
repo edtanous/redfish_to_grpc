@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package NVMeFirmwareImage;
+
+enum NVMeDeviceType {
+    NVMeDeviceType_Drive = 0;
+    NVMeDeviceType_JBOF = 1;
+    NVMeDeviceType_FabricAttachArray = 2;
+}

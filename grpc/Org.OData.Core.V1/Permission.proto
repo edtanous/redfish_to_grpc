@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Org;
+
+enum Permission {
+    Permission_None = 0;
+    Permission_Read = 1;
+    Permission_Write = 2;
+    Permission_ReadWrite = 3;
+    Permission_Invoke = 4;
+}

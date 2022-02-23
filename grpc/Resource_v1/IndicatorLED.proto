@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Resource;
+
+enum IndicatorLED {
+    IndicatorLED_Lit = 0;
+    IndicatorLED_Blinking = 1;
+    IndicatorLED_Off = 2;
+}

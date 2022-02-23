@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package MessageRegistry;
+
+enum ParamType {
+    ParamType_string = 0;
+    ParamType_number = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+import "google/protobuf/any.proto";
+
+message TrustedModules{
+    map<string, google.protobuf.Any> TrustedModules = 1;
+}
+

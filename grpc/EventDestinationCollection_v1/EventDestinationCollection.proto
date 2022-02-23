@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package EventDestinationCollection;
+
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message EventDestinationCollection {
+    // from Resource.v1_0_0.ResourceCollection
+    string Description = 1;
+    string Name = 2;
+    .Resource.Oem Oem = 3;
+
+    // from EventDestinationCollection.EventDestinationCollection
+    repeated NavigationReference Members = 4;
+}

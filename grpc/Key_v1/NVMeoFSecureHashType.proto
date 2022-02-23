@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Key;
+
+enum NVMeoFSecureHashType {
+    NVMeoFSecureHashType_SHA256 = 0;
+    NVMeoFSecureHashType_SHA384 = 1;
+    NVMeoFSecureHashType_SHA512 = 2;
+}

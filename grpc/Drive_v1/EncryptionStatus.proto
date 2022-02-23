@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Drive;
+
+enum EncryptionStatus {
+    EncryptionStatus_Unecrypted = 0;
+    EncryptionStatus_Unlocked = 1;
+    EncryptionStatus_Locked = 2;
+    EncryptionStatus_Foreign = 3;
+    EncryptionStatus_Unencrypted = 4;
+}

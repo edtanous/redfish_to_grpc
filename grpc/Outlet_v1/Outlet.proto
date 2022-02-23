@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package Outlet;
+
+import "Circuit_v1/NominalVoltageType.proto";
+import "Circuit_v1/PhaseWiringType.proto";
+import "Circuit_v1/PowerRestorePolicyTypes.proto";
+import "NavigationReference.proto";
+import "Outlet_v1/Actions.proto";
+import "Outlet_v1/CurrentSensors.proto";
+import "Outlet_v1/Links.proto";
+import "Outlet_v1/ReceptacleType.proto";
+import "Outlet_v1/VoltageSensors.proto";
+import "Outlet_v1/VoltageType.proto";
+import "Resource_v1/IndicatorLED.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/PowerState.proto";
+import "Resource_v1/Status.proto";
+import "Sensor_v1/ElectricalContext.proto";
+
+message Outlet {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Outlet.v1_0_0.Outlet
+    .Resource.Status Status = 5;
+    .Sensor.ElectricalContext ElectricalContext = 6;
+    .Circuit.PhaseWiringType PhaseWiringType = 7;
+    VoltageType VoltageType = 8;
+    ReceptacleType OutletType = 9;
+    .Circuit.NominalVoltageType NominalVoltage = 10;
+    double RatedCurrentAmps = 11;
+    .Resource.IndicatorLED IndicatorLED = 12;
+    double PowerOnDelaySeconds = 13;
+    double PowerOffDelaySeconds = 14;
+    double PowerCycleDelaySeconds = 15;
+    double PowerRestoreDelaySeconds = 16;
+    .Circuit.PowerRestorePolicyTypes PowerRestorePolicy = 17;
+    .Resource.PowerState PowerState = 18;
+    bool PowerEnabled = 19;
+    NavigationReference Voltage = 20;
+    NavigationReference CurrentAmps = 21;
+    NavigationReference PowerWatts = 22;
+    NavigationReference EnergykWh = 23;
+    NavigationReference FrequencyHz = 24;
+    VoltageSensors PolyPhaseVoltage = 25;
+    CurrentSensors PolyPhaseCurrentAmps = 26;
+    Links Links = 27;
+    Actions Actions = 28;
+
+    // from Outlet.v1_1_0.Outlet
+    bool LocationIndicatorActive = 29;
+
+    // from Outlet.v1_2_0.Outlet
+    NavigationReference PowerLoadPercent = 30;
+
+    // from Outlet.v1_3_0.Outlet
+    repeated string ElectricalConsumerNames = 31;
+    string UserLabel = 32;
+
+    // from Outlet.v1_4_0.Outlet
+    bool PowerControlLocked = 33;
+    bool ConfigurationLocked = 34;
+    bool PowerStateInTransition = 35;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package Power;
+
+import "Power_v1/Actions.proto";
+import "Power_v1/PowerControl.proto";
+import "Power_v1/PowerSupply.proto";
+import "Power_v1/Voltage.proto";
+import "Redundancy_v1/Redundancy.proto";
+import "Resource_v1/Oem.proto";
+
+message Power {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Power.v1_0_0.Power
+    repeated PowerControl PowerControl = 5;
+    repeated Voltage Voltages = 6;
+    repeated PowerSupply PowerSupplies = 7;
+    repeated .Redundancy.Redundancy Redundancy = 8;
+
+    // from Power.v1_3_0.Power
+    Actions Actions = 9;
+}

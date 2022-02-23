@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Processor;
+
+enum TurboState {
+    TurboState_Enabled = 0;
+    TurboState_Disabled = 1;
+}

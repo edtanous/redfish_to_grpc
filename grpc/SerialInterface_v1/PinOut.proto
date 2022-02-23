@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package SerialInterface;
+
+enum PinOut {
+    PinOut_Cisco = 0;
+    PinOut_Cyclades = 1;
+    PinOut_Digi = 2;
+}

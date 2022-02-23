@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package SensorCollection;
+
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message SensorCollection {
+    // from Resource.v1_0_0.ResourceCollection
+    string Description = 1;
+    string Name = 2;
+    .Resource.Oem Oem = 3;
+
+    // from SensorCollection.SensorCollection
+    repeated NavigationReference Members = 4;
+}

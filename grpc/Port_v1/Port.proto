@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package Port;
+
+import "NavigationReference.proto";
+import "Port_v1/Actions.proto";
+import "Port_v1/EthernetProperties.proto";
+import "Port_v1/FibreChannelProperties.proto";
+import "Port_v1/FunctionMaxBandwidth.proto";
+import "Port_v1/FunctionMinBandwidth.proto";
+import "Port_v1/GenZ.proto";
+import "Port_v1/InfiniBandProperties.proto";
+import "Port_v1/LinkConfiguration.proto";
+import "Port_v1/LinkNetworkTechnology.proto";
+import "Port_v1/Links.proto";
+import "Port_v1/LinkState.proto";
+import "Port_v1/LinkStatus.proto";
+import "Port_v1/PortMedium.proto";
+import "Port_v1/PortType.proto";
+import "Port_v1/SFP.proto";
+import "Protocol_v1/Protocol.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Port {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Port.v1_0_0.Port
+    .Resource.Status Status = 5;
+    string PortId = 6;
+    .Protocol.Protocol PortProtocol = 7;
+    PortType PortType = 8;
+    double CurrentSpeedGbps = 9;
+    double MaxSpeedGbps = 10;
+    int64 Width = 11;
+    Links Links = 12;
+    Actions Actions = 13;
+
+    // from Port.v1_1_0.Port
+    .Resource.Location Location = 14;
+
+    // from Port.v1_2_0.Port
+    PortMedium PortMedium = 15;
+    LinkNetworkTechnology LinkNetworkTechnology = 16;
+    bool InterfaceEnabled = 17;
+    bool SignalDetected = 18;
+    int64 LinkTransitionIndicator = 19;
+    int64 ActiveWidth = 20;
+    LinkState LinkState = 21;
+    LinkStatus LinkStatus = 22;
+    GenZ GenZ = 23;
+    NavigationReference Metrics = 24;
+
+    // from Port.v1_3_0.Port
+    bool LocationIndicatorActive = 25;
+    int64 MaxFrameSize = 26;
+    repeated LinkConfiguration LinkConfiguration = 27;
+    FibreChannelProperties FibreChannel = 28;
+    EthernetProperties Ethernet = 29;
+
+    // from Port.v1_4_0.Port
+    repeated FunctionMinBandwidth FunctionMinBandwidth = 30;
+    repeated FunctionMaxBandwidth FunctionMaxBandwidth = 31;
+    SFP SFP = 32;
+    NavigationReference EnvironmentMetrics = 33;
+    string CurrentProtocolVersion = 34;
+    repeated string CapableProtocolVersions = 35;
+    bool Enabled = 36;
+
+    // from Port.v1_6_0.Port
+    InfiniBandProperties InfiniBand = 37;
+}

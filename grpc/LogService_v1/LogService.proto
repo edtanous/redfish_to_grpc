@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package LogService;
+
+import "google/protobuf/timestamp.proto";
+import "LogEntryCollection_v1/LogEntryCollection.proto";
+import "LogService_v1/Actions.proto";
+import "LogService_v1/LogEntryTypes.proto";
+import "LogService_v1/OverWritePolicy.proto";
+import "LogService_v1/SyslogFilter.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message LogService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from LogService.v1_0_0.LogService
+    bool ServiceEnabled = 5;
+    int64 MaxNumberOfRecords = 6;
+    OverWritePolicy OverWritePolicy = 7;
+    google.protobuf.Timestamp DateTime = 8;
+    string DateTimeLocalOffset = 9;
+    .LogEntryCollection.LogEntryCollection Entries = 10;
+    Actions Actions = 11;
+    .Resource.Status Status = 12;
+
+    // from LogService.v1_1_0.LogService
+    LogEntryTypes LogEntryType = 13;
+
+    // from LogService.v1_2_0.LogService
+    repeated SyslogFilter SyslogFilters = 14;
+
+    // from LogService.v1_3_0.LogService
+    bool AutoDSTEnabled = 15;
+}

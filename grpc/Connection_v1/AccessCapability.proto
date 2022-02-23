@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Connection;
+
+enum AccessCapability {
+    AccessCapability_Read = 0;
+    AccessCapability_Write = 1;
+}

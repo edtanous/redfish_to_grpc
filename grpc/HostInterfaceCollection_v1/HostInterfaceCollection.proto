@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package HostInterfaceCollection;
+
+import "NavigationReference.proto";
+import "Resource_v1/Oem.proto";
+
+message HostInterfaceCollection {
+    // from Resource.v1_0_0.ResourceCollection
+    string Description = 1;
+    string Name = 2;
+    .Resource.Oem Oem = 3;
+
+    // from HostInterfaceCollection.HostInterfaceCollection
+    repeated NavigationReference Members = 4;
+}

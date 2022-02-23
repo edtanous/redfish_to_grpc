@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package KeyPolicy;
+
+enum KeyPolicyType {
+    KeyPolicyType_NVMeoF = 0;
+}

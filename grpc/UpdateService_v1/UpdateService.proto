@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package UpdateService;
+
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SoftwareInventoryCollection_v1/SoftwareInventoryCollection.proto";
+import "UpdateService_v1/Actions.proto";
+import "UpdateService_v1/HttpPushUriOptions.proto";
+
+message UpdateService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from UpdateService.v1_0_0.UpdateService
+    .Resource.Status Status = 5;
+    bool ServiceEnabled = 6;
+    .SoftwareInventoryCollection.SoftwareInventoryCollection FirmwareInventory = 7;
+    .SoftwareInventoryCollection.SoftwareInventoryCollection SoftwareInventory = 8;
+    Actions Actions = 9;
+
+    // from UpdateService.v1_1_0.UpdateService
+    string HttpPushUri = 10;
+
+    // from UpdateService.v1_2_0.UpdateService
+    repeated string HttpPushUriTargets = 11;
+    bool HttpPushUriTargetsBusy = 12;
+
+    // from UpdateService.v1_4_0.UpdateService
+    HttpPushUriOptions HttpPushUriOptions = 13;
+    bool HttpPushUriOptionsBusy = 14;
+
+    // from UpdateService.v1_5_0.UpdateService
+    int64 MaxImageSizeBytes = 15;
+
+    // from UpdateService.v1_6_0.UpdateService
+    string MultipartHttpPushUri = 16;
+
+    // from UpdateService.v1_9_0.UpdateService
+    .CertificateCollection.CertificateCollection RemoteServerCertificates = 17;
+    bool VerifyRemoteServerCertificate = 18;
+
+    // from UpdateService.v1_10_0.UpdateService
+    .CertificateCollection.CertificateCollection ClientCertificates = 19;
+}

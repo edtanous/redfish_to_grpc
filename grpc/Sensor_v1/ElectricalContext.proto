@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package Sensor;
+
+enum ElectricalContext {
+    ElectricalContext_Line1 = 0;
+    ElectricalContext_Line2 = 1;
+    ElectricalContext_Line3 = 2;
+    ElectricalContext_Neutral = 3;
+    ElectricalContext_LineToLine = 4;
+    ElectricalContext_Line1ToLine2 = 5;
+    ElectricalContext_Line2ToLine3 = 6;
+    ElectricalContext_Line3ToLine1 = 7;
+    ElectricalContext_LineToNeutral = 8;
+    ElectricalContext_Line1ToNeutral = 9;
+    ElectricalContext_Line2ToNeutral = 10;
+    ElectricalContext_Line3ToNeutral = 11;
+    ElectricalContext_Line1ToNeutralAndL1L2 = 12;
+    ElectricalContext_Line2ToNeutralAndL1L2 = 13;
+    ElectricalContext_Line2ToNeutralAndL2L3 = 14;
+    ElectricalContext_Line3ToNeutralAndL3L1 = 15;
+    ElectricalContext_Total = 16;
+}

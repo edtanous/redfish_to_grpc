@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package GraphicsController;
+
+import "GraphicsController_v1/Actions.proto";
+import "GraphicsController_v1/Links.proto";
+import "NavigationReference.proto";
+import "Resource_v1/Location.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message GraphicsController {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from GraphicsController.v1_0_0.GraphicsController
+    string AssetTag = 5;
+    string Manufacturer = 6;
+    string Model = 7;
+    string SKU = 8;
+    string SerialNumber = 9;
+    string PartNumber = 10;
+    string SparePartNumber = 11;
+    string BiosVersion = 12;
+    string DriverVersion = 13;
+    .Resource.Status Status = 14;
+    .Resource.Location Location = 15;
+    NavigationReference Ports = 16;
+    Links Links = 17;
+    Actions Actions = 18;
+}

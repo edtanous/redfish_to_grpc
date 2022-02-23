@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Certificate;
+
+enum CertificateUsageType {
+    CertificateUsageType_User = 0;
+    CertificateUsageType_Web = 1;
+    CertificateUsageType_SSH = 2;
+    CertificateUsageType_Device = 3;
+    CertificateUsageType_Platform = 4;
+    CertificateUsageType_BIOS = 5;
+}

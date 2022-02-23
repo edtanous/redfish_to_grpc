@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package MetricDefinition;
+
+enum ImplementationType {
+    ImplementationType_PhysicalSensor = 0;
+    ImplementationType_Calculated = 1;
+    ImplementationType_Synthesized = 2;
+    ImplementationType_DigitalMeter = 3;
+}

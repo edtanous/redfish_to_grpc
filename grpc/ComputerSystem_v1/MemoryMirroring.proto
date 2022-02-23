@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+enum MemoryMirroring {
+    MemoryMirroring_System = 0;
+    MemoryMirroring_DIMM = 1;
+    MemoryMirroring_Hybrid = 2;
+    MemoryMirroring_None = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package EthernetInterface;
+
+enum DHCPv6OperatingMode {
+    DHCPv6OperatingMode_Stateful = 0;
+    DHCPv6OperatingMode_Stateless = 1;
+    DHCPv6OperatingMode_Disabled = 2;
+    DHCPv6OperatingMode_Enabled = 3;
+}

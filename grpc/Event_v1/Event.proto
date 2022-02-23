@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package Event;
+
+import "Event_v1/Actions.proto";
+import "Event_v1/EventRecord.proto";
+import "Resource_v1/Oem.proto";
+
+message Event {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from Event.v1_0_0.Event
+    repeated EventRecord Events = 5;
+
+    // from Event.v1_1_0.Event
+    string Context = 6;
+
+    // from Event.v1_2_0.Event
+    Actions Actions = 7;
+}

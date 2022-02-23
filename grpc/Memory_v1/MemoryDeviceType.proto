@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package Memory;
+
+enum MemoryDeviceType {
+    MemoryDeviceType_DDR = 0;
+    MemoryDeviceType_DDR2 = 1;
+    MemoryDeviceType_DDR3 = 2;
+    MemoryDeviceType_DDR4 = 3;
+    MemoryDeviceType_DDR4_SDRAM = 4;
+    MemoryDeviceType_DDR4E_SDRAM = 5;
+    MemoryDeviceType_LPDDR4_SDRAM = 6;
+    MemoryDeviceType_DDR3_SDRAM = 7;
+    MemoryDeviceType_LPDDR3_SDRAM = 8;
+    MemoryDeviceType_DDR2_SDRAM = 9;
+    MemoryDeviceType_DDR2_SDRAM_FB_DIMM = 10;
+    MemoryDeviceType_DDR2_SDRAM_FB_DIMM_PROBE = 11;
+    MemoryDeviceType_DDR_SGRAM = 12;
+    MemoryDeviceType_DDR_SDRAM = 13;
+    MemoryDeviceType_ROM = 14;
+    MemoryDeviceType_SDRAM = 15;
+    MemoryDeviceType_EDO = 16;
+    MemoryDeviceType_FastPageMode = 17;
+    MemoryDeviceType_PipelinedNibble = 18;
+    MemoryDeviceType_Logical = 19;
+    MemoryDeviceType_HBM = 20;
+    MemoryDeviceType_HBM2 = 21;
+    MemoryDeviceType_HBM3 = 22;
+    MemoryDeviceType_GDDR = 23;
+    MemoryDeviceType_GDDR2 = 24;
+    MemoryDeviceType_GDDR3 = 25;
+    MemoryDeviceType_GDDR4 = 26;
+    MemoryDeviceType_GDDR5 = 27;
+    MemoryDeviceType_GDDR5X = 28;
+    MemoryDeviceType_GDDR6 = 29;
+    MemoryDeviceType_DDR5 = 30;
+    MemoryDeviceType_OEM = 31;
+}

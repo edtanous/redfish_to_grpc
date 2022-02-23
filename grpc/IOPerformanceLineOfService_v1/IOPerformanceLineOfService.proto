@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package IOPerformanceLineOfService;
+
+import "IOPerformanceLineOfService_v1/Actions.proto";
+import "IOPerformanceLoSCapabilities_v1/IOWorkload.proto";
+import "Resource_v1/Oem.proto";
+
+message IOPerformanceLineOfService {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from IOPerformanceLineOfService.v1_0_0.IOPerformanceLineOfService
+    bool IOOperationsPerSecondIsLimited = 5;
+    string SamplePeriod = 6;
+    int64 MaxIOOperationsPerSecondPerTerabyte = 7;
+    int64 AverageIOOperationLatencyMicroseconds = 8;
+    .IOPerformanceLoSCapabilities.IOWorkload IOWorkload = 9;
+
+    // from IOPerformanceLineOfService.v1_1_0.IOPerformanceLineOfService
+    Actions Actions = 10;
+}

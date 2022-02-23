@@ -1,0 +1,134 @@
+syntax = "proto3";
+
+package ComputerSystem;
+
+import "Bios_v1/Bios.proto";
+import "CertificateCollection_v1/CertificateCollection.proto";
+import "ComputerSystem_v1/Actions.proto";
+import "ComputerSystem_v1/Boot.proto";
+import "ComputerSystem_v1/BootProgress.proto";
+import "ComputerSystem_v1/HostedServices.proto";
+import "ComputerSystem_v1/HostGraphicalConsole.proto";
+import "ComputerSystem_v1/HostingRole.proto";
+import "ComputerSystem_v1/HostSerialConsole.proto";
+import "ComputerSystem_v1/IdlePowerSaver.proto";
+import "ComputerSystem_v1/IndicatorLED.proto";
+import "ComputerSystem_v1/KeyManagement.proto";
+import "ComputerSystem_v1/Links.proto";
+import "ComputerSystem_v1/MemorySummary.proto";
+import "ComputerSystem_v1/PowerMode.proto";
+import "ComputerSystem_v1/PowerRestorePolicyTypes.proto";
+import "ComputerSystem_v1/PowerState.proto";
+import "ComputerSystem_v1/ProcessorSummary.proto";
+import "ComputerSystem_v1/SystemType.proto";
+import "ComputerSystem_v1/TrustedModules.proto";
+import "ComputerSystem_v1/VirtualMediaConfig.proto";
+import "ComputerSystem_v1/WatchdogTimer.proto";
+import "EthernetInterfaceCollection_v1/EthernetInterfaceCollection.proto";
+import "FabricAdapterCollection_v1/FabricAdapterCollection.proto";
+import "google/protobuf/timestamp.proto";
+import "GraphicsControllerCollection_v1/GraphicsControllerCollection.proto";
+import "LogServiceCollection_v1/LogServiceCollection.proto";
+import "MemoryCollection_v1/MemoryCollection.proto";
+import "MemoryDomainCollection_v1/MemoryDomainCollection.proto";
+import "NavigationReference.proto";
+import "NetworkInterfaceCollection_v1/NetworkInterfaceCollection.proto";
+import "ProcessorCollection_v1/ProcessorCollection.proto";
+import "Redundancy_v1/Redundancy.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+import "SecureBoot_v1/SecureBoot.proto";
+import "SimpleStorageCollection_v1/SimpleStorageCollection.proto";
+import "SoftwareInventory_v1/MeasurementBlock.proto";
+import "StorageCollection_v1/StorageCollection.proto";
+import "USBControllerCollection_v1/USBControllerCollection.proto";
+import "VirtualMediaCollection_v1/VirtualMediaCollection.proto";
+
+message ComputerSystem {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.Resource
+    string Id = 2;
+    string Description = 3;
+    string Name = 4;
+
+    // from ComputerSystem.v1_0_0.ComputerSystem
+    SystemType SystemType = 5;
+    Links Links = 6;
+    string AssetTag = 7;
+    string Manufacturer = 8;
+    string Model = 9;
+    string SKU = 10;
+    string SerialNumber = 11;
+    string PartNumber = 12;
+    string UUID = 13;
+    string HostName = 14;
+    IndicatorLED IndicatorLED = 15;
+    PowerState PowerState = 16;
+    Boot Boot = 17;
+    string BiosVersion = 18;
+    ProcessorSummary ProcessorSummary = 19;
+    MemorySummary MemorySummary = 20;
+    Actions Actions = 21;
+    .ProcessorCollection.ProcessorCollection Processors = 22;
+    .EthernetInterfaceCollection.EthernetInterfaceCollection EthernetInterfaces = 23;
+    .SimpleStorageCollection.SimpleStorageCollection SimpleStorage = 24;
+    .LogServiceCollection.LogServiceCollection LogServices = 25;
+    .Resource.Status Status = 26;
+
+    // from ComputerSystem.v1_1_0.ComputerSystem
+    repeated TrustedModules TrustedModules = 27;
+    .SecureBoot.SecureBoot SecureBoot = 28;
+    .Bios.Bios Bios = 29;
+    .MemoryCollection.MemoryCollection Memory = 30;
+    .StorageCollection.StorageCollection Storage = 31;
+
+    // from ComputerSystem.v1_2_0.ComputerSystem
+    repeated HostingRole HostingRoles = 32;
+    repeated NavigationReference PCIeDevices = 33;
+    repeated NavigationReference PCIeFunctions = 34;
+    HostedServices HostedServices = 35;
+    .MemoryDomainCollection.MemoryDomainCollection MemoryDomains = 36;
+
+    // from ComputerSystem.v1_3_0.ComputerSystem
+    .NetworkInterfaceCollection.NetworkInterfaceCollection NetworkInterfaces = 37;
+
+    // from ComputerSystem.v1_5_0.ComputerSystem
+    repeated .Redundancy.Redundancy Redundancy = 38;
+    WatchdogTimer HostWatchdogTimer = 39;
+    string SubModel = 40;
+
+    // from ComputerSystem.v1_6_0.ComputerSystem
+    PowerRestorePolicyTypes PowerRestorePolicy = 41;
+
+    // from ComputerSystem.v1_10_0.ComputerSystem
+    .FabricAdapterCollection.FabricAdapterCollection FabricAdapters = 42;
+
+    // from ComputerSystem.v1_12_0.ComputerSystem
+    google.protobuf.Timestamp LastResetTime = 43;
+
+    // from ComputerSystem.v1_13_0.ComputerSystem
+    bool LocationIndicatorActive = 44;
+    BootProgress BootProgress = 45;
+    double PowerOnDelaySeconds = 46;
+    double PowerOffDelaySeconds = 47;
+    double PowerCycleDelaySeconds = 48;
+    HostSerialConsole SerialConsole = 49;
+    HostGraphicalConsole GraphicalConsole = 50;
+    VirtualMediaConfig VirtualMediaConfig = 51;
+    .VirtualMediaCollection.VirtualMediaCollection VirtualMedia = 52;
+
+    // from ComputerSystem.v1_14_0.ComputerSystem
+    .CertificateCollection.CertificateCollection Certificates = 53;
+    repeated .SoftwareInventory.MeasurementBlock Measurements = 54;
+
+    // from ComputerSystem.v1_15_0.ComputerSystem
+    .GraphicsControllerCollection.GraphicsControllerCollection GraphicsControllers = 55;
+    .USBControllerCollection.USBControllerCollection USBControllers = 56;
+    PowerMode PowerMode = 57;
+
+    // from ComputerSystem.v1_16_0.ComputerSystem
+    IdlePowerSaver IdlePowerSaver = 58;
+    KeyManagement KeyManagement = 59;
+}

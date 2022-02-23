@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Resource;
+
+enum Orientation {
+    Orientation_FrontToBack = 0;
+    Orientation_BackToFront = 1;
+    Orientation_TopToBottom = 2;
+    Orientation_BottomToTop = 3;
+    Orientation_LeftToRight = 4;
+    Orientation_RightToLeft = 5;
+}

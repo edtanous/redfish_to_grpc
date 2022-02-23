@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ComponentIntegrity;
+
+enum VerificationStatus {
+    VerificationStatus_Success = 0;
+    VerificationStatus_Failed = 1;
+}

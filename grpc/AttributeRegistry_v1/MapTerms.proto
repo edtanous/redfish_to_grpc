@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package AttributeRegistry;
+
+enum MapTerms {
+    MapTerms_AND = 0;
+    MapTerms_OR = 1;
+}

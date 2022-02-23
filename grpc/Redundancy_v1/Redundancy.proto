@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package Redundancy;
+
+import "NavigationReference.proto";
+import "Redundancy_v1/Actions.proto";
+import "Resource_v1/Oem.proto";
+import "Resource_v1/Status.proto";
+
+message Redundancy {
+    // from Resource.Item
+    .Resource.Oem Oem = 1;
+
+    // from Resource.v1_0_0.ReferenceableMember
+    string MemberId = 2;
+
+    // from Redundancy.v1_0_0.Redundancy
+    string Name = 3;
+    string Mode = 4;
+    int64 MaxNumSupported = 5;
+    int64 MinNumNeeded = 6;
+    .Resource.Status Status = 7;
+    repeated NavigationReference RedundancySet = 8;
+
+    // from Redundancy.v1_1_0.Redundancy
+    bool RedundancyEnabled = 9;
+
+    // from Redundancy.v1_2_0.Redundancy
+    Actions Actions = 10;
+}
